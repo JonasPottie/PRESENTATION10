@@ -35,7 +35,7 @@ public class Main extends MovieClip {
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
 
-        stage.color = 0x000000;
+        stage.color = 0x00000;
 
         preloader = new Preloader();
         preloader.progress = 0;
