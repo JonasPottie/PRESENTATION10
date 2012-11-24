@@ -2,80 +2,16 @@
 
 <pages>
 
-    <page1 label="page1">
+    <page name="1" label="1" slideType="TCM" slideTheme="rb">
+        <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 1</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/01.jpg</contentMedia>
+    </page>
 
-        <slideType>TCM</slideType>
-
-        <slideTheme>rb</slideTheme>
-
-        <contentTitle>
-
-            <text>Dit is titel 1</text>
-
-            <transition>fadeIn</transition>
-
-            <transitionIndex>1</transitionIndex>
-
-        </contentTitle>
-
-        <contentText>
-
-            <text>Lorem ipsum dolor sit amen,...</text>
-
-            <transition>fadeInLeft</transition>
-
-            <transitionIndex>2</transitionIndex>
-
-        </contentText>
-
-        <contentFoto>
-
-            <url>somefuckingurl.jpg</url>
-
-            <transition>fadeInRight</transition>
-
-            <transitionIndex>3</transitionIndex>
-
-        </contentFoto>
-
-    </page1>
-
-    <page2 label="page2">
-
-        <slideType>TMM</slideType>
-
-        <slideTheme>rb</slideTheme>
-
-        <contentTitle>
-
-            <text>Dit is titel 1</text>
-
-            <transition>fadeIn</transition>
-
-            <transitionIndex>1</transitionIndex>
-
-        </contentTitle>
-
-        <contentFoto>
-
-            <url>somefuckingurl.jpg</url>
-
-            <transition>fadeInRight</transition>
-
-            <transitionIndex>2</transitionIndex>
-
-        </contentFoto>
-
-        <contentFoto>
-
-            <url>somefuckingurl2.jpg</url>
-
-            <transition>fadeInRight</transition>
-
-            <transitionIndex>3</transitionIndex>
-
-        </contentFoto>
-
-    </page2>
+    <page name="2" label="2" slideType="TCM" slideTheme="rb">
+        <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 2</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
+    </page>
 
 </pages>
