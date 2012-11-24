@@ -25,19 +25,19 @@ import flash.text.TextField;
 
 public class Application extends Sprite{
 
-    private var q:Queue;
+    private var queue:Queue;
 
     public function Application() {
 
         trace("[appl CONSTRUCTED]");
-        q = new Queue();
+        queue = new Queue();
 
-        q.addEventListener( ProgressEvent.PROGRESS, queueProgressHandler );
-        q.addEventListener( Event.COMPLETE, queueCompleteHandler );
-        q.add( new XMLTask("assets/xml/presentation.xml") );
+        queue.addEventListener( ProgressEvent.PROGRESS, queueProgressHandler );
+        queue.addEventListener( Event.COMPLETE, queueCompleteHandler );
+        queue.add( new XMLTask("assets/xml/presentation.xml") );
         //q.add( new ImageTask("assets/images/1.JPG") );
         //q.add( new ImageTask("assets/images/2.JPG") );
-        q.start();
+        queue.start();
 
     }
 
@@ -48,8 +48,8 @@ public class Application extends Sprite{
 
     private function queueCompleteHandler( e:Event ):void{
         trace("queue complete");
-        trace(q.completedItems);
-        for each( var task:ITask in q.completedItems ){
+        trace(queue.completedItems);
+        for each( var task:ITask in queue.completedItems ){
             if( task is ImageTask ){
                 var image:DisplayObject = DisplayObject( task );
                 TweenLite.to( image, 2, { scaleX:0.5, scaleY:0.5, x:Math.random()*stage.stageWidth/2, y:Math.random()*stage.stageHeight/2 } );
