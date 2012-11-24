@@ -20,7 +20,7 @@ import flash.events.Event;
 import flash.events.ProgressEvent;
 import flash.text.TextField;
 
-[SWF(backgroundColor="#00FF00")]
+[SWF(backgroundColor="#0000FF")]
 
 
 public class Application extends Sprite{
