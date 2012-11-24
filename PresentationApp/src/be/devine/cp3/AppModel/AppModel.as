@@ -72,7 +72,5 @@ public class AppModel extends EventDispatcher
             dispatchEvent(new Event(XML_URL_CHANGED));
         }
     }
-
-
 }
 }

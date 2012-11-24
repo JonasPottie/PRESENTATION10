@@ -20,7 +20,7 @@ public class Application extends Sprite{
 
     private var queue:Queue;
     private var appModel:AppModel;
-    private var arrPages:Vector.<XML>;
+    public var arrPages:Vector.<XML>;
 
     public function Application()
     {
@@ -43,20 +43,20 @@ public class Application extends Sprite{
 
         for each( var task:XMLTask in queue.completedItems )
         {
+            arrPages = new Vector.<XML>();
             var ingeladenXML:XML = new XML(task.data);
 
             for (var pages:uint=0; pages<2; pages++)
             {
                 // Elke page appart gaan opslaan in arrPage -> kan je makkelijk met indexen gaan werken...
-                arrPages = new Vector.<XML>();
                 arrPages.push(ingeladenXML.page[pages]);
-                trace("[SLIDE " + pages + "]: " + arrPages);
             }
 
         }
 
+        trace("[ARRPAGES]: " + arrPages);
         // kijken of we in bepaalde page content kan gaan ophalen -> WERKT!
-        trace("[ACCESTEST]:" + arrPages[0].contentTitle);
+        trace("[ACCESTEST]:" + arrPages[1].contentTitle);
 
     }
 }
