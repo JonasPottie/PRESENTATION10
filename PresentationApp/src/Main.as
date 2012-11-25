@@ -1,24 +1,17 @@
 package {
 
-import be.devine.cp3.Application;
-import be.devine.cp3.components.Preloader;
-
+import be.devine.cp3.view.Preloader;
 import com.greensock.TweenLite;
 import com.greensock.easing.Back;
-
 import flash.display.DisplayObject;
-
 import flash.display.MovieClip;
-
-import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.ProgressEvent;
-import flash.text.TextField;
 import flash.utils.getDefinitionByName;
 
-
+[SWF(backgroundColor="#fff", width="1024", height="768")]
 
 
 public class Main extends MovieClip {
@@ -81,6 +74,7 @@ public class Main extends MovieClip {
         var appClass:* = getDefinitionByName("be.devine.cp3.Application");
         app = new appClass();
         TweenLite.from(app, 1, {alpha: 0});
+        stage.color = 0xffffff;
         addChild(app);
         layout(null);
     }

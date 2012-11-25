@@ -15,8 +15,8 @@ public class AppModel extends EventDispatcher
         public static const XML_URL_CHANGED:String = "XML_URL_CHANGED";
 
         private var _currentSlideIndex:int;
-        private var _xmlChangedHandler:String;
-        private var _imageUrls:Vector.<String>;
+        private var _xmlUrl:String;
+        private var _xmlSlides:Vector.<XML>;
 
 
 
@@ -26,15 +26,17 @@ public class AppModel extends EventDispatcher
 
     }
 
-    public function goToPreviousImage():void
+    public function goToPreviousSlide():void
     {
        // Functie om naar vorige slide te gaan
+        trace("PREVIOUS SLIDE");
        currentSlideIndex --;
     }
 
-    public function goToNextImage():void
+    public function goToNextSlide():void
     {
        // Functie om naar volgende slide te gaan
+        trace("NEXT SLIDE")
       currentSlideIndex ++;
     }
 
@@ -48,8 +50,7 @@ public class AppModel extends EventDispatcher
 
     public function set currentSlideIndex(value:int):void {
 
-        // currentSlideIndex
-        value = Math.max(0, Math.min(value, _imageUrls.length - 1));
+        value = Math.max(0, Math.min(value, _xmlSlides.length - 1));
         if(_currentSlideIndex != value)
         {
             _currentSlideIndex = value;
@@ -58,17 +59,30 @@ public class AppModel extends EventDispatcher
         }
     }
 
-    public function get xmlChangedHandler():String {
-        return _xmlChangedHandler;
+    public function get xmlSlides():Vector.<XML> {
+        return _xmlSlides;
     }
 
-    public function set xmlChangedHandler(value:String):void
+    public function set xmlSlides(value:Vector.<XML>):void
     {
-        // Kijken of er nieuwe xml wordt ingeladen
-        if(_xmlChangedHandler != value)
+        //xmlSlide's in appmodel opslaan voor navigatie
+        if(_xmlSlides != value)
         {
-            _xmlChangedHandler = value;
-            trace("XML CHANGED: " + _xmlChangedHandler)
+            _xmlSlides = value;
+        }
+    }
+
+    public function get xmlUrl():String {
+        return _xmlUrl;
+    }
+
+    public function set xmlUrl(value:String):void {
+
+        // Kijken of er nieuwe xml wordt ingeladen
+        if(_xmlUrl != value)
+        {
+            _xmlUrl = value;
+            trace("XML CHANGED: " + _xmlSlides)
             dispatchEvent(new Event(XML_URL_CHANGED));
         }
     }

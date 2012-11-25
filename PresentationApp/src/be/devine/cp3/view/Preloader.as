@@ -1,4 +1,4 @@
-package be.devine.cp3.components
+package be.devine.cp3.view
 {
 import flash.display.Shape;
 import flash.display.Sprite;

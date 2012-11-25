@@ -14,4 +14,16 @@
         <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
     </page>
 
+    <page name="3" label="3" slideType="TCM" slideTheme="rb">
+        <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 3</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
+    </page>
+
+    <page name="4" label="4" slideType="TCM" slideTheme="rb">
+        <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 4</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
+    </page>
+
 </pages>
