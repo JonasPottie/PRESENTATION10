@@ -1,6 +1,7 @@
 package {
 
-import be.devine.cp3.view.Preloader;
+import be.devine.cp3.Application;
+
 import com.greensock.TweenLite;
 import com.greensock.easing.Back;
 import flash.display.DisplayObject;
@@ -16,9 +17,8 @@ import flash.utils.getDefinitionByName;
 
 public class Main extends MovieClip {
 
-    private var preloader:Preloader;
-    private var app:DisplayObject;
-
+    private var appl:Application = new Application();
+    private var bg:TheBackground = new TheBackground();
 
     public function Main() {
 
@@ -30,67 +30,15 @@ public class Main extends MovieClip {
 
         stage.color = 0x00000;
 
-        preloader = new Preloader();
-        preloader.progress = 0;
-        preloader.addEventListener(Event.CHANGE, preloaderChangeHandler);
-        addChild(preloader);
+        bg.x = stage.stageWidth/2;
+        bg.y = stage.stageHeight/2;
+        addChild(bg);
+        addChild(appl);
 
-        if(loaderInfo.bytesLoaded == loaderInfo.bytesTotal)
-        {
-            completeHandler(null);
-        }
-        else
-        {
-            loaderInfo.addEventListener(ProgressEvent.PROGRESS, progressHandler);
-            loaderInfo.addEventListener(Event.COMPLETE, completeHandler);
-        }
-
-        stage.addEventListener(Event.RESIZE, layout);
-        layout(null);
     }
 
 
-    private function progressHandler(event:ProgressEvent):void
-    {
-        TweenLite.to(preloader, 0.5, {progress: (event.bytesLoaded / event.bytesTotal)});
-    }
 
-    private function completeHandler(event:Event):void
-    {
-        gotoAndPlay("start");
-        TweenLite.to(preloader, 0.5, {progress: 1});
-    }
-
-    private function preloaderChangeHandler(event:Event):void
-    {
-        if(preloader.progress == 1)
-        {
-            TweenLite.to(preloader, 0.5, {y: -50, ease: Back.easeIn, onComplete: showApplication});
-        }
-    }
-
-    private function showApplication():void
-    {
-        var appClass:* = getDefinitionByName("be.devine.cp3.Application");
-        app = new appClass();
-        TweenLite.from(app, 1, {alpha: 0});
-        stage.color = 0xffffff;
-        addChild(app);
-        layout(null);
-    }
-
-    private function layout(event:Event):void
-    {
-        if(preloader.progress < 1)
-        {
-            preloader.y = stage.stageHeight * 0.5;
-        }
-        if(app != null)
-        {
-            /*app.x = (stage.stageWidth - app.width) * 0.5;
-             app.y = (stage.stageHeight - app.height) * 0.5;*/
-        }
-    }
 
 }
 }
