@@ -12,6 +12,8 @@ import be.devine.cp3.view.MenuComponent;
 import be.devine.cp3.view.OverviewComponent;
 import be.devine.cp3.view.SlideComponent;
 
+import com.greensock.TweenLite;
+
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
@@ -30,6 +32,7 @@ public class Application extends Sprite{
 
     public function Application()
     {
+        trace("[app CONSTRUCTED]");
         this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
 
         appModel = AppModel.getInstance();
@@ -37,7 +40,8 @@ public class Application extends Sprite{
         menuComponent = new MenuComponent();
         //addchilden via starling?
 
-        overviewComponent = new OverviewComponent();
+        //AANMAKEN ALS HET GEVRAAGD WORDT : PAS WANNEER "SPACE" KLIKT
+        //overviewComponent = new OverviewComponent();
         //addchilden via starling?
 
         slideComponent = new SlideComponent();
@@ -66,7 +70,30 @@ public class Application extends Sprite{
             case Keyboard.RIGHT:
                 appModel.goToNextSlide();
             break;
+
+            case Keyboard.SPACE:
+                showOverview();
+                break;
         }
+    }
+
+    private function showOverview():void {
+
+
+        if(overviewComponent==null){
+            overviewComponent = new OverviewComponent();
+            addChild(overviewComponent);
+            overviewComponent.y = 768;
+        }
+
+        if(overviewComponent.y == 568){
+            TweenLite.to(overviewComponent, 1, {y:768});
+        }else{
+            TweenLite.to(overviewComponent, 1, {y:568});
+        }
+
+
+
     }
 
 
