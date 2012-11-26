@@ -98,7 +98,7 @@ public class AppModel extends EventDispatcher
     }
 
 /*-------------------------------------------------------------------------//
-//------------    NEXT AND PREVIOUS SLIDE / SLIDE INDEX      --------------//
+//------------    NEXT AND PREVIOUS SLIDE     --------------//
 //------------------------------------------------------------------------*/
 
     public function goToPreviousSlide():void
@@ -115,6 +115,9 @@ public class AppModel extends EventDispatcher
       currentSlideIndex ++;
     }
 
+/*-------------------------------------------------------------------------//
+//------------    SLIDE INDEX => CURRENTSLIDE   --------------//
+//------------------------------------------------------------------------*/
 
     public function get currentSlideIndex():int
     {
