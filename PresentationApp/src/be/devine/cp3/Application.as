@@ -79,7 +79,6 @@ public class Application extends Sprite{
 
     private function showOverview():void {
 
-
         if(overviewComponent==null){
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
@@ -91,8 +90,6 @@ public class Application extends Sprite{
         }else{
             TweenLite.to(overviewComponent, 1, {y:568});
         }
-
-
 
     }
 

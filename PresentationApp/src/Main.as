@@ -29,11 +29,9 @@ public class Main extends Sprite {
 
         addChild(new Stats());
         addChild(app);
+
         //starling = new Starling(Application, stage);
-
-
-        //starling = new Starling(app, stage);
-        //starling.sta();
+        //starling.start();
 
 
 
