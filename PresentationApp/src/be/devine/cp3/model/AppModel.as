@@ -15,6 +15,7 @@ public class AppModel extends EventDispatcher
     {
         public static const CURRENT_SLIDE_CHANGED:String = "CURRENT_SLIDE_CHANGED";
         public static const XML_URL_CHANGED:String = "XML_URL_CHANGED";
+        public static const XML_URL_LOADED:String = "XML_URL_LOADED";
 
         private var _currentSlideIndex:int;
         private var _xmlUrl:String;
@@ -79,6 +80,8 @@ public class AppModel extends EventDispatcher
 
         }
 
+        dispatchEvent(new Event(XML_URL_LOADED));
+
     }
 
     public function get xmlUrl():String {
@@ -91,7 +94,7 @@ public class AppModel extends EventDispatcher
         if(_xmlUrl != value)
         {
             _xmlUrl = value;
-            trace("XML CHANGED: " + _xmlSlides)
+            trace("XML CHANGED")
             xmlChangedHandler();
             dispatchEvent(new Event(XML_URL_CHANGED));
         }

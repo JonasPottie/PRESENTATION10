@@ -35,22 +35,29 @@ public class Application extends Sprite{
         trace("[app CONSTRUCTED]");
         this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
 
-        appModel = AppModel.getInstance();
-
-        menuComponent = new MenuComponent();
-        //addchilden via starling?
-
-        //AANMAKEN ALS HET GEVRAAGD WORDT : PAS WANNEER "SPACE" KLIKT
-        //overviewComponent = new OverviewComponent();
-        //addchilden via starling?
-
-        slideComponent = new SlideComponent();
-        //addchilden via starling?
-
-        //LOAD XML!
+        this.appModel = AppModel.getInstance();
         appModel.load("assets/xml/presentation.xml");
+        appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
+        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, XmlLoadedHandler);
+
 
     }
+
+
+
+    private function XmlLoadedHandler(event:Event):void
+    {
+
+        menuComponent = new MenuComponent();
+
+        slideComponent = new SlideComponent();
+        addChild(slideComponent);
+
+
+
+    }
+
+
 /*-------------------------------------------------------------------------//
 //------------    SWITCHEN TUSSEN SLIDES MET PIJLTJES     --------------//
 //------------------------------------------------------------------------*/

@@ -15,7 +15,7 @@ import net.hires.debug.Stats;
 
 public class Main extends Sprite {
 
-    private var app:Application = new Application();
+    private var app:Application;
     //private var starling:Starling;
 
 
@@ -24,11 +24,11 @@ public class Main extends Sprite {
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
 
-        stage.align = StageAlign.TOP_LEFT;
-        stage.scaleMode = StageScaleMode.NO_SCALE;
-
-        addChild(new Stats());
+        app = new Application();
         addChild(app);
+
+        //addChild(new Stats());
+        //addChild(app);
 
         //starling = new Starling(Application, stage);
         //starling.start();
