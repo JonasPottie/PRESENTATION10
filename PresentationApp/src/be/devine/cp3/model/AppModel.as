@@ -134,12 +134,6 @@ public class AppModel extends EventDispatcher
         {
             _currentSlideIndex = value;
             dispatchEvent(new Event(CURRENT_SLIDE_CHANGED));
-
-            //TESTEN VAN DATA
-            trace("[CURRENT SLIDE INDEX]: " +_currentSlideIndex);
-            trace("[CURRENT SLIDE TITLE]: " + xmlSlides[_currentSlideIndex].contentTitle);
-            trace("[CURRENT SLIDE CONTENT]: " + xmlSlides[_currentSlideIndex].contentText);
-            trace("[CURRENT SLIDE MEDIA]: " + xmlSlides[_currentSlideIndex].contentMedia);
         }
     }
 

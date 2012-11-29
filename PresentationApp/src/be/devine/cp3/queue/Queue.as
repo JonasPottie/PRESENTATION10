@@ -29,14 +29,11 @@ public class Queue extends EventDispatcher{
 		
 		public function start():void{
 			if(items.length>0){
-				trace("Er zijn nog steeds items in de array.");
-
 				var task:ITask = items.shift();
 				task.addEventListener( Event.COMPLETE, taskCompleteHandler );
 				task.start();
 				completedItems.push( task );
 			}else{
-				trace("Er zijn geen items meer in de array!");
 			}
 		}
 		

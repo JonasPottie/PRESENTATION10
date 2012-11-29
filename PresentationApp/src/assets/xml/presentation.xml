@@ -5,25 +5,25 @@
     <page name="1" label="1" slideType="TCM" slideTheme="rb">
         <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 1</contentTitle>
         <contentText transition="fadIn" transitionIndex="2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</contentText>
-        <contentMedia transition="fadIn" transitionIndex="3">assets/images/01.jpg</contentMedia>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/1.jpg</contentMedia>
     </page>
 
     <page name="2" label="2" slideType="TCM" slideTheme="rb">
         <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 2</contentTitle>
         <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
-        <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/2.jpg</contentMedia>
     </page>
 
     <page name="3" label="3" slideType="TCM" slideTheme="rb">
         <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 3</contentTitle>
         <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
-        <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/1.jpg</contentMedia>
     </page>
 
     <page name="4" label="4" slideType="TCM" slideTheme="rb">
         <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 4</contentTitle>
         <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
-        <contentMedia transition="fadIn" transitionIndex="3">assets/images/02.jpg</contentMedia>
+        <contentMedia transition="fadIn" transitionIndex="3">assets/images/2.jpg</contentMedia>
     </page>
 
 </pages>

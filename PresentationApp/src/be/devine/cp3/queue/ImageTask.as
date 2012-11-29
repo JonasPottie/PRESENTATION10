@@ -9,7 +9,7 @@ import flash.net.URLRequest;
 public class ImageTask extends Loader implements ITask{
 		// variabelen
 		private var url:String;
-		private var loadedImage:Bitmap;
+		public var loadedImage:Bitmap;
 		
 		// constructor
 		public function ImageTask(url:String){
