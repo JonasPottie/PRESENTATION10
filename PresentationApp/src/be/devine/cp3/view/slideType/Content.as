@@ -34,8 +34,8 @@ public class Content extends Sprite{
 
         // Create a new instance of the Textformat class.
         var textformat:TextFormat = new TextFormat();
-        //textformat.font = "Helvetica Neue";
-        textformat.font = "Avenir";
+        textformat.font = "Helvetica Neue";
+        //textformat.font = "Avenir";
         textformat.size = 24;
         textformat.color = 0x000000;
 
