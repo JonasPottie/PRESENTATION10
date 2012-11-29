@@ -25,8 +25,6 @@ public class OverviewComponent extends Sprite{
 
         appModel = AppModel.getInstance();
 
-        overzichtsTitel = new TextField();
-
         overviewBackground = new Shape();
         overviewBackground.graphics.beginFill(0x999895,.5);
         overviewBackground.graphics.drawRect(0,0,1024,768);
@@ -34,6 +32,7 @@ public class OverviewComponent extends Sprite{
         addChild(overviewBackground);
 
 
+        overzichtsTitel = new TextField();
         overzichtsTitel.text="De XML TITEL";
         addChild(overzichtsTitel);
 
@@ -44,13 +43,15 @@ public class OverviewComponent extends Sprite{
         xPos=60;
 
         for(var i:int=0 ; i<appModel.xmlSlides.length; i++){
-            trace("ne sliddde!!");
+
             minislide = new Shape();
             minislide.graphics.beginFill(0xFF00FF,.5);
             minislide.graphics.drawRect(xPos,30,140,140);
             minislide.graphics.endFill();
             addChild(minislide);
             xPos+=160;
+
+
         }
     }
 }

@@ -16,13 +16,13 @@
 
     <page name="3" label="3" slideType="TCM" slideTheme="rb">
         <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 3</contentTitle>
-        <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
+        <contentText transition="fadIn" transitionIndex="2">Dit is een 3de dia Content</contentText>
         <contentMedia transition="fadIn" transitionIndex="3">assets/images/1.jpg</contentMedia>
     </page>
 
     <page name="4" label="4" slideType="TCM" slideTheme="rb">
         <contentTitle transition="fadIn" transitionIndex="1">Dit is titel 4</contentTitle>
-        <contentText transition="fadIn" transitionIndex="2">Lorem ipsum dolor sit amen</contentText>
+        <contentText transition="fadIn" transitionIndex="2">Hier komt content over 4e video</contentText>
         <contentMedia transition="fadIn" transitionIndex="3">assets/images/2.jpg</contentMedia>
     </page>
 

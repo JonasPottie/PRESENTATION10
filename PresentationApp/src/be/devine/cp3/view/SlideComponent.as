@@ -26,6 +26,7 @@ public class SlideComponent extends Sprite{
     private var title:Title;
     private var content:Content;
     private var media:Media;
+    private var bg:TheBackground;
 
     public function SlideComponent()
     {
@@ -42,6 +43,7 @@ public class SlideComponent extends Sprite{
 
     private function createItems():void
     {
+
         //EM KOMT HIER ALTIJD IN ACHTER DAT DE SLIDEINDEX IS GESET, MAAR EM WILT NIET IN DIE IF LUS GAAN... EN KHEB HET AL OP DUUUST MANIEREN
         //GEBROBEERT OM DIE ITEMCONTAINER EERST LEEG TE MAKEN EN DAN WEER TE VULLEN, WANT NU ZET EM DE SLIDES OP ELKAAR... ENIG IDEE?
         if(itemContainer != null && itemContainer.parent != null)
@@ -57,18 +59,25 @@ public class SlideComponent extends Sprite{
         {
             case "TCM":
 
+                bg = new TheBackground();
+                bg.x = stage.stageWidth/2;
+                bg.y = stage.stageHeight/2;
+                bg.gotoAndStop(3);
+                addChild(bg);
+
                 title = new Title(slide.contentTitle);
                 title.x = (stage.stageWidth/2) - (title.width/2);
+                title.y = 35;
                 itemContainer.addChild(title);
 
                 content = new Content(slide.contentText, 450, 600);
-                content.x = 40;
-                content.y = 60;
+                content.x = 150;
+                content.y = 150;
                 itemContainer.addChild(content);
 
                 media = new Media(slide.contentMedia, 450, 600);
-                media.x = 534;
-                media.y = 60;
+                media.x = 634;
+                media.y = 150;
                 itemContainer.addChild(media);
 
                 break;

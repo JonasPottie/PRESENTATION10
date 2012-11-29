@@ -8,6 +8,7 @@
 package be.devine.cp3.view.slideType {
 import flash.display.Sprite;
 import flash.text.AntiAliasType;
+import flash.text.Font;
 import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
@@ -22,6 +23,8 @@ public class Title extends Sprite{
     public function Title(titleText:String)
     {
         this.content = titleText;
+
+
 
         // Create a new instance of the Textformat class.
         var textformat:TextFormat = new TextFormat();
