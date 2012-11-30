@@ -10,11 +10,16 @@ package be.devine.cp3.view.slideType {
 import be.devine.cp3.queue.ImageTask;
 import be.devine.cp3.queue.Queue;
 
-import flash.display.Sprite;
+import flash.display.Bitmap;
 import flash.events.Event;
 
+import starling.display.Image;
 
-public class Media extends Sprite{
+import starling.display.Sprite;
+import starling.textures.Texture;
+
+
+public class Media extends starling.display.Sprite{
 
     private var media:String;
     private var mWidth:int;
@@ -41,9 +46,8 @@ public class Media extends Sprite{
     {
         for each (var task:ImageTask in queue.completedItems)
         {
-            var image:Sprite = new Sprite();
-            image.addChild(task.loadedImage);
-            addChild(image);
+            var image:Image = new Image(Texture.fromBitmap(task.content as Bitmap));
+
         }
     }
 }

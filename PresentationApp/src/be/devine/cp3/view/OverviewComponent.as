@@ -10,59 +10,59 @@ import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
 
 import flash.display.Shape;
-import flash.display.Sprite;
 import flash.text.TextField;
 
-public class OverviewComponent extends Sprite{
+import starling.display.Quad;
+
+import starling.display.Sprite;
+
+public class OverviewComponent extends starling.display.Sprite{
 
     private var appModel:AppModel;
-    private var overviewBackground:Shape;
-    private var overzichtsTitel:TextField;
-    private var xPos:int =0;
-    private var scrollbar:ScrollBar;
-    private var maskerShape:Shape = new Shape();
 
-    private var minislide:Shape = new Shape();
+    //private var scrollbar:ScrollBar;
+
 
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
 
-        overviewBackground = new Shape();
-        overviewBackground.graphics.beginFill(0x999895,.5);
-        overviewBackground.graphics.drawRect(0,0,1024,768);
-        overviewBackground.graphics.endFill();
+        var overviewBackground:Quad = new Quad(1024,200, 0x343434);
         addChild(overviewBackground);
 
-
+        /*
         overzichtsTitel = new TextField();
         overzichtsTitel.text="De XML TITEL";
         //overzichtsTitel.text=appModel.xmlSlides;
         addChild(overzichtsTitel);
+         */
+
 
         vooraantalSlides();
-
+         /*
         scrollbar = new ScrollBar();
         scrollbar.x = 0;
         scrollbar.y = 100;
         addChild(scrollbar);
+        */
 
     }
 
     private function vooraantalSlides():void {
-        xPos=60;
+        var xPos=60;
 
         for(var i:int=0 ; i<10; i++){
 
-            minislide = new Shape();
-            minislide.graphics.beginFill(0xFF00FF,.5);
-            minislide.graphics.drawRect(xPos,30,140,140);
-            minislide.graphics.endFill();
-            addChild(minislide);
+            var miniSlide:Quad = new Quad(80,80, 0x4a4a4a);
+            miniSlide.x = xPos;
+            miniSlide.y = 30;
+            addChild(miniSlide);
+
             xPos+=160;
 
 
         }
+
     }
 }
 }

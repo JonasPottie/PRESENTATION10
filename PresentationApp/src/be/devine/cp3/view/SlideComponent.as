@@ -7,18 +7,16 @@
  */
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
-import be.devine.cp3.model.AppModel;
 import be.devine.cp3.model.PageVo;
 import be.devine.cp3.view.slideType.Content;
 import be.devine.cp3.view.slideType.Media;
 import be.devine.cp3.view.slideType.Title;
-
-import flash.display.MovieClip;
-
 import flash.display.Sprite;
 import flash.events.Event;
 
-public class SlideComponent extends Sprite{
+import starling.display.Sprite;
+
+public class SlideComponent extends starling.display.Sprite{
 
     private var appModel:AppModel;
     private var pageVO:PageVo;
@@ -28,44 +26,38 @@ public class SlideComponent extends Sprite{
     private var title:Title;
     private var content:Content;
     private var media:Media;
-    private var bg:TheBackground;
+
+
+    private var explicitWidth:Number;
+    private var explicitHeight:Number;
 
     public function SlideComponent()
     {
         this.appModel = AppModel.getInstance();
-        this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
-        this.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, createItems);
-
+        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, check);
+        createItems();
     }
 
-    private function addedToStageHandler(event:Event):void
+
+    private function check(event:Event):void
     {
+        trace("HELLLO");
+        removeChild(itemContainer, false);
         createItems();
+
+
     }
 
     private function createItems():void
     {
+        trace("HELLLO2");
 
-        //EM KOMT HIER ALTIJD IN ACHTER DAT DE SLIDEINDEX IS GESET, MAAR EM WILT NIET IN DIE IF LUS GAAN... EN KHEB HET AL OP DUUUST MANIEREN
-        //GEBROBEERT OM DIE ITEMCONTAINER EERST LEEG TE MAKEN EN DAN WEER TE VULLEN, WANT NU ZET EM DE SLIDES OP ELKAAR... ENIG IDEE?
-        if(itemContainer != null && itemContainer.parent != null)
-        {
-            itemContainer.parent.removeChild(itemContainer);
-        }
         itemContainer = new Sprite();
 
         pageVO = new PageVo();
         var slide:PageVo =  appModel.pages[appModel.currentSlideIndex];
 
-
-
-                bg = new TheBackground();
-                bg.x = stage.stageWidth/2;
-                bg.y = stage.stageHeight/2;
-                bg.gotoAndStop(2);
-                addChild(bg);
-
-                title = new Title(slide.title);
+                title = new Title(slide.title,slide.contentProp[2],slide.contentProp[3]);
                 title.x = (slide.titleProp[0]);
                 title.y = (slide.titleProp[1]);
                 itemContainer.addChild(title);

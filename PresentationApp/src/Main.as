@@ -8,15 +8,15 @@ import flash.display.StageScaleMode;
 
 import net.hires.debug.Stats;
 
+import starling.core.Starling;
 
 
-[SWF(backgroundColor="#ffffff", width="1024", height="768", frameRate=60)]
+[SWF(backgroundColor="#4a4a4a", width="1024", height="768", frameRate=60)]
 
 
-public class Main extends Sprite {
+public class Main extends Sprite{
 
-    private var app:Application;
-    //private var starling:Starling;
+    private var starling:Starling;
 
 
     public function Main() {
@@ -24,17 +24,11 @@ public class Main extends Sprite {
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
 
-        app = new Application();
-        addChild(app);
+        starling = new Starling(Application,stage);
+        starling.start();
 
         //addChild(new Stats());
         //addChild(app);
-
-        //starling = new Starling(Application, stage);
-        //starling.start();
-
-
-
 
     }
 }

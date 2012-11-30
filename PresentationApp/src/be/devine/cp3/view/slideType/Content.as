@@ -14,7 +14,12 @@ import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
 import flash.text.engine.FontLookup;
 
-public class Content extends Sprite{
+import starling.core.Starling;
+
+import starling.display.Sprite;
+import starling.text.TextField;
+
+public class Content extends starling.display.Sprite{
 
     private var content:String;
     private var cWidth:int;
@@ -27,28 +32,10 @@ public class Content extends Sprite{
         this.cWidth = contentWidth;
         this.cHeight = contentHeight;
 
-        trace("het font is" + fonts);
-        for each(var font:Font in fonts){
-            trace(font.fontName,font.fontStyle,font.fontType);
-        }
-
-        // Create a new instance of the Textformat class.
-        var textformat:TextFormat = new TextFormat();
-        //textformat.font = "Helvetica Neue";
-        textformat.font = "Avenir LT Std 45 Book";
-        textformat.size = 24;
-        textformat.color = 0xFFFFFF;
-
-        var textfield:TextField = new TextField();
-
-        textfield.defaultTextFormat = textformat;
-        textfield.embedFonts = true;
-        textfield.text = "wat content";
-        textfield.text = content;
-        textfield.width = cWidth;
-        textfield.height = cHeight;
-        textfield.wordWrap = true;
+        var textfield:starling.text.TextField = new starling.text.TextField(cWidth,cHeight,content,"Helvetica",24,0xa4a4a4)
         addChild(textfield);
+
+
 
     }
 }

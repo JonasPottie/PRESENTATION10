@@ -12,14 +12,16 @@ import be.devine.cp3.view.MenuComponent;
 import be.devine.cp3.view.OverviewComponent;
 import be.devine.cp3.view.SlideComponent;
 
-import com.greensock.TweenLite;
-
-import flash.display.Sprite;
-import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
 
-public class Application extends Sprite{
+import starling.core.Starling;
+
+import starling.display.Sprite;
+import starling.events.Event;
+import starling.textures.Texture;
+
+public class Application extends starling.display.Sprite{
 
     private var appModel:AppModel;
     private var menuComponent:MenuComponent;
@@ -33,22 +35,23 @@ public class Application extends Sprite{
     public function Application()
     {
         trace("[app CONSTRUCTED]");
-        this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
+        this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
 
         this.appModel = AppModel.getInstance();
         appModel.load("assets/xml/presentation.xml");
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
-        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, XmlLoadedHandler);
+        appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlLoadedHandler);
 
 
     }
 
 
 
-    private function XmlLoadedHandler(event:Event):void
+    private function XmlLoadedHandler(event:flash.events.Event):void
     {
 
         menuComponent = new MenuComponent();
+
 
         slideComponent = new SlideComponent();
         addChild(slideComponent);
@@ -62,12 +65,13 @@ public class Application extends Sprite{
 //------------    SWITCHEN TUSSEN SLIDES MET PIJLTJES     --------------//
 //------------------------------------------------------------------------*/
 
-    private function addedToStageHandler(event:Event):void
+    private function addedToStageHandler(event:starling.events.Event):void
     {
+        this.removeEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
         stage.addEventListener(KeyboardEvent.KEY_DOWN, keyHandler);
     }
 
-    private function keyHandler(event:KeyboardEvent):void {
+    private function keyHandler(event:starling.events.KeyboardEvent):void {
         switch (event.keyCode)
         {
             case Keyboard.LEFT:
@@ -84,18 +88,30 @@ public class Application extends Sprite{
         }
     }
 
-    private function showOverview():void {
+    private function showOverview():void
+    {
 
-        if(overviewComponent==null){
+        trace("SHOWOVERVIEW")
+
+        if(overviewComponent==null)
+        {
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
+
             overviewComponent.y = 768;
+
+            trace("CREATE(hide)")
         }
 
-        if(overviewComponent.y == 568){
-            TweenLite.to(overviewComponent, 1, {y:768});
-        }else{
-            TweenLite.to(overviewComponent, 1, {y:568});
+        if(overviewComponent.y == 568)
+        {
+            trace("HIDE")
+            overviewComponent.y = 768
+        }
+        else
+        {
+            trace("DISPLAY")
+            overviewComponent.y = 568
         }
 
     }

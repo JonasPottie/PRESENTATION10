@@ -13,31 +13,23 @@ import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
 
-public class Title extends Sprite{
+import starling.display.Sprite;
+import starling.text.TextField;
 
-    private var content:String;
-    private var title:TextField;
-    private var fontContainer:FontContainer;
-    private var overviewBackground:Sprite;
+public class Title extends starling.display.Sprite{
 
-    public function Title(titleText:String)
+    private var title:String;
+    private var tWidth:int;
+    private var tHeight:int;
+
+    public function Title(titleText:String,titleWidth:int, titleHeight:int)
     {
-        this.content = titleText;
+        this.title = titleText;
+        this.tWidth = titleWidth;
+        this.tHeight = titleHeight;
 
 
-
-        // Create a new instance of the Textformat class.
-        var textformat:TextFormat = new TextFormat();
-        textformat.font = "Helvetica Neue";
-        textformat.size = 48;
-        textformat.color = 0x000000;
-
-        var textfield:TextField = new TextField();
-
-        textfield.defaultTextFormat = textformat;
-        textfield.embedFonts = true;
-        textfield.text = content;
-        textfield.autoSize = TextFieldAutoSize.LEFT;
+        var textfield:starling.text.TextField = new starling.text.TextField(tWidth,tHeight,title,"Helvetica",48,0xa4a4a4)
         addChild(textfield);
 
 
