@@ -6,7 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.model {
-public class PageVo {
+import starling.display.Sprite;
+
+public class PageVo extends Sprite{
 
     public var title:String = new String();
     public var titleProp:Vector.<int> = Vector.<int>([]);

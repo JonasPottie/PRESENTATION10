@@ -32,7 +32,7 @@ public class Content extends starling.display.Sprite{
         this.cWidth = contentWidth;
         this.cHeight = contentHeight;
 
-        var textfield:starling.text.TextField = new starling.text.TextField(cWidth,cHeight,content,"Helvetica",24,0xa4a4a4)
+        var textfield:starling.text.TextField = new starling.text.TextField(cWidth,cHeight,content,"Avenir LT Std 45 Book",22,0xc8c6c6)
         addChild(textfield);
 
 
