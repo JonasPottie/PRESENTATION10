@@ -59,6 +59,12 @@ public class SlideComponent extends Sprite{
         {
             case "TCM":
 
+                bg = new TheBackground();
+                bg.x = stage.stageWidth/2;
+                bg.y = stage.stageHeight/2;
+                bg.gotoAndStop(2);
+                addChild(bg);
+
                 title = new Title(slide.contentTitle);
                 title.x = (stage.stageWidth/2) - (title.width/2);
                 title.y = 35;
