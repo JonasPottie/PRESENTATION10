@@ -19,7 +19,7 @@ public class AppModel extends EventDispatcher
 
         private var _currentSlideIndex:int;
         private var _xmlUrl:String;
-        private var _xmlSlides:Vector.<PageVo>;
+        private var _pages:Vector.<PageVo>;
 
         public var pageVo:PageVo;
 
@@ -37,15 +37,13 @@ public class AppModel extends EventDispatcher
         return instance;
     }
 
-
-
     public function AppModel(e:Enforcer)
     {
         if(e == null) {
             throw new Error("model is a singleton, use getInstance() instead");
         }
 
-        xmlSlides = new Vector.<PageVo>()
+        pages = new Vector.<PageVo>()
     }
 
 /*-------------------------------------------------------------------------//
@@ -73,34 +71,30 @@ public class AppModel extends EventDispatcher
         {
             var ingeladenXML:XML = new XML(task.data);
 
-            // Onderstaande for lus moet nog herschreven worden zodat hij het aantal pages in de xml inlaat en je het nieuw manueel moet instellen.
-            for (var pages:uint=0; pages<4; pages++)
+            for (var pagesInt:uint=0; pagesInt<ingeladenXML.page.length(); pagesInt++)
             {
-                // Elke page appart gaan opslaan in arrPage -> kan je makkelijk met indexen gaan werken...
-
                 pageVo = new PageVo();
 
-                pageVo.title = ingeladenXML.page[pages].contentTitle
-                pageVo.titleProp.push(ingeladenXML.page[pages].contentTitle.@x,ingeladenXML.page[pages].contentTitle.@y,ingeladenXML.page[pages].contentTitle.@width,ingeladenXML.page[pages].contentTitle.@height);
-                pageVo.titleTrans.push(ingeladenXML.page[pages].contentTitle.@transition,ingeladenXML.page[pages].contentTitle.@transitionIndex);
+                pageVo.title = ingeladenXML.page[pagesInt].contentTitle;
+                pageVo.titleProp.push(ingeladenXML.page[pagesInt].contentTitle.@x,ingeladenXML.page[pagesInt].contentTitle.@y,ingeladenXML.page[pagesInt].contentTitle.@width,ingeladenXML.page[pagesInt].contentTitle.@height);
+                pageVo.titleTrans.push(ingeladenXML.page[pagesInt].contentTitle.@transition,ingeladenXML.page[pagesInt].contentTitle.@transitionIndex);
 
-                pageVo.content = ingeladenXML.page[pages].contentText
-                pageVo.contentProp.push(ingeladenXML.page[pages].contentText.@x,ingeladenXML.page[pages].contentText.@y,ingeladenXML.page[pages].contentText.@width,ingeladenXML.page[pages].contentText.@height);
-                pageVo.contentTrans.push(ingeladenXML.page[pages].contentText.@transition,ingeladenXML.page[pages].contentText.@transitionIndex);
+                pageVo.content = ingeladenXML.page[pagesInt].contentText
+                pageVo.contentProp.push(ingeladenXML.page[pagesInt].contentText.@x,ingeladenXML.page[pagesInt].contentText.@y,ingeladenXML.page[pagesInt].contentText.@width,ingeladenXML.page[pagesInt].contentText.@height);
+                pageVo.contentTrans.push(ingeladenXML.page[pagesInt].contentText.@transition,ingeladenXML.page[pagesInt].contentText.@transitionIndex);
 
-                pageVo.image = ingeladenXML.page[pages].contentText
-                pageVo.imageProp.push(ingeladenXML.page[pages].contentText.@x,ingeladenXML.page[pages].contentText.@y,ingeladenXML.page[pages].contentText.@width,ingeladenXML.page[pages].contentText.@height);
-                pageVo.imageTrans.push(ingeladenXML.page[pages].contentText.@transition,ingeladenXML.page[pages].contentText.@transitionIndex);
+                pageVo.image = ingeladenXML.page[pagesInt].image
+                pageVo.imageProp.push(ingeladenXML.page[pagesInt].image.@x,ingeladenXML.page[pagesInt].image.@y);
+                pageVo.imageTrans.push(ingeladenXML.page[pagesInt].image.@transition,ingeladenXML.page[pagesInt].image.@transitionIndex);
 
-
-
-
-                xmlSlides.push(pageVo);
+                pages.push(pageVo);
             }
 
         }
 
         dispatchEvent(new Event(XML_URL_LOADED));
+
+        trace("PAGES: " +pages)
 
     }
 
@@ -149,7 +143,7 @@ public class AppModel extends EventDispatcher
 
     public function set currentSlideIndex(value:int):void
     {
-        value = Math.max(0, Math.min(value, _xmlSlides.length - 1));
+        value = Math.max(0, Math.min(value, pages.length - 1));
         if(_currentSlideIndex != value)
         {
             _currentSlideIndex = value;
@@ -161,15 +155,15 @@ public class AppModel extends EventDispatcher
 //-----------        SLIDES IN VECTOR [XML FORMAT]         ----------//
 //-------------------------------------------------------------------------*/
 
-    public function get xmlSlides():Vector.<PageVo> {
-        return _xmlSlides;
+    public function get pages():Vector.<PageVo> {
+        return _pages;
     }
 
-    public function set xmlSlides(value:Vector.<PageVo>):void
+    public function set pages(value:Vector.<PageVo>):void
     {
-        if(_xmlSlides != value)
+        if(_pages != value)
         {
-            _xmlSlides = value;
+            _pages = value;
         }
     }
 }

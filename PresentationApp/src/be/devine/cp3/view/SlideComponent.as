@@ -8,6 +8,7 @@
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.model.AppModel;
+import be.devine.cp3.model.PageVo;
 import be.devine.cp3.view.slideType.Content;
 import be.devine.cp3.view.slideType.Media;
 import be.devine.cp3.view.slideType.Title;
@@ -20,6 +21,7 @@ import flash.events.Event;
 public class SlideComponent extends Sprite{
 
     private var appModel:AppModel;
+    private var pageVO:PageVo;
 
     private var itemContainer:Sprite;
 
@@ -29,16 +31,16 @@ public class SlideComponent extends Sprite{
     private var bg:TheBackground;
 
     public function SlideComponent()
-    {  /*
+    {
         this.appModel = AppModel.getInstance();
         this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
-        //this.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, createItems);
+        this.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, createItems);
 
     }
 
     private function addedToStageHandler(event:Event):void
     {
-        //createItems();
+        createItems();
     }
 
     private function createItems():void
@@ -52,8 +54,8 @@ public class SlideComponent extends Sprite{
         }
         itemContainer = new Sprite();
 
-        //var slide:XML =  appModel.xmlSlides[appModel.currentSlideIndex];
-       var slidetype:String = slide.@slideType;
+        pageVO = new PageVo();
+        var slide:PageVo =  appModel.pages[appModel.currentSlideIndex];
 
 
 
@@ -63,23 +65,23 @@ public class SlideComponent extends Sprite{
                 bg.gotoAndStop(2);
                 addChild(bg);
 
-                title = new Title(slide.contentTitle);
-                title.x = (stage.stageWidth/2) - (title.width/2);
-                title.y = 35;
+                title = new Title(slide.title);
+                title.x = (slide.titleProp[0]);
+                title.y = (slide.titleProp[1]);
                 itemContainer.addChild(title);
 
-                content = new Content(slide.contentText, 450, 600);
-                content.x = 150;
-                content.y = 150;
+                content = new Content(slide.content, slide.contentProp[2], slide.contentProp[3]);
+                content.x = slide.contentProp[0]
+                content.y = slide.contentProp[1]
                 itemContainer.addChild(content);
 
-                media = new Media(slide.contentMedia, 450, 600);
-                media.x = 634;
-                media.y = 150;
+                media = new Media(slide.image, 450, 600);
+                media.x = slide.imageProp[0];
+                media.y = slide.imageProp[1];
                 itemContainer.addChild(media);
 
 
-        addChild(itemContainer);*/
+        addChild(itemContainer);
     }
 
 
