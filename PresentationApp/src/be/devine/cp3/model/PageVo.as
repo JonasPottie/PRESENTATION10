@@ -10,10 +10,13 @@ public class PageVo {
 
     public var title:String = new String();
     public var titleProp:Vector.<int> = Vector.<int>([]);
+    public var titleTrans:Vector.<String> = Vector.<String>([]);
     public  var content:String = new String();
     public var contentProp:Vector.<int> = Vector.<int>([]);
+    public var contentTrans:Vector.<String> = Vector.<String>([]);
     public var image:String = new String();
     public var imageProp:Vector.<int> = Vector.<int>([]);
+    public var imageTrans:Vector.<String> = Vector.<String>([]);
 
     public function PageVo()
     {

@@ -78,9 +78,22 @@ public class AppModel extends EventDispatcher
             {
                 // Elke page appart gaan opslaan in arrPage -> kan je makkelijk met indexen gaan werken...
 
-                pageVo = new PageVo()
+                pageVo = new PageVo();
+
                 pageVo.title = ingeladenXML.page[pages].contentTitle
-                pageVo.titleProp = ingeladenXML.page[pages].@
+                pageVo.titleProp.push(ingeladenXML.page[pages].contentTitle.@x,ingeladenXML.page[pages].contentTitle.@y,ingeladenXML.page[pages].contentTitle.@width,ingeladenXML.page[pages].contentTitle.@height);
+                pageVo.titleTrans.push(ingeladenXML.page[pages].contentTitle.@transition,ingeladenXML.page[pages].contentTitle.@transitionIndex);
+
+                pageVo.content = ingeladenXML.page[pages].contentText
+                pageVo.contentProp.push(ingeladenXML.page[pages].contentText.@x,ingeladenXML.page[pages].contentText.@y,ingeladenXML.page[pages].contentText.@width,ingeladenXML.page[pages].contentText.@height);
+                pageVo.contentTrans.push(ingeladenXML.page[pages].contentText.@transition,ingeladenXML.page[pages].contentText.@transitionIndex);
+
+                pageVo.image = ingeladenXML.page[pages].contentText
+                pageVo.imageProp.push(ingeladenXML.page[pages].contentText.@x,ingeladenXML.page[pages].contentText.@y,ingeladenXML.page[pages].contentText.@width,ingeladenXML.page[pages].contentText.@height);
+                pageVo.imageTrans.push(ingeladenXML.page[pages].contentText.@transition,ingeladenXML.page[pages].contentText.@transitionIndex);
+
+
+
 
                 xmlSlides.push(pageVo);
             }
