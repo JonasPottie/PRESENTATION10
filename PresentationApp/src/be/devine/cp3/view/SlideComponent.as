@@ -29,16 +29,16 @@ public class SlideComponent extends Sprite{
     private var bg:TheBackground;
 
     public function SlideComponent()
-    {
+    {  /*
         this.appModel = AppModel.getInstance();
         this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
-        this.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, createItems);
+        //this.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, createItems);
 
     }
 
     private function addedToStageHandler(event:Event):void
     {
-        createItems();
+        //createItems();
     }
 
     private function createItems():void
@@ -52,12 +52,10 @@ public class SlideComponent extends Sprite{
         }
         itemContainer = new Sprite();
 
-        var slide:XML =  appModel.xmlSlides[appModel.currentSlideIndex];
-        var slidetype:String = slide.@slideType;
+        //var slide:XML =  appModel.xmlSlides[appModel.currentSlideIndex];
+       var slidetype:String = slide.@slideType;
 
-        switch (slidetype)
-        {
-            case "TCM":
+
 
                 bg = new TheBackground();
                 bg.x = stage.stageWidth/2;
@@ -80,10 +78,8 @@ public class SlideComponent extends Sprite{
                 media.y = 150;
                 itemContainer.addChild(media);
 
-                break;
-        }
 
-        addChild(itemContainer);
+        addChild(itemContainer);*/
     }
 
 

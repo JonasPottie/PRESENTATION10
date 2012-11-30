@@ -19,7 +19,9 @@ public class AppModel extends EventDispatcher
 
         private var _currentSlideIndex:int;
         private var _xmlUrl:String;
-        private var _xmlSlides:Vector.<XML>;
+        private var _xmlSlides:Vector.<PageVo>;
+
+        public var pageVo:PageVo;
 
         private var queue:Queue;
         private static var instance:AppModel;
@@ -43,7 +45,7 @@ public class AppModel extends EventDispatcher
             throw new Error("model is a singleton, use getInstance() instead");
         }
 
-        xmlSlides = new Vector.<XML>();
+        xmlSlides = new Vector.<PageVo>()
     }
 
 /*-------------------------------------------------------------------------//
@@ -75,7 +77,12 @@ public class AppModel extends EventDispatcher
             for (var pages:uint=0; pages<4; pages++)
             {
                 // Elke page appart gaan opslaan in arrPage -> kan je makkelijk met indexen gaan werken...
-                xmlSlides.push(ingeladenXML.page[pages]);
+
+                pageVo = new PageVo()
+                pageVo.title = ingeladenXML.page[pages].contentTitle
+                pageVo.titleProp = ingeladenXML.page[pages].@
+
+                xmlSlides.push(pageVo);
             }
 
         }
@@ -141,11 +148,11 @@ public class AppModel extends EventDispatcher
 //-----------        SLIDES IN VECTOR [XML FORMAT]         ----------//
 //-------------------------------------------------------------------------*/
 
-    public function get xmlSlides():Vector.<XML> {
+    public function get xmlSlides():Vector.<PageVo> {
         return _xmlSlides;
     }
 
-    public function set xmlSlides(value:Vector.<XML>):void
+    public function set xmlSlides(value:Vector.<PageVo>):void
     {
         if(_xmlSlides != value)
         {
