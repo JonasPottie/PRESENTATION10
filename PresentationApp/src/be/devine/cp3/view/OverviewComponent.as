@@ -7,6 +7,7 @@
  */
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
+import be.devine.cp3.scrollBar.ScrollBar;
 
 import flash.display.Shape;
 import flash.display.Sprite;
@@ -18,6 +19,8 @@ public class OverviewComponent extends Sprite{
     private var overviewBackground:Shape;
     private var overzichtsTitel:TextField;
     private var xPos:int =0;
+    private var scrollbar:ScrollBar;
+    private var maskerShape:Shape = new Shape();
 
     private var minislide:Shape = new Shape();
 
@@ -34,15 +37,22 @@ public class OverviewComponent extends Sprite{
 
         overzichtsTitel = new TextField();
         overzichtsTitel.text="De XML TITEL";
+        //overzichtsTitel.text=appModel.xmlSlides;
         addChild(overzichtsTitel);
 
         vooraantalSlides();
+
+        scrollbar = new ScrollBar();
+        scrollbar.x = 0;
+        scrollbar.y = 100;
+        addChild(scrollbar);
+
     }
 
     private function vooraantalSlides():void {
         xPos=60;
 
-        for(var i:int=0 ; i<appModel.xmlSlides.length; i++){
+        for(var i:int=0 ; i<10; i++){
 
             minislide = new Shape();
             minislide.graphics.beginFill(0xFF00FF,.5);

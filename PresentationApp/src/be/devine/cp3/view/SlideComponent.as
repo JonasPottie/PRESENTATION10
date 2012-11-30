@@ -62,7 +62,7 @@ public class SlideComponent extends Sprite{
                 bg = new TheBackground();
                 bg.x = stage.stageWidth/2;
                 bg.y = stage.stageHeight/2;
-                bg.gotoAndStop(3);
+                bg.gotoAndStop(2);
                 addChild(bg);
 
                 title = new Title(slide.contentTitle);
