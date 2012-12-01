@@ -64,6 +64,7 @@ public class OverviewComponent extends starling.display.Sprite{
 
     public function VersleepTextContainer():void
     {
+
         /*scrollTween = new Tween(slidesContainer,.5,Transitions.EASE_IN_OUT);
         scrollTween.animate("y",xPosScroll);
         Starling.juggler.add(scrollTween);*/
