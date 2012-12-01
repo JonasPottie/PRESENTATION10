@@ -6,24 +6,21 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.scrollBar {
+
 import be.devine.cp3.view.OverviewComponent;
 
 import flash.display.Shape;
-import flash.events.Event;
 import flash.events.Event;
 import flash.geom.Point;
 import starling.display.Quad;
 
 import starling.display.Sprite;
 import starling.events.Event;
-import starling.events.Event;
 import starling.events.Touch;
 import starling.events.TouchPhase;
 
-
 public class ScrollBar extends starling.display.Sprite{
 
-    public static const THUMB_POS_CHANGED:String = "THUMB_POS_CHANGED";
     private var track:Quad;
     private var thumb:Quad;
     private var up:Quad;
@@ -31,10 +28,9 @@ public class ScrollBar extends starling.display.Sprite{
     private var _thumbPosition:Number = 0;
     private var w:Number = 960;
     private var h:Number = 20;
-    private var ovc:OverviewComponent;
-
     private var triangleHeight:uint = 14;
     private var triangleShape:Shape = new Shape();
+
     //private var triangleShape2:Shape = new Shape();
 
     public function ScrollBar() {
@@ -118,9 +114,6 @@ public class ScrollBar extends starling.display.Sprite{
         if(_thumbPosition != value){
             _thumbPosition =value;
             thumb.x =_thumbPosition *(track.height -thumb.height);
-            ovc = new OverviewComponent();
-            ovc.VersleepTextContainer(_thumbPosition);
-            //dispatchEvent(new Event(Event.CHANGE));
             }
     }
 }
