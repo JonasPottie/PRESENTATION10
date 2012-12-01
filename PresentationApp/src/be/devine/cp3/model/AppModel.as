@@ -76,7 +76,7 @@ public class AppModel extends EventDispatcher
                 pageVo = new PageVo();
 
                 pageVo.title = ingeladenXML.page[pagesInt].contentTitle;
-                pageVo.titleProp.push(ingeladenXML.page[pagesInt].contentTitle.@x,ingeladenXML.page[pagesInt].contentTitle.@y,ingeladenXML.page[pagesInt].contentTitle.@width,ingeladenXML.page[pagesInt].contentTitle.@height);
+                pageVo.titleProp.push(ingeladenXML.page[pagesInt].contentTitle.@x,ingeladenXML.page[pagesInt].contentTitle.@y,ingeladenXML.page[pagesInt].contentTitle.@width,ingeladenXML.page[pagesInt].contentTitle.@height,ingeladenXML.page[pagesInt].contentTitle.@widthtwo);
                 pageVo.titleTrans.push(ingeladenXML.page[pagesInt].contentTitle.@transition,ingeladenXML.page[pagesInt].contentTitle.@transitionIndex);
 
                 pageVo.content = ingeladenXML.page[pagesInt].contentText

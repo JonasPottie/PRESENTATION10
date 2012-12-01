@@ -26,8 +26,8 @@ public class ScrollBar extends starling.display.Sprite{
     private var up:Quad;
     private var down:Quad;
     private var _thumbPosition:Number = 0;
-    private var w:Number = 960;
-    private var h:Number = 20;
+    private var w:Number = 1024;
+    private var h:Number = 15;
     private var triangleHeight:uint = 14;
     private var triangleShape:Shape = new Shape();
 
@@ -35,20 +35,10 @@ public class ScrollBar extends starling.display.Sprite{
 
     public function ScrollBar() {
 
-        track = new Quad(w,h,0x000000);
-        track.x = 32;
-        track.y = 180;
+        track = new Quad(w,h,0xffffff);
+        track.y = 185;
         addChild(track);
 
-        up = new Quad(h,h,0xCCC);
-        up.x =  6;
-        up.y =  180;
-        addChild(up);
-
-        down = new Quad(h, h,0x00FF00);
-        down.x =  998;
-        down.y =  180;
-        addChild(down);
 
         /*triangleShape.graphics.beginFill(0xCCCCCC);
         triangleShape.graphics.moveTo(triangleHeight/2, 5);
@@ -70,9 +60,9 @@ public class ScrollBar extends starling.display.Sprite{
         triangleShape2.rotation = 180;
         down.addChild(triangleShape2);*/
 
-        thumb = new Quad(20,20,0xFF0000);
+        thumb = new Quad(60,15,0xa468a9);
         thumb.x = 32;
-        thumb.y = 180;
+        thumb.y = 185;
         addChild(thumb);
 
         //thumb.addEventListener(MouseEvent.MOUSE_DOWN, downThumb);
@@ -91,16 +81,16 @@ public class ScrollBar extends starling.display.Sprite{
         if(touch.phase == TouchPhase.MOVED ){
             this.thumbPosition = thumb.x / (track.width-thumb.width);
             thumb.x= position.x;
-            if(thumb.x < 32)
+            if(thumb.x < 0)
             {
-                thumb.x = 32;
+                thumb.x = 0;
             }
-            if(thumb.x > 972)
+            if(thumb.x > 1024 - thumb.width)
             {
-                thumb.x = 972;
+                thumb.x = 1024 - thumb.width;
             }
 
-            thumb.y=180;
+            thumb.y=185;
         }
     }
 

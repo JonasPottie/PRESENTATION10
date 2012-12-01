@@ -8,18 +8,26 @@
 package be.devine.cp3 {
 
 import be.devine.cp3.model.AppModel;
+import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.MenuComponent;
 import be.devine.cp3.view.OverviewComponent;
 import be.devine.cp3.view.SlideComponent;
 
+import flash.display.Bitmap;
+
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
+
+import mx.effects.easing.Back;
 
 import starling.animation.Transitions;
 
 import starling.animation.Tween;
 
 import starling.core.Starling;
+import starling.display.DisplayObject;
+import starling.display.Image;
+import starling.display.MovieClip;
 
 import starling.display.Sprite;
 import starling.events.Event;
@@ -34,6 +42,10 @@ public class Application extends starling.display.Sprite{
     private var tweenUp:Tween;
     private var tweenDown:Tween;
 
+    private var displayToTexture:DisplayToTexture;
+    private var backGround:BackGround;
+
+
 
     /*-------------------------------------------------------------------------//
     //------------    APP / ADDEN VAN COMPONENTS      --------------//
@@ -43,6 +55,12 @@ public class Application extends starling.display.Sprite{
     {
         trace("[app CONSTRUCTED]");
         this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
+
+        backGround = new BackGround();
+        displayToTexture = new DisplayToTexture();
+        addChild(displayToTexture.imageFromSprite(backGround));
+
+
 
         this.appModel = AppModel.getInstance();
         appModel.load("assets/xml/presentation.xml");

@@ -34,7 +34,8 @@ public class OverviewComponent extends starling.display.Sprite{
         appModel = AppModel.getInstance();
 
 
-        var overviewBackground:Quad = new Quad(1024,200, 0x343434);
+        var overviewBackground:Quad = new Quad(1024,200, 0x000000);
+        overviewBackground.alpha = 0.9;
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();
@@ -49,15 +50,15 @@ public class OverviewComponent extends starling.display.Sprite{
     }
 
     private function overzichtTonen():void {
-        var xPos=60;
+        var xPos=10;
 
         for(var i:int=0 ; i<10; i++)
         {
-            var miniSlide:Quad = new Quad(80,80, 0x4a4a4a);
+            var miniSlide:Quad = new Quad(215,160, 0x4a4a4a);
             miniSlide.x = xPos;
-            miniSlide.y = 30;
+            miniSlide.y = 10;
             addChild(miniSlide);
-            xPos+=160;
+            xPos+= miniSlide.width + 20;
         }
 
     }

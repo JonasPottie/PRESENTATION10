@@ -15,16 +15,19 @@ import flash.text.TextFormat;
 import flash.text.engine.FontLookup;
 
 import starling.core.Starling;
+import starling.display.Quad;
 
 import starling.display.Sprite;
 import starling.text.TextField;
+import starling.utils.HAlign;
+import starling.utils.VAlign;
 
 public class Content extends starling.display.Sprite{
 
     private var content:String;
     private var cWidth:int;
     private var cHeight:int;
-    private var fonts:Array = Font.enumerateFonts();
+    private var fontContainer:FontContainer;
 
     public function Content(contentText:String,contentWidth:int, contentHeight:int)
     {
@@ -32,7 +35,14 @@ public class Content extends starling.display.Sprite{
         this.cWidth = contentWidth;
         this.cHeight = contentHeight;
 
-        var textfield:starling.text.TextField = new starling.text.TextField(cWidth,cHeight,content,"Avenir LT Std 45 Book",22,0xc8c6c6)
+        var q:Quad = new Quad(cWidth,cHeight,0x161616,true)
+        q.alpha = 0.9;
+        addChild(q);
+        var textfield:starling.text.TextField = new starling.text.TextField(cWidth - 10,cHeight - 10,content,"Courier",18,0xffffff,false);
+        textfield.vAlign = VAlign.TOP;
+        textfield.x = 5;
+        textfield.y = 5
+        textfield.hAlign = HAlign.LEFT;
         addChild(textfield);
 
 

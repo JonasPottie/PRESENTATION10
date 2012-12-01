@@ -3,20 +3,20 @@
 <pages>
 
     <page name="1" label="1"  slideTheme="rb">
-        <contentTitle transition="fadIn" transitionIndex="1" x="500" y="20" width="200" height="40">title 1</contentTitle>
-        <contentText transition="fadIn" transitionIndex="2" x="40" y="40" width="450" height="600" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</contentText>
+        <contentTitle transition="fadIn" transitionIndex="1" x="40" y="40" width="530" height="250" widthtwo="300">DIT IS WELLISWAAR EEN TITEL.</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2" x="500" y="200" width="350" height="280" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</contentText>
         <image transition="fadIn" transitionIndex="3" x="40" y="40">assets/images/1.jpg</image>
     </page>
 
     <page name="2" label="2"  slideTheme="rb">
-        <contentTitle transition="fadIn" transitionIndex="1" x="40" y="20" width="200" height="40">title 2</contentTitle>
-        <contentText transition="fadIn" transitionIndex="2" x="40" y="40" width="450" height="600" >Dit is wat tekst over de 2e Slide om maar eens te zien of alles wel correct verloopt!</contentText>
+        <contentTitle transition="fadIn" transitionIndex="1" x="300" y="200" width="550" height="250" widthtwo="200">NOG ZO EEN AWESOME TITEL.</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2" x="40" y="40" width="450" height="50" >Dit is wat tekst over de 2e Slide om maar eens te zien of alles wel correct verloopt!</contentText>
         <image transition="fadIn" transitionIndex="3" x="40" y="40">assets/images/1.jpg</image>
     </page>
 
     <page name="3" label="3"  slideTheme="rb">
-        <contentTitle transition="fadIn" transitionIndex="1" x="80" y="20" width="200" height="40">title 3</contentTitle>
-        <contentText transition="fadIn" transitionIndex="2" x="40" y="40" width="450" height="600" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</contentText>
+        <contentTitle transition="fadIn" transitionIndex="1" x="500" y="400" width="400" height="250" widthtwo="150">EN WE BLIJVEN GAAN!</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2" x="40" y="40" width="450" height="300" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</contentText>
         <image transition="fadIn" transitionIndex="3" x="40" y="40">assets/images/1.jpg</image>
     </page>
 

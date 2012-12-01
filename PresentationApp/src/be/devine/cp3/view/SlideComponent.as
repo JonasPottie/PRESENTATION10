@@ -57,7 +57,7 @@ public class SlideComponent extends starling.display.Sprite{
         pageVO = new PageVo();
         var slide:PageVo =  appModel.pages[appModel.currentSlideIndex];
 
-                title = new Title(slide.title,slide.contentProp[2],slide.contentProp[3]);
+                title = new Title(slide.title,slide.titleProp[2],slide.titleProp[3],slide.titleProp[4]);
                 title.x = (slide.titleProp[0]);
                 title.y = (slide.titleProp[1]);
                 itemContainer.addChild(title);

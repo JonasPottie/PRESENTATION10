@@ -5,13 +5,17 @@ import flash.display.MovieClip;
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
+import flash.geom.Rectangle;
 
 import net.hires.debug.Stats;
 
 import starling.core.Starling;
 
+import starling.core.Starling;
+import starling.events.ResizeEvent;
 
-[SWF(backgroundColor="#4a4a4a", width="1024", height="768", frameRate=60)]
+
+[SWF(width="1024", height="768", frameRate=60)]
 
 
 public class Main extends Sprite{
@@ -19,7 +23,8 @@ public class Main extends Sprite{
     private var starling:Starling;
 
 
-    public function Main() {
+    public function Main()
+    {
 
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -29,6 +34,7 @@ public class Main extends Sprite{
 
         //addChild(new Stats());
         //addChild(app);
+
 
     }
 }
