@@ -15,6 +15,10 @@ import be.devine.cp3.view.SlideComponent;
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
 
+import starling.animation.Transitions;
+
+import starling.animation.Tween;
+
 import starling.core.Starling;
 
 import starling.display.Sprite;
@@ -27,10 +31,13 @@ public class Application extends starling.display.Sprite{
     private var menuComponent:MenuComponent;
     private var overviewComponent:OverviewComponent;
     private var slideComponent:SlideComponent;
+    private var tweenUp:Tween;
+    private var tweenDown:Tween;
 
-/*-------------------------------------------------------------------------//
-//------------    APP / ADDEN VAN COMPONENTS      --------------//
-//------------------------------------------------------------------------*/
+
+    /*-------------------------------------------------------------------------//
+    //------------    APP / ADDEN VAN COMPONENTS      --------------//
+    //------------------------------------------------------------------------*/
 
     public function Application()
     {
@@ -91,27 +98,28 @@ public class Application extends starling.display.Sprite{
     private function showOverview():void
     {
 
-        trace("SHOWOVERVIEW")
-
         if(overviewComponent==null)
         {
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
-
             overviewComponent.y = 768;
 
-            trace("CREATE(hide)")
+            tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+            tweenUp.animate("y",568);
+            Starling.juggler.add(tweenUp);
         }
 
         if(overviewComponent.y == 568)
         {
-            trace("HIDE")
-            overviewComponent.y = 768
+            tweenDown = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+            tweenDown.animate("y",768);
+            Starling.juggler.add(tweenDown);
         }
         else
         {
-            trace("DISPLAY")
-            overviewComponent.y = 568
+            tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+            tweenUp.animate("y",568);
+            Starling.juggler.add(tweenUp);
         }
 
     }
