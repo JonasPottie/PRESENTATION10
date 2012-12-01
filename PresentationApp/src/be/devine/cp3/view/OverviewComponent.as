@@ -10,7 +10,6 @@ import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
 
 import flash.display.Shape;
-import flash.events.Event;
 import flash.text.TextField;
 
 import starling.animation.Transitions;
