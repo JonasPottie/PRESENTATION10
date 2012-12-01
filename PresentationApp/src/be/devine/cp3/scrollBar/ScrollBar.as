@@ -28,8 +28,6 @@ public class ScrollBar extends starling.display.Sprite{
     private var _thumbPosition:Number = 0;
     private var w:Number = 1024;
     private var h:Number = 15;
-    private var triangleHeight:uint = 14;
-    private var triangleShape:Shape = new Shape();
 
     //private var triangleShape2:Shape = new Shape();
 
@@ -40,34 +38,10 @@ public class ScrollBar extends starling.display.Sprite{
         addChild(track);
 
 
-        /*triangleShape.graphics.beginFill(0xCCCCCC);
-        triangleShape.graphics.moveTo(triangleHeight/2, 5);
-        triangleShape.graphics.lineTo(triangleHeight/2, 5);
-        triangleShape.graphics.lineTo(triangleHeight, triangleHeight+5);
-        triangleShape.graphics.lineTo(0, triangleHeight+5);
-        triangleShape.x = 3;
-        triangleShape.y = -25;
-        addChild(triangleShape);
-
-
-        triangleShape2.graphics.beginFill(0xCCCCCC);
-        triangleShape2.graphics.moveTo(triangleHeight/2, 5);
-        triangleShape2.graphics.lineTo(triangleHeight/2, 5);
-        triangleShape2.graphics.lineTo(triangleHeight, triangleHeight+5);
-        triangleShape2.graphics.lineTo(0, triangleHeight+5);
-        triangleShape2.x = 17;
-        triangleShape2.y = track.height+25;
-        triangleShape2.rotation = 180;
-        down.addChild(triangleShape2);*/
-
         thumb = new Quad(60,15,0xa468a9);
         thumb.x = 32;
         thumb.y = 185;
         addChild(thumb);
-
-        //thumb.addEventListener(MouseEvent.MOUSE_DOWN, downThumb);
-        /*up.addEventListener(MouseEvent.CLICK, clickedUp);
-        down.addEventListener(MouseEvent.CLICK, clickedDown);*/
         thumb.addEventListener(starling.events.TouchEvent.TOUCH, touchHandler);
 
     }

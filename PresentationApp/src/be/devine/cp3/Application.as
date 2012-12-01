@@ -18,7 +18,7 @@ import flash.display.Bitmap;
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
 
-import mx.effects.easing.Back;
+//import mx.effects.easing.Back;
 
 import starling.animation.Transitions;
 
@@ -43,7 +43,7 @@ public class Application extends starling.display.Sprite{
     private var tweenDown:Tween;
 
     private var displayToTexture:DisplayToTexture;
-    private var backGround:BackGround;
+    //private var backGround:BackGround;
 
 
 
@@ -56,9 +56,9 @@ public class Application extends starling.display.Sprite{
         trace("[app CONSTRUCTED]");
         this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
 
-        backGround = new BackGround();
+        //backGround = new BackGround();
         displayToTexture = new DisplayToTexture();
-        addChild(displayToTexture.imageFromSprite(backGround));
+        //addChild(displayToTexture.imageFromSprite(backGround));
 
 
 

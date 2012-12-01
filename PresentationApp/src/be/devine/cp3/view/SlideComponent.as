@@ -63,8 +63,8 @@ public class SlideComponent extends starling.display.Sprite{
                 itemContainer.addChild(title);
 
                 content = new Content(slide.content, slide.contentProp[2], slide.contentProp[3]);
-                content.x = slide.contentProp[0]
-                content.y = slide.contentProp[1]
+                content.x = slide.contentProp[0];
+                content.y = slide.contentProp[1];
                 itemContainer.addChild(content);
 
                 media = new Media(slide.image, 450, 600);

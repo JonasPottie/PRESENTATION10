@@ -20,6 +20,12 @@
         <image transition="fadIn" transitionIndex="3" x="40" y="40">assets/images/1.jpg</image>
     </page>
 
+    <page name="4" label="4"  slideTheme="rb">
+        <contentTitle transition="fadIn" transitionIndex="1" x="50" y="50" width="400" height="250" widthtwo="150">EEN 4e SLID JA!</contentTitle>
+        <contentText transition="fadIn" transitionIndex="2" x="300" y="200" width="400" height="200" >Want wat we in de les gezien hebben is toch de moeite.. Starling bla Lorum Ipsum.Want wat we in de les gezien hebben is toch de moeite.. Starling bla Lorum Ipsum.Want wat we in de les gezien hebben is toch de moeite.. Starling bla Lorum Ipsum.</contentText>
+        <image transition="fadIn" transitionIndex="3" x="40" y="40">assets/images/1.jpg</image>
+    </page>
+
 
 
 </pages>
