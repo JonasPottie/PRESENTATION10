@@ -35,7 +35,7 @@ public class OverviewComponent extends Sprite{
         appModel = AppModel.getInstance();
 
         var overviewBackground:Quad = new Quad(1024,200, 0x000000);
-        overviewBackground.alpha = 0.9;
+        overviewBackground.alpha = 0.6;
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();
@@ -55,13 +55,13 @@ public class OverviewComponent extends Sprite{
     {
         var xPos=0;
 
-        pageContainer.alpha=.7;
+        pageContainer.alpha=.8;
         pageContainer.x = 50;
         pageContainer.y = 15;
 
         for each(var pageVO:PageVO in appModel.pages)
         {
-            var q:Quad = new Quad(220,150,0xaaaaaa)
+            var q:Quad = new Quad(220,150,0xaaaaaa);
             q.x = xPos;
             pageContainer.addChild(q);
 

@@ -21,8 +21,8 @@ public class Page extends Sprite{
 
         trace("PAGE VIEW OBJECT WITH THESE ELEMENTS: " + pageVO.elements);
 
-        for each(var elementVO:ElementVO in pageVO.elements) {
-
+        for each(var elementVO:ElementVO in pageVO.elements)
+        {
             trace("ELEMENTVO: " + elementVO);
             var element:Element = ElementViewFactory.createFromVO(elementVO);
             addChild(element);

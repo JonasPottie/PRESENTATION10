@@ -23,8 +23,6 @@ public class ScrollBar extends starling.display.Sprite{
 
     private var track:Quad;
     private var thumb:Quad;
-    private var up:Quad;
-    private var down:Quad;
     private var _thumbPosition:Number = 0;
     private var w:Number = 1024;
     private var h:Number = 15;
