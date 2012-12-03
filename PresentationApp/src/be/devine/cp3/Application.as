@@ -9,26 +9,19 @@ package be.devine.cp3 {
 
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.utils.DisplayToTexture;
-import be.devine.cp3.view.MenuComponent;
 import be.devine.cp3.view.OverviewComponent;
-import be.devine.cp3.view.SlideComponent;
 
-import flash.display.Bitmap;
+//import be.devine.cp3.view.OverviewComponent;
+import be.devine.cp3.view.Page;
+import be.devine.cp3.vo.PageVO;
 
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
 
-//import mx.effects.easing.Back;
-
 import starling.animation.Transitions;
-
 import starling.animation.Tween;
 
 import starling.core.Starling;
-import starling.display.DisplayObject;
-import starling.display.Image;
-import starling.display.MovieClip;
-
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.textures.Texture;
@@ -36,14 +29,19 @@ import starling.textures.Texture;
 public class Application extends starling.display.Sprite{
 
     private var appModel:AppModel;
-    private var menuComponent:MenuComponent;
+
+    //private var overviewComponent:OverviewComponent;
+
+    private var pageContainer:Sprite;
+    private var page:Page;
     private var overviewComponent:OverviewComponent;
-    private var slideComponent:SlideComponent;
+
+
     private var tweenUp:Tween;
     private var tweenDown:Tween;
 
     private var displayToTexture:DisplayToTexture;
-    //private var backGround:BackGround;
+    private var backGround:BackGround;
 
 
 
@@ -56,8 +54,11 @@ public class Application extends starling.display.Sprite{
         trace("[app CONSTRUCTED]");
         this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
 
-        //backGround = new BackGround();
+        backGround = new BackGround();
         displayToTexture = new DisplayToTexture();
+        pageContainer = new Sprite();
+        addChild(pageContainer);
+        pageContainer.addChild(displayToTexture.imageFromSprite(backGround));
         //addChild(displayToTexture.imageFromSprite(backGround));
 
 
@@ -66,20 +67,30 @@ public class Application extends starling.display.Sprite{
         appModel.load("assets/xml/presentation.xml");
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlLoadedHandler);
+        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
 
+    }
 
+    private function pageChangeHandler(event:flash.events.Event):void
+    {
+        pageContainer.x = appModel.currentSlideIndex * -1024;
     }
 
 
 
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
+        trace("XML LOADED -> CREATE PAGE: " + appModel.pages);
 
-        menuComponent = new MenuComponent();
+        var xPos:uint = 0;
+        for each(var pageVO:PageVO in appModel.pages) {
+            page = new Page(pageVO);
+            page.x = xPos;
+            pageContainer.addChild(page);
+            xPos += 1024;
+        }
 
 
-        slideComponent = new SlideComponent();
-        addChild(slideComponent);
 
 
 

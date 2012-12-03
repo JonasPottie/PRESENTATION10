@@ -7,35 +7,27 @@
  */
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
-import be.devine.cp3.model.PageVo;
 import be.devine.cp3.scrollBar.ScrollBar;
-import be.devine.cp3.view.slideType.Title;
+import be.devine.cp3.vo.PageVO;
 
-import flash.display.Shape;
-import flash.events.MouseEvent;
-import flash.text.TextField;
-
-import starling.animation.Transitions;
+import flash.events.TouchEvent;
 
 import starling.animation.Tween;
-
 import starling.display.Quad;
 
 import starling.display.Sprite;
-import starling.events.Event;
-import starling.events.TouchEvent;
-import starling.text.TextField;
-import starling.utils.HAlign;
-import starling.utils.VAlign;
 
-public class OverviewComponent extends starling.display.Sprite{
+
+public class OverviewComponent extends Sprite{
 
     private var appModel:AppModel;
     private var scrollbar:ScrollBar;
-    private var slidesContainer:Quad;
+    private var pageContainer:Sprite;
+    private var page:Page;
+    
     private var xPosScroll:Number;
     private var scrollTween:Tween;
-    private var pageVO:PageVo;
+    private var pageVO:PageVO;
 
 
     public function OverviewComponent() {
@@ -51,61 +43,42 @@ public class OverviewComponent extends starling.display.Sprite{
         scrollbar.y = 0;
         addChild(scrollbar);
 
-        slidesContainer = new Quad(504,100,0xFF00FF);
+        pageContainer = new Sprite();
+        addChild(pageContainer);
         overzichtTonen();
 
     }
 
 
 
-    private function overzichtTonen():void {
-        var xPos=10;
+    private function overzichtTonen():void 
+    {
+        var xPos=0;
 
-        for(var i:int=0 ; i<appModel.pages.length; i++)
+        pageContainer.alpha=.7;
+        pageContainer.x = 50;
+        pageContainer.y = 15;
+
+        for each(var pageVO:PageVO in appModel.pages)
         {
-            var miniSlide:Quad = new Quad(215,160, 0x4a4a4a);
-            miniSlide.x = xPos;
-            miniSlide.y = 10;
-            addChild(miniSlide);
+            var q:Quad = new Quad(220,150,0xaaaaaa)
+            q.x = xPos;
+            pageContainer.addChild(q);
 
-            trace("slide is: "+appModel.pages[i].title);
-
-            pageVO = new PageVo();
-            var title:Title;
-
-            var minislideContainer:Sprite = new Sprite();
-            addChild(minislideContainer);
-            minislideContainer.scaleX=.4;
-            minislideContainer.scaleY=.4;
-            minislideContainer.alpha=.7;
-            minislideContainer.x = xPos+5;
-            minislideContainer.y = 15;
-
-            var slide:PageVo =  appModel.pages[i];
-
-            title = new Title(slide.title,slide.titleProp[2],slide.titleProp[3],slide.titleProp[4]);
-            minislideContainer.addChild(title);
-
-            xPos+= miniSlide.width + 20;
-
-            minislideContainer.addEventListener(TouchEvent.TOUCH, clickHandler);
+            page = new Page(pageVO);
+            page.x = xPos;
+            page.scaleX = 0.2;
+            page.scaleY = 0.2;
+            pageContainer.addChild(page);
+            xPos += 250;
         }
 
+            pageContainer.addEventListener(TouchEvent.TOUCH_BEGIN, clickHandler);
 
     }
 
-    private function clickHandler(e:TouchEvent):void {
-        //trace("clicked on a minislideContianer.."+ (e.target.));
-        //currentImage = _images.indexOf(event.currentTarget,0);
+    private function clickHandler(event:TouchEvent):void {
+
     }
-
-    public function VersleepTextContainer():void
-    {
-
-        /*scrollTween = new Tween(slidesContainer,.5,Transitions.EASE_IN_OUT);
-        scrollTween.animate("y",xPosScroll);
-        Starling.juggler.add(scrollTween);*/
-    }
-
 }
 }

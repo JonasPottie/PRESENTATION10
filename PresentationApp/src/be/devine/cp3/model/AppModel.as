@@ -6,10 +6,10 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.model {
+import be.devine.cp3.service.XmlService;
+import be.devine.cp3.vo.PageVO;
 import flash.events.Event;
 import flash.events.EventDispatcher;
-import be.devine.cp3.queue.Queue;
-import be.devine.cp3.queue.XMLTask;
 
 public class AppModel extends EventDispatcher
     {
@@ -19,11 +19,10 @@ public class AppModel extends EventDispatcher
 
         private var _currentSlideIndex:int;
         private var _xmlUrl:String;
-        private var _pages:Vector.<PageVo>;
+        private var _pages:Vector.<PageVO>;
 
-        public var pageVo:PageVo;
+        private var xmlService:XmlService;
 
-        private var queue:Queue;
         private static var instance:AppModel;
 
 /*-------------------------------------------------------------------------//
@@ -43,92 +42,48 @@ public class AppModel extends EventDispatcher
             throw new Error("model is a singleton, use getInstance() instead");
         }
 
-        pages = new Vector.<PageVo>()
+        pages = new Vector.<PageVO>();
+        xmlService = new XmlService();
     }
 
 /*-------------------------------------------------------------------------//
 //--------------------------- LOAD XML ----------------------------//
 //-------------------------------------------------------------------------*/
 
-    public function load(url:String):void
+   public function load(xmlPath:String)
+   {
+        xmlUrl = xmlPath;
+   }
+
+    public function get xmlUrl():String
     {
-        xmlUrl = url;
-    }
-
-    private function xmlChangedHandler():void
-    {
-        queue = new Queue();
-        queue.addEventListener( Event.COMPLETE, queueCompleteHandler );
-        queue.add( new XMLTask("assets/xml/presentation.xml") );
-        queue.start();
-    }
-
-
-    private function queueCompleteHandler( e:Event ):void
-    {
-
-        for each( var task:XMLTask in queue.completedItems )
-        {
-            var ingeladenXML:XML = new XML(task.data);
-
-            for (var pagesInt:uint=0; pagesInt<ingeladenXML.page.length(); pagesInt++)
-            {
-                pageVo = new PageVo();
-
-                pageVo.title = ingeladenXML.page[pagesInt].contentTitle;
-                pageVo.titleProp.push(ingeladenXML.page[pagesInt].contentTitle.@x,ingeladenXML.page[pagesInt].contentTitle.@y,ingeladenXML.page[pagesInt].contentTitle.@width,ingeladenXML.page[pagesInt].contentTitle.@height,ingeladenXML.page[pagesInt].contentTitle.@widthtwo);
-                pageVo.titleTrans.push(ingeladenXML.page[pagesInt].contentTitle.@transition,ingeladenXML.page[pagesInt].contentTitle.@transitionIndex);
-
-                pageVo.content = ingeladenXML.page[pagesInt].contentText
-                pageVo.contentProp.push(ingeladenXML.page[pagesInt].contentText.@x,ingeladenXML.page[pagesInt].contentText.@y,ingeladenXML.page[pagesInt].contentText.@width,ingeladenXML.page[pagesInt].contentText.@height);
-                pageVo.contentTrans.push(ingeladenXML.page[pagesInt].contentText.@transition,ingeladenXML.page[pagesInt].contentText.@transitionIndex);
-
-                pageVo.image = ingeladenXML.page[pagesInt].image
-                pageVo.imageProp.push(ingeladenXML.page[pagesInt].image.@x,ingeladenXML.page[pagesInt].image.@y);
-                pageVo.imageTrans.push(ingeladenXML.page[pagesInt].image.@transition,ingeladenXML.page[pagesInt].image.@transitionIndex);
-
-                pages.push(pageVo);
-            }
-
-        }
-
-        dispatchEvent(new Event(XML_URL_LOADED));
-
-        trace("PAGES: " +pages)
-
-    }
-
-    public function get xmlUrl():String {
         return _xmlUrl;
     }
 
     public function set xmlUrl(value:String):void
     {
-
         if(_xmlUrl != value)
         {
             _xmlUrl = value;
-            trace("XML CHANGED")
-            xmlChangedHandler();
-            dispatchEvent(new Event(XML_URL_CHANGED));
+            xmlService.load(value);
         }
     }
 
+    public function xmlLoaded():void
+    {
+        dispatchEvent(new Event(XML_URL_LOADED));
+    }
 /*-------------------------------------------------------------------------//
 //------------    NEXT AND PREVIOUS SLIDE     --------------//
 //------------------------------------------------------------------------*/
 
     public function goToPreviousSlide():void
     {
-       // Functie om naar vorige slide te gaan
-        trace("PREVIOUS SLIDE");
        currentSlideIndex --;
     }
 
     public function goToNextSlide():void
     {
-       // Functie om naar volgende slide te gaan
-        trace("NEXT SLIDE")
       currentSlideIndex ++;
     }
 
@@ -155,22 +110,23 @@ public class AppModel extends EventDispatcher
 //-----------        SLIDES IN VECTOR [XML FORMAT]         ----------//
 //-------------------------------------------------------------------------*/
 
-    public function get pages():Vector.<PageVo> {
+    public function get pages():Vector.<PageVO> {
         return _pages;
     }
 
-    public function set pages(value:Vector.<PageVo>):void
+    public function set pages(value:Vector.<PageVO>):void
     {
         if(_pages != value)
         {
             _pages = value;
         }
     }
-}
-}
 
 /*-------------------------------------------------------------------------//
- //-----------       SINGLETON INTERNE CLASS        ----------//
- //-------------------------------------------------------------------------*/
+//-----------       SINGLETON INTERNE CLASS        ----------//
+//-------------------------------------------------------------------------*/
+
+}
+}
 
 internal class Enforcer{};

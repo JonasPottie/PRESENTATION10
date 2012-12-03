@@ -1,0 +1,62 @@
+/**
+ * Created with IntelliJ IDEA.
+ * User: laurensdhondt
+ * Date: 3/12/12
+ * Time: 12:01
+ * To change this template use File | Settings | File Templates.
+ */
+package be.devine.cp3.factory.vo {
+import be.devine.cp3.vo.ContentElementVO;
+import be.devine.cp3.vo.ElementVO;
+import be.devine.cp3.vo.ImageElementVO;
+import be.devine.cp3.vo.TitleElementVO;
+
+public class ElementVOFactory {
+
+    public static function createFromXML(elementXML:XML):ElementVO
+    {
+        switch("" + elementXML.@type)
+        {
+            case "title": return createTitleElementVO(elementXML);
+            case "content": return createContentElementVO(elementXML);
+            case "image": return createImageElementVo(elementXML);
+        }
+        return null;
+    }
+
+    public static function createTitleElementVO(elementXML:XML):TitleElementVO
+    {
+        trace("CREATE TITLE");
+        var elementVO:TitleElementVO = new TitleElementVO();
+        elementVO.text = elementXML;
+        elementVO.width = elementXML.@width;
+        elementVO.widthTwo = elementXML.@widthtwo;
+        elementVO.height = elementXML.@height;
+        elementVO.x = elementXML.@x;
+        elementVO.y = elementXML.@y;
+        return elementVO;
+    }
+
+    public static function createContentElementVO(elementXML:XML):ContentElementVO
+    {
+        trace("CREATE CONTENT");
+        var elementVO:ContentElementVO = new ContentElementVO();
+        elementVO.text = elementXML;
+        elementVO.width = elementXML.@width;
+        elementVO.height = elementXML.@height;
+        elementVO.x = elementXML.@x;
+        elementVO.y = elementXML.@y;
+        return elementVO;
+    }
+
+    public static function createImageElementVo(elementXML:XML):ImageElementVO
+    {
+        trace("CREATE IMAGE");
+        var elementVO:ImageElementVO = new ImageElementVO();
+        elementVO.url = elementXML;
+        elementVO.x = elementXML.@x;
+        elementVO.y = elementXML.@y;
+        return elementVO;
+    }
+}
+}
