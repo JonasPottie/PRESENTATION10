@@ -13,6 +13,13 @@ import be.devine.cp3.view.slideType.Media;
 import be.devine.cp3.view.slideType.Title;
 import flash.display.Sprite;
 import flash.events.Event;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import starling.animation.Transitions;
+
+import starling.animation.Tween;
+import starling.core.Starling;
 
 import starling.display.Sprite;
 
@@ -26,7 +33,8 @@ public class SlideComponent extends starling.display.Sprite{
     private var title:Title;
     private var content:Content;
     private var media:Media;
-
+    private var slideMoveTween:Tween;
+    private var slideTimer:Timer;
 
     private var explicitWidth:Number;
     private var explicitHeight:Number;
@@ -41,17 +49,22 @@ public class SlideComponent extends starling.display.Sprite{
 
     private function check(event:Event):void
     {
-        trace("HELLLO");
+        slideTimer = new Timer(500, 2);
+        slideTimer.addEventListener(TimerEvent.TIMER, verplaats);
+        slideTimer.start();
+
+        slideMoveTween = new Tween(itemContainer,.5,Transitions.EASE_IN_OUT);
+        slideMoveTween.animate("x",-1024);
+        Starling.juggler.add(slideMoveTween);
+    }
+    private function verplaats(e:TimerEvent):void
+    {
         removeChild(itemContainer, false);
         createItems();
-
-
     }
 
     private function createItems():void
     {
-        trace("HELLLO2");
-
         itemContainer = new Sprite();
 
         pageVO = new PageVo();
