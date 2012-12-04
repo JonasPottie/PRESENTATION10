@@ -12,6 +12,7 @@ import be.devine.cp3.vo.ImageElementVO;
 import be.devine.cp3.vo.ListElementVO;
 import be.devine.cp3.vo.ListElementVO;
 import be.devine.cp3.vo.TitleElementVO;
+import be.devine.cp3.vo.VideoElementVO;
 
 public class ElementVOFactory {
 
@@ -23,6 +24,7 @@ public class ElementVOFactory {
             case "content": return createContentElementVO(elementXML);
             case "image": return createImageElementVo(elementXML);
             case "list": return createListElementVo(elementXML);
+            case "video": return createVideoElementVo(elementXML);
         }
         return null;
     }
@@ -71,6 +73,16 @@ public class ElementVOFactory {
         elementVO.height = elementXML.@height;
         elementVO.x = elementXML.@x;
         elementVO.y = elementXML.@y;
+        return elementVO;
+    }
+
+    public static function createVideoElementVo(elementXML:XML):VideoElementVO
+    {
+        trace("CREATE LIST");
+        var elementVO:VideoElementVO = new VideoElementVO();
+        elementVO.x = elementXML.@x;
+        elementVO.y = elementXML.@y;
+        elementVO.url = elementXML;
         return elementVO;
     }
 }
