@@ -23,7 +23,6 @@ public class TitleElement extends Element{
     {
         super(titleElementVO);
 
-        trace("CREATE TITLE")
 
         title = new Sprite();
         title.x = titleElementVO.x;
@@ -42,8 +41,6 @@ public class TitleElement extends Element{
         textfield.y =  -5 -titleElementVO.height/4;
         textfield.x = 5;
         title.addChild(textfield);
-
-        trace("ADDCHILD TITLE");
     }
 }
 }

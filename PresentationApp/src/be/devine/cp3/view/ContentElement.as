@@ -39,7 +39,7 @@ public class ContentElement extends Element{
         textfield.x = 5;
         content.addChild(textfield);
 
-        trace("ADDCHILD CONTENT");
+        //trace("ADDCHILD CONTENT"+textfield.text);
 
     }
 }

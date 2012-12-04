@@ -9,6 +9,8 @@ package be.devine.cp3.factory.vo {
 import be.devine.cp3.vo.ContentElementVO;
 import be.devine.cp3.vo.ElementVO;
 import be.devine.cp3.vo.ImageElementVO;
+import be.devine.cp3.vo.ListElementVO;
+import be.devine.cp3.vo.ListElementVO;
 import be.devine.cp3.vo.TitleElementVO;
 
 public class ElementVOFactory {
@@ -20,6 +22,7 @@ public class ElementVOFactory {
             case "title": return createTitleElementVO(elementXML);
             case "content": return createContentElementVO(elementXML);
             case "image": return createImageElementVo(elementXML);
+            case "list": return createListElementVo(elementXML);
         }
         return null;
     }
@@ -54,6 +57,18 @@ public class ElementVOFactory {
         trace("CREATE IMAGE");
         var elementVO:ImageElementVO = new ImageElementVO();
         elementVO.url = elementXML;
+        elementVO.x = elementXML.@x;
+        elementVO.y = elementXML.@y;
+        return elementVO;
+    }
+
+    public static function createListElementVo(elementXML:XML):ListElementVO
+    {
+        trace("CREATE LIST");
+        var elementVO:ListElementVO = new ListElementVO();
+        elementVO.text = elementXML;
+        elementVO.width = elementXML.@width;
+        elementVO.height = elementXML.@height;
         elementVO.x = elementXML.@x;
         elementVO.y = elementXML.@y;
         return elementVO;

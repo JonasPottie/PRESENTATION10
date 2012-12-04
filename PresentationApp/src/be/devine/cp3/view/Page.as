@@ -19,11 +19,11 @@ public class Page extends Sprite{
     public function Page(pageVO:PageVO) {
         this.pageVO = pageVO;
 
-        trace("PAGE VIEW OBJECT WITH THESE ELEMENTS: " + pageVO.elements);
+        //trace("PAGE VIEW OBJECT WITH THESE ELEMENTS: " + pageVO.elements);
 
         for each(var elementVO:ElementVO in pageVO.elements)
         {
-            trace("ELEMENTVO: " + elementVO);
+            //trace("ELEMENTVO: " + elementVO);
             var element:Element = ElementViewFactory.createFromVO(elementVO);
             addChild(element);
         }

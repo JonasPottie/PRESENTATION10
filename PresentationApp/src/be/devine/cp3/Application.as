@@ -155,7 +155,6 @@ public class Application extends Sprite{
             overviewComponent.y = appModel.stageHeight;
 
             tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
-            trace("GO UP");
             tweenUp.animate("y",appModel.stageHeight -200);
             Starling.juggler.add(tweenUp);
             appModel.overViewActive = true;
@@ -167,7 +166,6 @@ public class Application extends Sprite{
 
             if(appModel.overViewActive == true)
             {
-                trace("GO FUCING DOWN");
                 tweenDown = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
                 tweenDown.animate("y",appModel.stageHeight);
                 Starling.juggler.add(tweenDown);
@@ -175,7 +173,6 @@ public class Application extends Sprite{
             }
             else
             {
-                trace("GO FUCING UP");
                 tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
                 tweenUp.animate("y",appModel.stageHeight -200);
                 Starling.juggler.add(tweenUp);

@@ -10,10 +10,12 @@ package be.devine.cp3.factory.view {
 import be.devine.cp3.view.ContentElement;
 import be.devine.cp3.view.Element;
 import be.devine.cp3.view.ImageElement;
+import be.devine.cp3.view.ListElement;
 import be.devine.cp3.view.TitleElement;
 import be.devine.cp3.vo.ContentElementVO;
 import be.devine.cp3.vo.ElementVO;
 import be.devine.cp3.vo.ImageElementVO;
+import be.devine.cp3.vo.ListElementVO;
 import be.devine.cp3.vo.TitleElementVO;
 
 
@@ -29,6 +31,9 @@ public class ElementViewFactory {
 
         if(elementVO is ImageElementVO)
             return new ImageElement(elementVO as ImageElementVO);
+
+        if(elementVO is ListElementVO)
+            return new ListElement(elementVO as ListElementVO);
 
         return new Element(elementVO);
     }

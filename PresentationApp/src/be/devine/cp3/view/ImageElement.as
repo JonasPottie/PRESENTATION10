@@ -28,7 +28,6 @@ public class ImageElement extends Element{
     {
         super(imageElementVO);
 
-        trace("CREATE IMAGE");
         displayToTexture = new DisplayToTexture();
 
         image = new Sprite();
@@ -39,7 +38,7 @@ public class ImageElement extends Element{
         deLoader = new Loader();
         deLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, imageLoadedHandler);
         deLoader.load(new URLRequest(imageElementVO.url));
-        trace("ADDCHILD IMAGE-ELEMENT" + imageElementVO.url);
+        //trace("ADDCHILD IMAGE-ELEMENT" + imageElementVO.url);
     }
 
     private function imageLoadedHandler(e:Event):void

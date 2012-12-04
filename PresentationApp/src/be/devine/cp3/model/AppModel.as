@@ -110,6 +110,7 @@ public class AppModel extends EventDispatcher
     public function set currentSlideIndex(value:int):void
     {
         value = Math.max(0, Math.min(value, pages.length - 1));
+        trace("de value !!!!!! "+value);
         if(_currentSlideIndex != value)
         {
             _currentSlideIndex = value;
