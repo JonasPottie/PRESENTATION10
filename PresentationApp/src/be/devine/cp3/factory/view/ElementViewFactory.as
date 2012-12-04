@@ -29,6 +29,7 @@ public class ElementViewFactory {
 
         if(elementVO is ImageElementVO)
             return new ImageElement(elementVO as ImageElementVO);
+
         return new Element(elementVO);
     }
 }

@@ -23,6 +23,8 @@ public class TitleElement extends Element{
     {
         super(titleElementVO);
 
+        trace("CREATE TITLE")
+
         title = new Sprite();
         title.x = titleElementVO.x;
         title.y = titleElementVO.y;
@@ -35,7 +37,7 @@ public class TitleElement extends Element{
         qTwo.y = titleElementVO.height/6;
         title.addChild(qTwo);
 
-        textfield = new TextField(titleElementVO.width,titleElementVO.height,titleElementVO.text,"Courier", 48);
+        textfield = new TextField(titleElementVO.width,titleElementVO.height,titleElementVO.text,"Courier", 36);
         textfield.hAlign = HAlign.LEFT;
         textfield.y =  -5 -titleElementVO.height/4;
         textfield.x = 5;

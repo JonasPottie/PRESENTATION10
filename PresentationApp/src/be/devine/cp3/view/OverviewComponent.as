@@ -10,6 +10,8 @@ import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
 import be.devine.cp3.vo.PageVO;
 
+import flash.events.Event;
+
 import flash.events.TouchEvent;
 
 import starling.animation.Tween;
@@ -53,7 +55,7 @@ public class OverviewComponent extends Sprite{
 
     private function overzichtTonen():void 
     {
-        var xPos=0;
+        var xPos:int=0;
 
         pageContainer.alpha=.8;
         pageContainer.x = 50;
@@ -74,10 +76,18 @@ public class OverviewComponent extends Sprite{
         }
 
             pageContainer.addEventListener(TouchEvent.TOUCH_BEGIN, clickHandler);
+            appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
 
     }
 
     private function clickHandler(event:TouchEvent):void {
+
+    }
+
+    private function thumbDragHandler(event:Event):void
+    {
+        pageContainer.x = -appModel.thumbPosition*(pageContainer.width - appModel.stageWidth);
+
 
     }
 }

@@ -28,11 +28,12 @@ public class ContentElement extends Element{
         content.y = contentElementVO.y;
         addChild(content);
 
-        var q:Quad = new Quad(contentElementVO.width,contentElementVO.height,0x000000,0.8);
+        var q:Quad = new Quad(contentElementVO.width,contentElementVO.height,0xffffff);
+        q.alpha = 0.5;
         content.addChild(q);
 
-        textfield = new TextField(contentElementVO.width,contentElementVO.height,contentElementVO.text,"Courier", 12);
-        textfield.color = 0xffffff;
+        textfield = new TextField(contentElementVO.width,contentElementVO.height,contentElementVO.text,"DIN", 12);
+        textfield.color = 0x000000;
         textfield.hAlign = HAlign.LEFT;
         textfield.y = 5;
         textfield.x = 5;

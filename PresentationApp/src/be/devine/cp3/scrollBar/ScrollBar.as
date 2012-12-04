@@ -7,6 +7,7 @@
  */
 package be.devine.cp3.scrollBar {
 
+import be.devine.cp3.model.AppModel;
 import be.devine.cp3.view.OverviewComponent;
 
 import flash.display.Shape;
@@ -26,10 +27,13 @@ public class ScrollBar extends starling.display.Sprite{
     private var _thumbPosition:Number = 0;
     private var w:Number = 1024;
     private var h:Number = 15;
+    private var appModel:AppModel;
 
     //private var triangleShape2:Shape = new Shape();
 
     public function ScrollBar() {
+
+        this.appModel = AppModel.getInstance();
 
         track = new Quad(w,h,0xffffff);
         track.y = 185;
@@ -51,15 +55,15 @@ public class ScrollBar extends starling.display.Sprite{
         var target:Quad = e.target as Quad;
 
         if(touch.phase == TouchPhase.MOVED ){
-            this.thumbPosition = thumb.x / (track.width-thumb.width);
+            appModel.thumbPosition= thumb.x / (track.width-thumb.width);
             thumb.x= position.x;
             if(thumb.x < 0)
             {
                 thumb.x = 0;
             }
-            if(thumb.x > 1024 - thumb.width)
+            if(thumb.x > appModel.stageWidth - thumb.width)
             {
-                thumb.x = 1024 - thumb.width;
+                thumb.x = appModel.stageWidth - thumb.width;
             }
 
             thumb.y=185;
@@ -67,16 +71,5 @@ public class ScrollBar extends starling.display.Sprite{
     }
 
 
-
-    public function get thumbPosition():Number {
-        return _thumbPosition;
-    }
-
-    public function set thumbPosition(value:Number):void {
-        if(_thumbPosition != value){
-            _thumbPosition =value;
-            thumb.x =_thumbPosition *(track.height -thumb.height);
-            }
-    }
 }
 }

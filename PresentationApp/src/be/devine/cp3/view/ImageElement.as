@@ -6,6 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.view {
+import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.vo.ImageElementVO;
 
 import flash.display.Loader;
@@ -15,14 +16,25 @@ import flash.net.URLRequest;
 import starling.core.Starling;
 
 import starling.display.DisplayObject;
+import starling.display.Sprite;
 
 public class ImageElement extends Element{
 
     private var deLoader:Loader;
+    private var image:Sprite;
+    private var displayToTexture:DisplayToTexture;
 
     public function ImageElement(imageElementVO:ImageElementVO)
     {
         super(imageElementVO);
+
+        trace("CREATE IMAGE");
+        displayToTexture = new DisplayToTexture();
+
+        image = new Sprite();
+        image.x = imageElementVO.x;
+        image.y = imageElementVO.y;
+        addChild(image);
 
         deLoader = new Loader();
         deLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, imageLoadedHandler);
@@ -30,12 +42,9 @@ public class ImageElement extends Element{
         trace("ADDCHILD IMAGE-ELEMENT" + imageElementVO.url);
     }
 
-    private function imageLoadedHandler(e:Event):void {
-        deLoader.x=(_elementVO as ImageElementVO).x;
-        deLoader.y=(_elementVO as ImageElementVO).y;
-        Starling.current.nativeOverlay.addChild(deLoader);
-
-
+    private function imageLoadedHandler(e:Event):void
+    {
+        image.addChild(displayToTexture.imageFromSprite(deLoader));
     }
 
 

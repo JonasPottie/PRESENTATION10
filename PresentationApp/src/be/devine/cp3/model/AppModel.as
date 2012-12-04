@@ -16,10 +16,17 @@ public class AppModel extends EventDispatcher
         public static const CURRENT_SLIDE_CHANGED:String = "CURRENT_SLIDE_CHANGED";
         public static const XML_URL_CHANGED:String = "XML_URL_CHANGED";
         public static const XML_URL_LOADED:String = "XML_URL_LOADED";
+        public static const THUMB_POS_CHANGED:String = "THUMB_POS_CHANGED";
 
         private var _currentSlideIndex:int;
         private var _xmlUrl:String;
         private var _pages:Vector.<PageVO>;
+
+
+        private var _stageWidth:int;
+        private var _stageHeight:int
+
+        private var _thumbPosition:Number;
 
         private var xmlService:XmlService;
 
@@ -126,6 +133,40 @@ public class AppModel extends EventDispatcher
 //-----------       SINGLETON INTERNE CLASS        ----------//
 //-------------------------------------------------------------------------*/
 
+    public function get stageWidth():int {
+        return _stageWidth;
+    }
+
+    public function set stageWidth(value:int):void {
+        if(_stageWidth != value)
+        {
+            _stageWidth = value;
+        }
+    }
+
+    public function get stageHeight():int {
+        return _stageHeight;
+    }
+
+    public function set stageHeight(value:int):void {
+        if(_stageHeight != value)
+        {
+            _stageHeight = value;
+        }
+    }
+
+    public function get thumbPosition():Number {
+        return _thumbPosition;
+    }
+
+    public function set thumbPosition(value:Number):void {
+        if(_thumbPosition != value)
+        {
+            _thumbPosition = value;
+        }
+        dispatchEvent(new Event(THUMB_POS_CHANGED));
+
+    }
 }
 }
 
