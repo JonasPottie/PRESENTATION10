@@ -26,6 +26,8 @@ public class OverviewComponent extends Sprite{
     private var scrollbar:ScrollBar;
     private var pageContainer:Sprite;
     private var page:Page;
+
+    private var overviewBackground:Quad;
     
     private var xPosScroll:Number;
     private var scrollTween:Tween;
@@ -35,9 +37,10 @@ public class OverviewComponent extends Sprite{
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
+        appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
-        var overviewBackground:Quad = new Quad(1024,200, 0x000000);
-        overviewBackground.alpha = 0.6;
+        overviewBackground = new Quad(appModel.stageWidth,200, 0x000000);
+        overviewBackground.alpha = 0.7;
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();
@@ -89,6 +92,11 @@ public class OverviewComponent extends Sprite{
         pageContainer.x = -appModel.thumbPosition*(pageContainer.width - appModel.stageWidth);
 
 
+    }
+
+    private function stageChangeHandler(event:Event):void
+    {
+      overviewBackground.width = appModel.stageWidth;
     }
 }
 }

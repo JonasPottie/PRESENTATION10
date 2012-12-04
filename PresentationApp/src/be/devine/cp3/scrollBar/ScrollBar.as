@@ -18,15 +18,14 @@ import starling.display.Quad;
 import starling.display.Sprite;
 import starling.events.Event;
 import starling.events.Touch;
+import starling.events.TouchEvent;
 import starling.events.TouchPhase;
 
-public class ScrollBar extends starling.display.Sprite{
+public class ScrollBar extends Sprite{
 
     private var track:Quad;
     private var thumb:Quad;
     private var _thumbPosition:Number = 0;
-    private var w:Number = 1024;
-    private var h:Number = 15;
     private var appModel:AppModel;
 
     //private var triangleShape2:Shape = new Shape();
@@ -34,8 +33,9 @@ public class ScrollBar extends starling.display.Sprite{
     public function ScrollBar() {
 
         this.appModel = AppModel.getInstance();
+        appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
-        track = new Quad(w,h,0xffffff);
+        track = new Quad(appModel.stageWidth,15,0xffffff);
         track.y = 185;
         addChild(track);
 
@@ -44,11 +44,11 @@ public class ScrollBar extends starling.display.Sprite{
         thumb.x = 32;
         thumb.y = 185;
         addChild(thumb);
-        thumb.addEventListener(starling.events.TouchEvent.TOUCH, touchHandler);
+        thumb.addEventListener(TouchEvent.TOUCH, touchHandler);
 
     }
 
-    private function touchHandler(e :starling.events.TouchEvent) : void
+    private function touchHandler(e :TouchEvent) : void
     {
         var touch:Touch = e.getTouch(stage);
         var position:Point = touch.getLocation(stage);
@@ -71,5 +71,10 @@ public class ScrollBar extends starling.display.Sprite{
     }
 
 
+    private function stageChangeHandler(event:flash.events.Event):void
+    {
+        track.width = appModel.stageWidth;
+        thumb.x = 0;
+    }
 }
 }

@@ -2,6 +2,7 @@ package {
 
 import be.devine.cp3.Application;
 import be.devine.cp3.model.AppModel;
+import be.devine.cp3.utils.DisplayToTexture;
 
 import flash.desktop.NativeApplication;
 
@@ -30,6 +31,9 @@ public class Main extends Sprite{
 
     private var starling:Starling;
     private var appModel:AppModel;
+
+    private var displayToTexture:DisplayToTexture;
+    private var bg:AbstractBG;
 
 
     public function Main()

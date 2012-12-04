@@ -11,6 +11,8 @@ import be.devine.cp3.model.AppModel;
 import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.OverviewComponent;
 
+import flash.events.Event;
+
 //import be.devine.cp3.view.OverviewComponent;
 import be.devine.cp3.view.Page;
 import be.devine.cp3.vo.PageVO;
@@ -26,7 +28,7 @@ import starling.display.Sprite;
 import starling.events.Event;
 import starling.textures.Texture;
 
-public class Application extends starling.display.Sprite{
+public class Application extends Sprite{
 
     private var appModel:AppModel;
 
@@ -72,12 +74,34 @@ public class Application extends starling.display.Sprite{
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
+        appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
+
+    }
+
+    private function stageChangeHandler(event:flash.events.Event):void
+    {
+        ("change!")
+        pageContainer.scaleX = appModel.stageWidth/1024;
+        pageContainer.scaleY = appModel.stageWidth/1024;
+
+        if(overviewComponent!=null)
+        {
+            if(appModel.overViewActive == true)
+            {
+                overviewComponent.y = appModel.stageHeight - 200;
+            }
+            else
+            {
+                overviewComponent.y = appModel.stageHeight;
+            }
+        }
 
     }
 
     private function pageChangeHandler(event:flash.events.Event):void
     {
         pageContainer.x = appModel.currentSlideIndex * -appModel.stageWidth;
+
     }
 
 
@@ -131,25 +155,34 @@ public class Application extends starling.display.Sprite{
             overviewComponent.y = appModel.stageHeight;
 
             tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+            trace("GO UP");
             tweenUp.animate("y",appModel.stageHeight -200);
             Starling.juggler.add(tweenUp);
-        }
+            appModel.overViewActive = true;
 
-        if(overviewComponent.y == appModel.stageHeight -200)
-        {
-            tweenDown = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
-            tweenDown.animate("y",appModel.stageHeight);
-            Starling.juggler.add(tweenDown);
+
         }
         else
         {
-            tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
-            tweenUp.animate("y",appModel.stageHeight -200);
-            Starling.juggler.add(tweenUp);
+
+            if(appModel.overViewActive == true)
+            {
+                trace("GO FUCING DOWN");
+                tweenDown = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+                tweenDown.animate("y",appModel.stageHeight);
+                Starling.juggler.add(tweenDown);
+                appModel.overViewActive = false;
+            }
+            else
+            {
+                trace("GO FUCING UP");
+                tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+                tweenUp.animate("y",appModel.stageHeight -200);
+                Starling.juggler.add(tweenUp);
+                appModel.overViewActive = true;
+            }
         }
 
     }
-
-
 }
 }
