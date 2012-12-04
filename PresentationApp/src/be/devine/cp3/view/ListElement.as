@@ -51,7 +51,7 @@ public class ListElement extends Element{
 
             var bullet:Quad = new Quad(5,5,0x000);
             bullet.x = 15;
-            bullet.y = yPosItem+10;
+            bullet.y = yPosItem+20;
             trace("[textfield.y] "+textfield.y);
             trace("[bullet.y] "+bullet.y);
             trace("[yPosItem] "+yPosItem);
