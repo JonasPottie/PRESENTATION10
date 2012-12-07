@@ -40,7 +40,7 @@ public class ScrollBar extends Sprite{
         addChild(track);
 
 
-        thumb = new Quad(60,15,0xa468a9);
+        thumb = new Quad(60,15,0xea655c);
         thumb.x = 32;
         thumb.y = 185;
         addChild(thumb);

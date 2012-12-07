@@ -25,8 +25,8 @@ public class AppModel extends EventDispatcher
         private var _pages:Vector.<PageVO>;
 
 
-        private var _stageWidth:int;
-        private var _stageHeight:int
+        private var _stageWidth:Number;
+        private var _stageHeight:Number
 
         public var overViewActive:Boolean;
 
@@ -138,11 +138,11 @@ public class AppModel extends EventDispatcher
 //-----------       SINGLETON INTERNE CLASS        ----------//
 //-------------------------------------------------------------------------*/
 
-    public function get stageWidth():int {
+    public function get stageWidth():Number {
         return _stageWidth;
     }
 
-    public function set stageWidth(value:int):void {
+    public function set stageWidth(value:Number):void {
         if(_stageWidth != value)
         {
             _stageWidth = value;
@@ -151,11 +151,11 @@ public class AppModel extends EventDispatcher
         dispatchEvent(new Event(STAGE_SIZE_CHANGED));
     }
 
-    public function get stageHeight():int {
+    public function get stageHeight():Number {
         return _stageHeight;
     }
 
-    public function set stageHeight(value:int):void {
+    public function set stageHeight(value:Number):void {
         if(_stageHeight != value)
         {
             _stageHeight = value;

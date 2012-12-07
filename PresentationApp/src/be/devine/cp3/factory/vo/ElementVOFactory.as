@@ -35,7 +35,6 @@ public class ElementVOFactory {
         var elementVO:TitleElementVO = new TitleElementVO();
         elementVO.text = elementXML;
         elementVO.width = elementXML.@width;
-        elementVO.widthTwo = elementXML.@widthtwo;
         elementVO.height = elementXML.@height;
         elementVO.x = elementXML.@x;
         elementVO.y = elementXML.@y;

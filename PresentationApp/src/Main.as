@@ -33,7 +33,6 @@ public class Main extends Sprite{
     private var appModel:AppModel;
 
     private var displayToTexture:DisplayToTexture;
-    private var bg:AbstractBG;
 
 
     public function Main()

@@ -14,7 +14,10 @@ import flash.events.Event;
 
 import flash.events.TouchEvent;
 
+import starling.animation.Transitions;
+
 import starling.animation.Tween;
+import starling.core.Starling;
 import starling.display.Quad;
 
 import starling.display.Sprite;
@@ -28,19 +31,15 @@ public class OverviewComponent extends Sprite{
     private var page:Page;
 
     private var overviewBackground:Quad;
-    
-    private var xPosScroll:Number;
-    private var scrollTween:Tween;
-    private var pageVO:PageVO;
 
+    private var tween:Tween;
 
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
-        overviewBackground = new Quad(appModel.stageWidth,200, 0x000000);
-        overviewBackground.alpha = 0.7;
+        overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();
@@ -66,7 +65,7 @@ public class OverviewComponent extends Sprite{
 
         for each(var pageVO:PageVO in appModel.pages)
         {
-            var q:Quad = new Quad(220,150,0xaaaaaa);
+            var q:Quad = new Quad(220,160,0xea655c);
             q.x = xPos;
             pageContainer.addChild(q);
 

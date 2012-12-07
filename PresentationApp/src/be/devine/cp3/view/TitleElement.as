@@ -19,6 +19,7 @@ public class TitleElement extends Element{
     private var title:Sprite;
     private var fontContainer:FontContainer;
 
+
     public function TitleElement(titleElementVO:TitleElementVO)
     {
         super(titleElementVO);
@@ -29,14 +30,8 @@ public class TitleElement extends Element{
         title.y = titleElementVO.y;
         addChild(title);
 
-        var q:Quad = new Quad(titleElementVO.width,titleElementVO.height/4,0xffffff);
-        title.addChild(q);
 
-        var qTwo:Quad = new Quad(titleElementVO.widthTwo,titleElementVO.height/4,0xffffff);
-        qTwo.y = titleElementVO.height/6;
-        title.addChild(qTwo);
-
-        textfield = new TextField(titleElementVO.width,titleElementVO.height,titleElementVO.text,"Courier", 36);
+        textfield = new TextField(titleElementVO.width,titleElementVO.height,titleElementVO.text,"Arvo",50,0xffffff,true);
         textfield.hAlign = HAlign.LEFT;
         textfield.y =  -5 -titleElementVO.height/4;
         textfield.x = 5;

@@ -10,7 +10,6 @@ public class TitleElementVO extends ElementVO {
 
     public var text:String;
     public var width:int;
-    public var widthTwo:int;
     public var height:int;
     public var x:int;
     public var y:int;

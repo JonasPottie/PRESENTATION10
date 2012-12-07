@@ -11,7 +11,12 @@ import be.devine.cp3.model.AppModel;
 import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.OverviewComponent;
 
+import flash.display.Shape;
+
 import flash.events.Event;
+
+import starling.display.Quad;
+import starling.extensions.pixelmask.PixelMaskDisplayObject;
 
 //import be.devine.cp3.view.OverviewComponent;
 import be.devine.cp3.view.Page;
@@ -39,12 +44,13 @@ public class Application extends Sprite{
     private var overviewComponent:OverviewComponent;
 
 
-    private var tweenUp:Tween;
-    private var tweenDown:Tween;
+    private var tween:Tween;
 
     private var displayToTexture:DisplayToTexture;
+    private var pixelMask:PixelMaskDisplayObject;
 
-    private var bg:AbstractBG;
+    private var bg:Quad;
+    private var mask:Quad;
 
 
 
@@ -59,17 +65,29 @@ public class Application extends Sprite{
 
 
         displayToTexture = new DisplayToTexture();
+        this.appModel = AppModel.getInstance();
 
-        bg = new AbstractBG();
-        addChild(displayToTexture.imageFromSprite(bg));
+        bg= new Quad(appModel.stageWidth,appModel.stageHeight,0xea655c);
+        addChild(bg);
+
+
 
         pageContainer = new Sprite();
-        addChild(pageContainer);
+        mask = new Quad(1024,758,0x0);
+
+
+        pixelMask = new PixelMaskDisplayObject();
+        pixelMask.addChild(pageContainer);
+
+        pixelMask.mask = mask;
+        addChild(pixelMask);
 
 
 
 
-        this.appModel = AppModel.getInstance();
+
+
+
         appModel.load("assets/xml/presentation.xml");
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlLoadedHandler);
@@ -80,9 +98,11 @@ public class Application extends Sprite{
 
     private function stageChangeHandler(event:flash.events.Event):void
     {
-        ("change!")
-        pageContainer.scaleX = appModel.stageWidth/1024;
-        pageContainer.scaleY = appModel.stageWidth/1024;
+        bg.width = appModel.stageWidth;
+        bg.height = appModel.stageHeight;
+        pixelMask.x =  ((appModel.stageWidth - 1024)/2);
+        pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2);
+        trace(pixelMask.width);
 
         if(overviewComponent!=null)
         {
@@ -100,7 +120,10 @@ public class Application extends Sprite{
 
     private function pageChangeHandler(event:flash.events.Event):void
     {
-        pageContainer.x = appModel.currentSlideIndex * -appModel.stageWidth;
+
+        tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+        tween.animate("x",(appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2));
+        Starling.juggler.add(tween);
 
     }
 
@@ -108,12 +131,13 @@ public class Application extends Sprite{
 
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
+
         var xPos:uint = 0;
         for each(var pageVO:PageVO in appModel.pages) {
             page = new Page(pageVO);
             page.x = xPos;
             pageContainer.addChild(page);
-            xPos += 1024;
+            xPos += appModel.stageWidth;
         }
     }
 
@@ -154,9 +178,9 @@ public class Application extends Sprite{
             addChild(overviewComponent);
             overviewComponent.y = appModel.stageHeight;
 
-            tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
-            tweenUp.animate("y",appModel.stageHeight -200);
-            Starling.juggler.add(tweenUp);
+            tween = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+            tween.animate("y",appModel.stageHeight -200);
+            Starling.juggler.add(tween);
             appModel.overViewActive = true;
 
 
@@ -166,16 +190,16 @@ public class Application extends Sprite{
 
             if(appModel.overViewActive == true)
             {
-                tweenDown = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
-                tweenDown.animate("y",appModel.stageHeight);
-                Starling.juggler.add(tweenDown);
+                tween = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+                tween.animate("y",appModel.stageHeight);
+                Starling.juggler.add(tween);
                 appModel.overViewActive = false;
             }
             else
             {
-                tweenUp = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
-                tweenUp.animate("y",appModel.stageHeight -200);
-                Starling.juggler.add(tweenUp);
+                tween = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
+                tween.animate("y",appModel.stageHeight -200);
+                Starling.juggler.add(tween);
                 appModel.overViewActive = true;
             }
         }
