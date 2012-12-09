@@ -73,7 +73,7 @@ public class Application extends Sprite{
 
 
         pageContainer = new Sprite();
-        mask = new Quad(1024,758,0x0);
+        mask = new Quad(1024,768,0x0);
 
 
         pixelMask = new PixelMaskDisplayObject();

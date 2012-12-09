@@ -40,6 +40,7 @@ public class OverviewComponent extends Sprite{
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
         overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
+        overviewBackground.alpha = .8;
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();

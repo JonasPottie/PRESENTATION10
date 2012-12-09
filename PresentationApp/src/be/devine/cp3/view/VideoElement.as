@@ -16,6 +16,7 @@ import flash.net.NetConnection;
 import flash.net.NetStream;
 
 import starling.core.Starling;
+import starling.display.MovieClip;
 
 import starling.display.Quad;
 import starling.display.Sprite;
@@ -50,7 +51,6 @@ public class VideoElement extends Element{
 
         video = new Video(videoElementVO.x, videoElementVO.y);
         video.attachNetStream(ns);
-        //content.add(video);
         //ns.play(videoElementVO.url);
 
     }
