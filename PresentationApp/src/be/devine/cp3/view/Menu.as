@@ -90,12 +90,7 @@ public class Menu extends Sprite{
                         textfield.text = "FULLSCREEN";
                     }
 
-
-
                 break;
-
-
-
             }
         }
         else
