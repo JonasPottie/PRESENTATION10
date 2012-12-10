@@ -31,7 +31,7 @@ public class TitleElement extends Element{
         addChild(title);
 
 
-        textfield = new TextField(titleElementVO.width,titleElementVO.height,titleElementVO.text,"Arvo",50,0xffffff,true);
+        textfield = new TextField(titleElementVO.width,titleElementVO.height,titleElementVO.text,"Arvo_regular",50,0xffffff,true);
         textfield.hAlign = HAlign.LEFT;
         textfield.y =  -5 -titleElementVO.height/4;
         textfield.x = 5;

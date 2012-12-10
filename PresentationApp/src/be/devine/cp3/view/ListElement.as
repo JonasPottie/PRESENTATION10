@@ -44,7 +44,7 @@ public class ListElement extends Element{
 
         for(var i:int;i<ListArray.length; i++){
 
-            textfield = new TextField(200,50,ListArray[i],"Avenir LT Std 45 Book", 16);
+            textfield = new TextField(200,50,ListArray[i],"Avenir", 16);
             textfield.color = 0x000000;
             textfield.hAlign = HAlign.LEFT;
             textfield.x = 30;

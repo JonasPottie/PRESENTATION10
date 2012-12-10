@@ -12,10 +12,8 @@ import be.devine.cp3.vo.PageVO;
 
 import flash.events.Event;
 import flash.events.MouseEvent;
-
-import starling.events.Touch;
-import starling.events.TouchEvent;
-import starling.events.TouchPhase;
+import flash.events.TouchEvent;
+import flash.ui.Keyboard;
 
 import starling.animation.Transitions;
 
@@ -24,7 +22,9 @@ import starling.core.Starling;
 import starling.display.Quad;
 
 import starling.display.Sprite;
+import starling.events.KeyboardEvent;
 import starling.events.TouchEvent;
+import starling.events.TouchPhase;
 
 
 public class OverviewComponent extends Sprite{
@@ -41,9 +41,6 @@ public class OverviewComponent extends Sprite{
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
-        appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
-        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
-
         overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
         overviewBackground.alpha = .8;
         addChild(overviewBackground);
@@ -57,6 +54,8 @@ public class OverviewComponent extends Sprite{
         addChild(pageContainer);
         overzichtTonen();
 
+        appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
+        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
     }
 
 
@@ -71,7 +70,7 @@ public class OverviewComponent extends Sprite{
 
         for each(var pageVO:PageVO in appModel.pages)
         {
-            var q:Quad = new Quad(220,160,0xea655c);
+            var q:Quad = new Quad(204.8,153.6,0xea655c);
 
             q.x = xPos;
             pageContainer.addChild(q);
@@ -80,18 +79,13 @@ public class OverviewComponent extends Sprite{
             page.x = xPos;
             page.scaleX = 0.2;
             page.scaleY = 0.2;
-            q.addEventListener(TouchEvent.TOUCH,touchHandler);
             pageContainer.addChild(page);
-            xPos += 250;
+            xPos += 235;
         }
             appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
-
     }
 
 
-    private function touchHandler(event:TouchEvent):void
-    {
-    }
 
     private function thumbDragHandler(event:Event):void
     {

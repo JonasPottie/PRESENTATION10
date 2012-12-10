@@ -26,6 +26,12 @@ public class Main extends Sprite{
 
     private var displayToTexture:DisplayToTexture;
 
+    [Embed(source="assets/font/AvenirLTStd-Book.ttf", embedAsCFF="false", fontFamily="Avenir")]private static const Avenir:Class;
+    [Embed(source="assets/font/Arvo-Bold.ttf", embedAsCFF="false", fontFamily="Arvo_bold")]private static const Arvo_bold:Class;
+    [Embed(source="assets/font/Arvo-Regular.ttf", embedAsCFF="false", fontFamily="Arvo_regular")]private static const Arvo_regular:Class;
+
+    //private static const Arvo_bold:Class;
+
 
     public function Main()
     {

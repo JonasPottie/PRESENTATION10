@@ -19,6 +19,8 @@ public class ContentElement extends Element{
     private var content:Sprite;
     private var fontContainer:FontContainer;
 
+
+
     public function ContentElement(contentElementVO:ContentElementVO)
     {
         super(contentElementVO);
@@ -26,13 +28,14 @@ public class ContentElement extends Element{
         content = new Sprite();
         content.x = contentElementVO.x;
         content.y = contentElementVO.y;
+        content.height=50;
         addChild(content);
 
         var q:Quad = new Quad(contentElementVO.width,contentElementVO.height,0xffffff);
         q.alpha = 0.5;
         content.addChild(q);
 
-        textfield = new TextField(contentElementVO.width,contentElementVO.height,contentElementVO.text,"DIN", 12);
+        textfield = new TextField(contentElementVO.width,contentElementVO.height,contentElementVO.text,"Avenir", 16);
         textfield.color = 0x000000;
         textfield.hAlign = HAlign.LEFT;
         textfield.y = 5;

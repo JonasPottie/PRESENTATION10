@@ -10,7 +10,6 @@ import be.devine.cp3.vo.ContentElementVO;
 import be.devine.cp3.vo.ElementVO;
 import be.devine.cp3.vo.ImageElementVO;
 import be.devine.cp3.vo.ListElementVO;
-import be.devine.cp3.vo.ListElementVO;
 import be.devine.cp3.vo.TitleElementVO;
 import be.devine.cp3.vo.VideoElementVO;
 
