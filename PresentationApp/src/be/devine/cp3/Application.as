@@ -159,6 +159,7 @@ public class Application extends Sprite{
 
         if(overviewComponent==null)
         {
+
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
 
