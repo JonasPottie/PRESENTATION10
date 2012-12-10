@@ -9,6 +9,8 @@ package be.devine.cp3.view {
 import be.devine.cp3.vo.ContentElementVO;
 import be.devine.cp3.vo.ListElementVO;
 
+import flash.text.Font;
+
 import starling.display.Quad;
 import starling.display.Sprite;
 import starling.text.TextField;
@@ -19,6 +21,7 @@ public class ListElement extends Element{
     private var textfield:TextField;
     private var content:Sprite;
     private var fontContainer:FontContainer;
+
 
     public function ListElement(listElementVO:ListElementVO)
     {
@@ -38,9 +41,10 @@ public class ListElement extends Element{
         var ListArray:Array = allesSamen.split(".");
         var yPosItem:int = 0;
 
+
         for(var i:int;i<ListArray.length; i++){
 
-            textfield = new TextField(200,50,ListArray[i],"DIN", 16);
+            textfield = new TextField(200,50,ListArray[i],"Avenir LT Std 45 Book", 16);
             textfield.color = 0x000000;
             textfield.hAlign = HAlign.LEFT;
             textfield.x = 30;
@@ -50,7 +54,7 @@ public class ListElement extends Element{
 
             var bullet:Quad = new Quad(5,5,0x000);
             bullet.x = 15;
-            bullet.y = yPosItem+20;
+            bullet.y = yPosItem+23;
             content.addChild(bullet);
             yPosItem+=35;
         }

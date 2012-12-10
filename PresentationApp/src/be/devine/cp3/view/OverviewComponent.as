@@ -11,8 +11,11 @@ import be.devine.cp3.scrollBar.ScrollBar;
 import be.devine.cp3.vo.PageVO;
 
 import flash.events.Event;
+import flash.events.MouseEvent;
 
-import flash.events.TouchEvent;
+import starling.events.Touch;
+import starling.events.TouchEvent;
+import starling.events.TouchPhase;
 
 import starling.animation.Transitions;
 
@@ -21,6 +24,7 @@ import starling.core.Starling;
 import starling.display.Quad;
 
 import starling.display.Sprite;
+import starling.events.TouchEvent;
 
 
 public class OverviewComponent extends Sprite{
@@ -68,6 +72,7 @@ public class OverviewComponent extends Sprite{
         for each(var pageVO:PageVO in appModel.pages)
         {
             var q:Quad = new Quad(220,160,0xea655c);
+
             q.x = xPos;
             pageContainer.addChild(q);
 
@@ -75,18 +80,17 @@ public class OverviewComponent extends Sprite{
             page.x = xPos;
             page.scaleX = 0.2;
             page.scaleY = 0.2;
+            q.addEventListener(TouchEvent.TOUCH,touchHandler);
             pageContainer.addChild(page);
             xPos += 250;
         }
-
-            pageContainer.addEventListener(TouchEvent.TOUCH_BEGIN, clickHandler);
             appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
 
     }
 
-    private function clickHandler(event:TouchEvent):void
-    {
 
+    private function touchHandler(event:TouchEvent):void
+    {
     }
 
     private function thumbDragHandler(event:Event):void

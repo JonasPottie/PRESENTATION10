@@ -47,7 +47,7 @@ public class Menu extends Sprite{
         textfield.hAlign = HAlign.LEFT;
         textfield.x =  appModel.stageWidth - textfield.width;
         textfield.y = 5;
-        textfield.addEventListener(TouchEvent.TOUCH,touchHandler)
+        textfield.addEventListener(TouchEvent.TOUCH,touchHandler);
         addChild(textfield);
 
 
