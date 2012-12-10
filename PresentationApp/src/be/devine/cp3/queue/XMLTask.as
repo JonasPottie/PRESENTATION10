@@ -8,9 +8,9 @@ public class XMLTask extends URLLoader implements ITask
     {
         private var _path:String;
 
-        public function XMLTask(path:String) {
+        public function XMLTask(path:String)
+        {
             _path = path;
-            // We don't need to listen to the Event.COMPLETE event here because URLLoader dispatches the event automagically
         }
 
         public function start():void {

@@ -31,7 +31,6 @@ public class XmlService extends EventDispatcher{
     {
         this.xmlPath = xml;
         queue = new Queue();
-        trace("LOAD IN SERVICE WITH THIS PATH: " + xmlPath);
         queue.addEventListener( Event.COMPLETE, queueCompleteHandler );
         queue.add( new XMLTask(xmlPath));
         queue.start();
@@ -49,7 +48,6 @@ public class XmlService extends EventDispatcher{
             for each(var page:XML in ingeladenXML.page)
             {
                appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
-                trace("CREATE FOR EACH PAGE VO AND PUSH");
             }
 
             appModel.xmlLoaded();

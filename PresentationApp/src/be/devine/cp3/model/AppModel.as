@@ -23,15 +23,15 @@ public class AppModel extends EventDispatcher
         private var _currentSlideIndex:int;
         private var _xmlUrl:String;
         private var _pages:Vector.<PageVO>;
-
-
         private var _stageWidth:Number;
-        private var _stageHeight:Number
+        private var _stageHeight:Number;
+
 
         public var overViewActive:Boolean;
+        public var fullScreen:Boolean;
+
 
         private var _thumbPosition:Number;
-
         private var xmlService:XmlService;
 
         private static var instance:AppModel;
@@ -110,11 +110,10 @@ public class AppModel extends EventDispatcher
     public function set currentSlideIndex(value:int):void
     {
         value = Math.max(0, Math.min(value, pages.length - 1));
-        trace("de value !!!!!! "+value);
         if(_currentSlideIndex != value)
         {
             _currentSlideIndex = value;
-            dispatchEvent(new Event(CURRENT_SLIDE_CHANGED));
+            dispatchEvent(new flash.events.Event(CURRENT_SLIDE_CHANGED));
         }
     }
 
@@ -147,7 +146,6 @@ public class AppModel extends EventDispatcher
         {
             _stageWidth = value;
         }
-        trace("STAGEWIDTH CHANGED");
         dispatchEvent(new Event(STAGE_SIZE_CHANGED));
     }
 
@@ -161,7 +159,6 @@ public class AppModel extends EventDispatcher
             _stageHeight = value;
         }
 
-        trace("STAGEHEIGHT CHANGED");
         dispatchEvent(new Event(STAGE_SIZE_CHANGED));
     }
 

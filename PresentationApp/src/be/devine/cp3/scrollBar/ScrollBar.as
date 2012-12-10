@@ -8,15 +8,16 @@
 package be.devine.cp3.scrollBar {
 
 import be.devine.cp3.model.AppModel;
-import be.devine.cp3.view.OverviewComponent;
-
-import flash.display.Shape;
 import flash.events.Event;
 import flash.geom.Point;
+
+import starling.animation.Transitions;
+
+import starling.animation.Tween;
+import starling.core.Starling;
 import starling.display.Quad;
 
 import starling.display.Sprite;
-import starling.events.Event;
 import starling.events.Touch;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
@@ -25,15 +26,14 @@ public class ScrollBar extends Sprite{
 
     private var track:Quad;
     private var thumb:Quad;
-    private var _thumbPosition:Number = 0;
     private var appModel:AppModel;
-
-    //private var triangleShape2:Shape = new Shape();
+    private var tween:Tween;
 
     public function ScrollBar() {
 
         this.appModel = AppModel.getInstance();
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
+        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
 
         track = new Quad(appModel.stageWidth,15,0xffffff);
         track.y = 185;
@@ -52,7 +52,6 @@ public class ScrollBar extends Sprite{
     {
         var touch:Touch = e.getTouch(stage);
         var position:Point = touch.getLocation(stage);
-        var target:Quad = e.target as Quad;
 
         if(touch.phase == TouchPhase.MOVED ){
             appModel.thumbPosition= thumb.x / (track.width-thumb.width);
@@ -74,7 +73,20 @@ public class ScrollBar extends Sprite{
     private function stageChangeHandler(event:flash.events.Event):void
     {
         track.width = appModel.stageWidth;
-        thumb.x = 0;
+        thumb.x = (appModel.currentSlideIndex/appModel.pages.length) * (appModel.stageWidth);
+    }
+
+    private function slideChangeHandler(event:flash.events.Event):void
+    {
+        tween = new Tween(thumb,.5,Transitions.EASE_IN_OUT);
+        tween.animate("x",(appModel.currentSlideIndex/appModel.pages.length) * (appModel.stageWidth));
+        Starling.juggler.add(tween);
     }
 }
 }
+
+
+
+
+
+

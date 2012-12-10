@@ -23,7 +23,6 @@ public class Queue extends EventDispatcher{
 		// functions
 		public function add( pathToLoad:EventDispatcher ):void{
 			items.push(pathToLoad);
-			trace("Itempath (array): " + items );
 			totalItemsCount++;
 		}
 		
@@ -36,13 +35,11 @@ public class Queue extends EventDispatcher{
 			}else{
 			}
 		}
-		
+
 		private function taskCompleteHandler(e:Event):void{
 			dispatchEvent( new Event( Event.COMPLETE ) );
 			start();
 		}
-		
-		// getters and setters
 	}
 	
 	

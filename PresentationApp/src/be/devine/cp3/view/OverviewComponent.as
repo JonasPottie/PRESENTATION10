@@ -38,6 +38,7 @@ public class OverviewComponent extends Sprite{
 
         appModel = AppModel.getInstance();
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
+        appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
 
         overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
         overviewBackground.alpha = .8;
@@ -61,7 +62,7 @@ public class OverviewComponent extends Sprite{
         var xPos:int=0;
 
         pageContainer.alpha=.8;
-        pageContainer.x = 50;
+        pageContainer.x = ((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -250);
         pageContainer.y = 15;
 
         for each(var pageVO:PageVO in appModel.pages)
@@ -83,20 +84,29 @@ public class OverviewComponent extends Sprite{
 
     }
 
-    private function clickHandler(event:TouchEvent):void {
+    private function clickHandler(event:TouchEvent):void
+    {
 
     }
 
     private function thumbDragHandler(event:Event):void
     {
-        pageContainer.x = -appModel.thumbPosition*(pageContainer.width - appModel.stageWidth);
-
+        tween = new Tween(pageContainer,.1,Transitions.EASE_IN_OUT);
+        tween.animate("x",-appModel.thumbPosition*(pageContainer.width - appModel.stageWidth));
+        Starling.juggler.add(tween);
 
     }
 
     private function stageChangeHandler(event:Event):void
     {
       overviewBackground.width = appModel.stageWidth;
+    }
+
+    private function slideChangeHandler(event:Event):void
+    {
+        tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+        tween.animate("x",((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -250));
+        Starling.juggler.add(tween);
     }
 }
 }

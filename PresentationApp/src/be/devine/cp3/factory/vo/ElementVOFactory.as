@@ -31,7 +31,6 @@ public class ElementVOFactory {
 
     public static function createTitleElementVO(elementXML:XML):TitleElementVO
     {
-        trace("CREATE TITLE");
         var elementVO:TitleElementVO = new TitleElementVO();
         elementVO.text = elementXML;
         elementVO.width = elementXML.@width;
@@ -43,7 +42,6 @@ public class ElementVOFactory {
 
     public static function createContentElementVO(elementXML:XML):ContentElementVO
     {
-        trace("CREATE CONTENT");
         var elementVO:ContentElementVO = new ContentElementVO();
         elementVO.text = elementXML;
         elementVO.width = elementXML.@width;
@@ -55,7 +53,6 @@ public class ElementVOFactory {
 
     public static function createImageElementVo(elementXML:XML):ImageElementVO
     {
-        trace("CREATE IMAGE");
         var elementVO:ImageElementVO = new ImageElementVO();
         elementVO.url = elementXML;
         elementVO.x = elementXML.@x;
@@ -65,7 +62,6 @@ public class ElementVOFactory {
 
     public static function createListElementVo(elementXML:XML):ListElementVO
     {
-        trace("CREATE LIST");
         var elementVO:ListElementVO = new ListElementVO();
         elementVO.text = elementXML;
         elementVO.width = elementXML.@width;
@@ -77,7 +73,6 @@ public class ElementVOFactory {
 
     public static function createVideoElementVo(elementXML:XML):VideoElementVO
     {
-        trace("CREATE LIST");
         var elementVO:VideoElementVO = new VideoElementVO();
         elementVO.x = elementXML.@x;
         elementVO.y = elementXML.@y;

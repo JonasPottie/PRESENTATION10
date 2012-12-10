@@ -37,7 +37,6 @@ public class ListElement extends Element{
         var allesSamen:String = listElementVO.text;
         var ListArray:Array = allesSamen.split(".");
         var yPosItem:int = 0;
-        trace(ListArray.length);
 
         for(var i:int;i<ListArray.length; i++){
 
@@ -52,22 +51,11 @@ public class ListElement extends Element{
             var bullet:Quad = new Quad(5,5,0x000);
             bullet.x = 15;
             bullet.y = yPosItem+20;
-            trace("[textfield.y] "+textfield.y);
-            trace("[bullet.y] "+bullet.y);
-            trace("[yPosItem] "+yPosItem);
             content.addChild(bullet);
             yPosItem+=35;
         }
 
-
-        trace("ADDCHILD LIST"+content.width);
-
-        /*trace(listElementVO.text.split("?"));
-        listArray.push(listElementVO.text.split("?"));
-        trace("listarray"+listArray[1]);*/
-
-
-
+        //listArray.push(listElementVO.text.split("?"));
 
     }
 }

@@ -41,11 +41,9 @@ public class DisplayToTexture extends Sprite{
 
         if ( rect.width > 2048 ) {
             rect.width = 2048;
-            trace("Bitmap too big, shrinking");
         }
         if ( rect.height > 2048 ) {
             rect.height = 2048;
-            trace("Bitmap too big, shrinking");
         }
 
         //red box means invalid texture

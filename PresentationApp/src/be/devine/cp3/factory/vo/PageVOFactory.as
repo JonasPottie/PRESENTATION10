@@ -20,7 +20,6 @@ public class PageVOFactory {
         for each (var elementXML:XML in pageXML.pageElement)
         {
             pageVO.elements.push(ElementVOFactory.createFromXML(elementXML));
-            trace("CREATE FOR EACH ELEMENT IN PAGE VO");
         }
         return pageVO;
     }
