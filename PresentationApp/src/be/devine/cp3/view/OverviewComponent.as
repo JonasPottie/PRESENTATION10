@@ -13,6 +13,7 @@ import be.devine.cp3.vo.PageVO;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.events.TouchEvent;
+import flash.net.FileReference;
 import flash.ui.Keyboard;
 
 import starling.animation.Transitions;
@@ -38,6 +39,7 @@ public class OverviewComponent extends Sprite{
 
     private var tween:Tween;
 
+
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
@@ -56,6 +58,9 @@ public class OverviewComponent extends Sprite{
 
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
+
+
+
     }
 
 

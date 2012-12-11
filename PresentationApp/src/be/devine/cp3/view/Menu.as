@@ -9,9 +9,14 @@ package be.devine.cp3.view {
 
 
 import be.devine.cp3.model.AppModel;
+import be.devine.cp3.service.XMLLoadedService;
+import be.devine.cp3.utils.DisplayToTexture;
 
 import flash.display.StageDisplayState;
+import flash.events.Event;
 import flash.events.EventDispatcher;
+import flash.events.MouseEvent;
+import flash.net.FileReference;
 import flash.ui.Mouse;
 import flash.ui.MouseCursor;
 
@@ -31,7 +36,7 @@ public class Menu extends Sprite{
     private var menuBalk:Quad;
     private var appModel:AppModel;
     private var textfield:TextField;
-    private var fontContainer:FontContainer;
+    private var textfield2:TextField;
 
     public function Menu()
     {
@@ -43,15 +48,20 @@ public class Menu extends Sprite{
         addChild(menuBalk);
 
 
-        textfield = new TextField(100,15,"FULLSCREEN","DIN",14,0xffffff);
+        textfield = new TextField(100,15,"FULLSCREEN","Arvo_regular",12,0xffffff);
         textfield.hAlign = HAlign.LEFT;
         textfield.x =  appModel.stageWidth - textfield.width;
-        textfield.y = 5;
+        textfield.y = 2;
         textfield.addEventListener(TouchEvent.TOUCH,touchHandler);
         addChild(textfield);
 
 
-
+        textfield2 = new TextField(100,15,"BROWS","Arvo_regular",12,0xffffff);
+        textfield2.hAlign = HAlign.LEFT;
+        textfield2.x = 10;
+        textfield2.y = 2;
+        textfield2.addEventListener(TouchEvent.TOUCH,clickedBrows);
+        addChild(textfield2);
     }
 
     private function stageChangeHandler(event:flash.events.Event):void
@@ -80,6 +90,9 @@ public class Menu extends Sprite{
                         textfield.width = 150;
                         textfield.x -= 50;
                         textfield.text = "EXIT FULLSCREEN";
+
+                        textfield2.width = 150;
+                        textfield2.x = 10;
                     }
                     else
                     {
@@ -99,5 +112,29 @@ public class Menu extends Sprite{
         }
 
     }
+
+
+    function clickedBrows(event:TouchEvent):void
+    {
+        var touch:Touch = event.getTouch(event.currentTarget as DisplayObject);
+        if(touch != null)
+        {
+            Mouse.cursor = MouseCursor.BUTTON;
+
+            switch (touch.phase)
+            {
+                case TouchPhase.ENDED:
+                var xmlloaded:XMLLoadedService = new XMLLoadedService();
+                addChild(xmlloaded);
+            }
+        }
+        else
+        {
+            Mouse.cursor = MouseCursor.ARROW;
+        }
+    }
+
+
+
 }
 }
