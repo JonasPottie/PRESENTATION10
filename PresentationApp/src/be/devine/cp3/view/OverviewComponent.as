@@ -8,6 +8,7 @@
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
+import be.devine.cp3.service.XMLLoadedService;
 import be.devine.cp3.vo.PageVO;
 import flash.events.Event;
 import flash.ui.Mouse;
@@ -25,6 +26,7 @@ import starling.events.TouchPhase;
 public class OverviewComponent extends Sprite{
 
     private var appModel:AppModel;
+    private var xmlloadedSer:XMLLoadedService;
     private var scrollbar:ScrollBar;
     private var pageContainer:Sprite;
     private var page:Page;
@@ -51,12 +53,10 @@ public class OverviewComponent extends Sprite{
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
 
 
-
     }
 
 
-
-    private function overzichtTonen():void 
+    public function overzichtTonen():void
     {
         var xPos:int=0;
 

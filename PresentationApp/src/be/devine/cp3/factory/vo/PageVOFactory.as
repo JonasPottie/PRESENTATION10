@@ -19,6 +19,7 @@ public class PageVOFactory {
 
     public function createPageVOFromXML(pageXML:XML):PageVO
     {
+        trace("pageXML"+pageXML);
         var pageVO:PageVO = new PageVO();
         for each (var elementXML:XML in pageXML.pageElement)
         {

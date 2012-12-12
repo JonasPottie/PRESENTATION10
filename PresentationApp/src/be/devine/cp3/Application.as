@@ -84,6 +84,8 @@ public class Application extends Sprite{
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
+
+
     }
 
     private function stageChangeHandler(event:flash.events.Event):void
@@ -118,7 +120,7 @@ public class Application extends Sprite{
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
         var xPos:uint = 0;
-        for each(var pageVO:PageVO in appModel.pages){
+        for each(var pageVO:PageVO in appModel.pages) {
             page = new Page(pageVO);
             page.x = xPos;
             pageContainer.addChild(page);
@@ -159,7 +161,6 @@ public class Application extends Sprite{
 
         if(overviewComponent==null)
         {
-
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
 

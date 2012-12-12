@@ -125,7 +125,6 @@ public class Menu extends Sprite{
             {
                 case TouchPhase.ENDED:
                 var xmlloaded:XMLLoadedService = new XMLLoadedService();
-                addChild(xmlloaded);
             }
         }
         else

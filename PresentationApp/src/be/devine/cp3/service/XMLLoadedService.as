@@ -6,7 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.service {
+import be.devine.cp3.factory.vo.PageVOFactory;
+import be.devine.cp3.model.AppModel;
+import be.devine.cp3.queue.Queue;
+import be.devine.cp3.queue.XMLTask;
 import be.devine.cp3.utils.DisplayToTexture;
+import be.devine.cp3.view.OverviewComponent;
 
 import flash.display.DisplayObject;
 import flash.display.Loader;
@@ -14,8 +19,10 @@ import flash.display.Sprite;
 import flash.events.DataEvent;
 import flash.events.Event;
 import flash.events.EventDispatcher;
+import flash.events.FileListEvent;
 import flash.events.IOErrorEvent;
 import flash.events.ProgressEvent;
+import flash.filesystem.File;
 import flash.net.FileFilter;
 import flash.net.FileReference;
 import flash.net.URLRequest;
@@ -25,95 +32,63 @@ import flash.utils.ByteArray;
 import starling.display.Quad;
 
 
-public class XMLLoadedService extends starling.display.Sprite{
+public class XMLLoadedService extends File{
 
-    private var mFileReference:FileReference;
-    private var container:Sprite;
-    private var displayToTexture:DisplayToTexture;
+    private var q:Queue;
+    private var appModel:AppModel;
+    private var pageVOFactory:PageVOFactory;
+    private var overviewComponent:OverviewComponent;
 
+
+    public static const WRONG_FILETYPE:String = "wrong filetype";
+    public static const DELETE_OVERVIEWCOMPONENT:String = "DELETE_OVERVIEWCOMPONENT";
 
 
     public function XMLLoadedService()
     {
-        displayToTexture = new DisplayToTexture();
+        this.appModel = AppModel.getInstance();
 
-
-        trace("[XMLLOADEDSERVICE] IMPORTED");
-        mFileReference=new FileReference();
-        mFileReference.addEventListener(Event.SELECT, onFileSelected);
-        var swfTypeFilter:FileFilter = new FileFilter("SWF/JPG/PNG Files","*.jpeg; *.jpg;*.gif;*.png");
-        var allTypeFilter:FileFilter = new FileFilter("All Files (*.*)","*.*");
-        mFileReference.browse([swfTypeFilter, allTypeFilter]);
-
-
-        container = new flash.display.Sprite();
-        container.alpha=.3;
+        //Opent de finder. +  een filter op welke bestanden je kan toevoegen.
+        this.browseForOpenMultiple('Selecteer XML-Bestand.', [new FileFilter('Xml', '*.xml')]);
+        this.addEventListener(FileListEvent.SELECT_MULTIPLE, selectHandler);
     }
 
-    function onFileSelected(event:Event):void
-    {
-        trace("onFileSelected");
-        // This callback will be called when the file is uploaded and ready to use
-        mFileReference.addEventListener(Event.COMPLETE, onFileLoaded);
-        // This callback will be called if there's error during uploading
-        mFileReference.addEventListener(IOErrorEvent.IO_ERROR, onFileLoadError);
-        mFileReference.addEventListener(ProgressEvent.PROGRESS, onProgress);
-        mFileReference.load();
-    }
-
-    function onProgress(event:ProgressEvent):void
-    {
-        var percentLoaded:Number=event.bytesLoaded/event.bytesTotal*100;
-        trace("loaded: "+percentLoaded+"%");
-    }
-
-    function onFileLoaded(event:Event):void
-    {
-        var fileReference:FileReference=event.target as FileReference;
-        var data:ByteArray=fileReference["data"];
-        trace("File loaded");
-        var movieClipLoader:Loader=new Loader();
-        movieClipLoader.loadBytes(data);
-        movieClipLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onMovieClipLoaderComplete);
-        mFileReference.removeEventListener(Event.COMPLETE, onFileLoaded);
-        mFileReference.removeEventListener(IOErrorEvent.IO_ERROR, onFileLoadError);
-        mFileReference.removeEventListener(ProgressEvent.PROGRESS, onProgress);
-    }
-
-    function onFileLoadError(event:Event):void
+    private function selectHandler(e:FileListEvent):void
     {
 
+        trace('LocalFileLoader:' + e.files);
+        q = new Queue();
+        q.addEventListener(Event.COMPLETE, qCompleteHandler);
+
+        for(var i:uint = 0; i<e.files.length; i++){
+            q.add(new XMLTask(e.files[i].url));
+        }
+        q.start();
     }
 
-    function onMovieClipLoaderComplete(event:Event):void
+
+    private function qCompleteHandler(e:Event):void
     {
-        var loadedContent:DisplayObject=event.target.content;
-        var loader:Loader=event.target.loader as Loader;
-        trace("loadedContent.width="+loadedContent.width);
-        trace("loadedContent.scaleX="+loadedContent.scaleX);
-        trace("loader= "+loader);
-        var filename:String=mFileReference.name;
-        trace("filename " +filename);
-        container.addChild(loader);
-        var urlRequest:URLRequest = new URLRequest("http://student.howest.be/jonas.pottie/20122013/CPIII/phpxml/upload.php");
-        urlRequest.method = URLRequestMethod.POST;
-        mFileReference.addEventListener(ProgressEvent.PROGRESS, onProgress);
-        mFileReference.addEventListener(DataEvent.UPLOAD_COMPLETE_DATA,onUploadComplete);
-        mFileReference.upload(urlRequest);
+        pageVOFactory = new PageVOFactory();
+        appModel = AppModel.getInstance();
+
+        for each( var task:XMLTask in q.completedItems )
+        {
+            var ingeladenXML:XML = new XML(task.data);
+
+            //PAGES ALLEMAAL VERWIJDEREN EN PLAATS MAKEN VOOR NIEUWE
+            appModel.pages.splice(0, appModel.pages.length);
+            appModel.currentSlideIndex =0;
+
+            for each(var page:XML in ingeladenXML.page)
+            {
+                appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
+            }
+
+            appModel.xmlLoaded();
+        }
+        dispatchEvent(new Event(Event.COMPLETE));
     }
-
-    function onUploadComplete(event:Event):void
-    {
-        trace("complete");
-        mFileReference.removeEventListener(ProgressEvent.PROGRESS, onProgress);
-        mFileReference.removeEventListener(DataEvent.UPLOAD_COMPLETE_DATA,onUploadComplete);
-    }
-
-
-
-
-
-
 
     }
 }

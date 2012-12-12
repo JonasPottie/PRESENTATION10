@@ -17,7 +17,7 @@ import flash.events.EventDispatcher;
 public class XmlService extends EventDispatcher{
 
     private var queue:Queue;
-    private var pageVOFactory:PageVOFactory
+    private var pageVOFactory:PageVOFactory;
     private var xmlPath:String;
 
     private var appModel:AppModel;
@@ -38,20 +38,22 @@ public class XmlService extends EventDispatcher{
 
     private function queueCompleteHandler(event:Event):void
     {
+
         pageVOFactory = new PageVOFactory();
         appModel = AppModel.getInstance();
 
         for each( var task:XMLTask in queue.completedItems )
         {
             var ingeladenXML:XML = new XML(task.data);
-
             for each(var page:XML in ingeladenXML.page)
             {
-               appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
+                appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
             }
 
             appModel.xmlLoaded();
         }
+        dispatchEvent(new Event(Event.COMPLETE));
+
     }
 }
 }
