@@ -118,7 +118,7 @@ public class Application extends Sprite{
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
         var xPos:uint = 0;
-        for each(var pageVO:PageVO in appModel.pages) {
+        for each(var pageVO:PageVO in appModel.pages){
             page = new Page(pageVO);
             page.x = xPos;
             pageContainer.addChild(page);

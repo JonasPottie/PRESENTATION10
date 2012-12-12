@@ -2,13 +2,13 @@
 
 <pages>
 
-    <page name="1" label="1"  slideTheme="rb">
+    <page label="0">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">WHAT DID I DO?</pageElement>
         <pageElement type="list" transition="fadIn" transitionIndex="2" x="500" y="300" width="300" height="190" diameter="10">MiniSlides Juiste Grootte.FontEmbedding.Tried To click minislide(FAILED).Beautiful Pics.el5</pageElement>
         <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="300">assets/images/WE-DID-IT.jpg</pageElement>
     </page>
 
-    <page name="2" label="2"  slideTheme="rb">
+    <page label="1">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="300">BAD ASS SCHOOL</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="320" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
         <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="160" height="190" diameter="10">Devine.Howest.Artevelde.Erasmus.KHBO</pageElement>
@@ -16,73 +16,122 @@
 
     </page>
 
-    <page name="3" label="1"  slideTheme="rb">
+    <page label="2">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="400">I LOVE MY JOB!</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
         <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
         <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="435">assets/images/4.jpg</pageElement>
     </page>
 
-    <page name="4" label="2"  slideTheme="rb">
+    <page label="3">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">THIS COLOR ROCKS!</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
         <pageElement type="video" transition="fadIn" transitionIndex="3" x="100" y="400">assets/video/1.mp4</pageElement>
     </page>
 
-    <page name="5" label="1"  slideTheme="rb">
+    <page label="4">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="100" y="50" width="300" height="400">DUMMY TITLE IS DUMMY...</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="300" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
         <pageElement type="image" transition="fadIn" transitionIndex="3" x="714" y="0">assets/images/07.jpg</pageElement>
     </page>
 
-    <page name="6" label="2"  slideTheme="rb">
-        <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="600" height="200">A WILD POKEMON APPEARS</pageElement>
-        <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="150">assets/images/8.jpg</pageElement>
+    <page label="5">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">WHAT DID I DO?</pageElement>
+        <pageElement type="list" transition="fadIn" transitionIndex="2" x="500" y="300" width="300" height="190" diameter="10">MiniSlides Juiste Grootte.FontEmbedding.Tried To click minislide(FAILED).Beautiful Pics.el5</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="300">assets/images/WE-DID-IT.jpg</pageElement>
+    </page>
+
+    <page label="6">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="320" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+        <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="160" height="190" diameter="10">Devine.Howest.Artevelde.Erasmus.KHBO</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="535">assets/images/howest.jpg</pageElement>
 
     </page>
 
-    <page name="7" label="1"  slideTheme="rb">
-        <pageElement type="title" transition="fadIn" transitionIndex="1" x="180" y="10" width="700" height="300">WHAT A WALLPAPER !!!</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="200">assets/images/achtergrond.jpg</pageElement>
-    </page>
-
-    <page name="2" label="2"  slideTheme="rb">
-        <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">LOOK AT ALL THE STUFF WE CAN DO!</pageElement>
-        <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="150">assets/images/2.jpg</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="400">assets/images/1.jpg</pageElement>
-    </page>
-
-    <page name="3" label="1"  slideTheme="rb">
+    <page label="7">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="400">I LOVE MY JOB!</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="500" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="450" y="575">assets/images/4.jpg</pageElement>
+        <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="435">assets/images/4.jpg</pageElement>
     </page>
 
-    <page name="4" label="2"  slideTheme="rb">
+    <page label="8">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">THIS COLOR ROCKS!</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
         <pageElement type="video" transition="fadIn" transitionIndex="3" x="100" y="400">assets/video/1.mp4</pageElement>
     </page>
 
-    <page name="5" label="1"  slideTheme="rb">
+    <page label="9">
         <pageElement type="title" transition="fadIn" transitionIndex="1" x="100" y="50" width="300" height="400">DUMMY TITLE IS DUMMY...</pageElement>
         <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="300" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
         <pageElement type="image" transition="fadIn" transitionIndex="3" x="714" y="0">assets/images/07.jpg</pageElement>
     </page>
 
-    <page name="6" label="2"  slideTheme="rb">
-        <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="600" height="200">A WILD POKEMON APPEARS</pageElement>
-        <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="150">assets/images/8.jpg</pageElement>
+    <page label="10">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">WHAT DID I DO?</pageElement>
+    <pageElement type="list" transition="fadIn" transitionIndex="2" x="500" y="300" width="300" height="190" diameter="10">MiniSlides Juiste Grootte.FontEmbedding.Tried To click minislide(FAILED).Beautiful Pics.el5</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="300">assets/images/WE-DID-IT.jpg</pageElement>
+    </page>
+
+    <page label="11">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="300">BAD ASS SCHOOL</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="320" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="160" height="190" diameter="10">Devine.Howest.Artevelde.Erasmus.KHBO</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="535">assets/images/howest.jpg</pageElement>
 
     </page>
 
+    <page label="12">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="400">I LOVE MY JOB!</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="435">assets/images/4.jpg</pageElement>
+    </page>
 
+    <page label="13">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">THIS COLOR ROCKS!</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="video" transition="fadIn" transitionIndex="3" x="100" y="400">assets/video/1.mp4</pageElement>
+    </page>
 
+    <page label="14">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="100" y="50" width="300" height="400">DUMMY TITLE IS DUMMY...</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="300" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="714" y="0">assets/images/07.jpg</pageElement>
+    </page>
 
+    <page label="15">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">WHAT DID I DO?</pageElement>
+    <pageElement type="list" transition="fadIn" transitionIndex="2" x="500" y="300" width="300" height="190" diameter="10">MiniSlides Juiste Grootte.FontEmbedding.Tried To click minislide(FAILED).Beautiful Pics.el5</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="100" y="300">assets/images/WE-DID-IT.jpg</pageElement>
+    </page>
 
+    <page label="16">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="300">BAD ASS SCHOOL</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="320" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="160" height="190" diameter="10">Devine.Howest.Artevelde.Erasmus.KHBO</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="535">assets/images/howest.jpg</pageElement>
+
+    </page>
+
+    <page label="17">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="10" y="10" width="700" height="400">I LOVE MY JOB!</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="200" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="list" transition="fadIn" transitionIndex="2" x="700" y="200" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="700" y="435">assets/images/4.jpg</pageElement>
+    </page>
+
+    <page label="18">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="40" y="40" width="550" height="200">THIS COLOR ROCKS!</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="video" transition="fadIn" transitionIndex="3" x="100" y="400">assets/video/1.mp4</pageElement>
+    </page>
+
+    <page label="19">
+    <pageElement type="title" transition="fadIn" transitionIndex="1" x="100" y="50" width="300" height="400">DUMMY TITLE IS DUMMY...</pageElement>
+    <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="300" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
+    <pageElement type="image" transition="fadIn" transitionIndex="3" x="714" y="0">assets/images/07.jpg</pageElement>
+    </page>
 
 </pages>

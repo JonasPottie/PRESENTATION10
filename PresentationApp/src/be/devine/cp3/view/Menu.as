@@ -56,7 +56,7 @@ public class Menu extends Sprite{
         addChild(textfield);
 
 
-        textfield2 = new TextField(100,15,"BROWS","Arvo_regular",12,0xffffff);
+        textfield2 = new TextField(100,15,"LOAD XML","Arvo_regular",12,0xffffff);
         textfield2.hAlign = HAlign.LEFT;
         textfield2.x = 10;
         textfield2.y = 2;

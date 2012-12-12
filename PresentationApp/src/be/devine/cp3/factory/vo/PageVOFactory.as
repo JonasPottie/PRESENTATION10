@@ -9,6 +9,9 @@ package be.devine.cp3.factory.vo {
 import be.devine.cp3.vo.PageVO;
 
 public class PageVOFactory {
+
+
+
     public function PageVOFactory()
     {
 
@@ -20,7 +23,9 @@ public class PageVOFactory {
         for each (var elementXML:XML in pageXML.pageElement)
         {
             pageVO.elements.push(ElementVOFactory.createFromXML(elementXML));
+
         }
+        pageVO.index = pageXML.@label;
         return pageVO;
     }
 }

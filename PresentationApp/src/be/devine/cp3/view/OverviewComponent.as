@@ -9,21 +9,15 @@ package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
 import be.devine.cp3.vo.PageVO;
-
 import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.events.TouchEvent;
-import flash.net.FileReference;
-import flash.ui.Keyboard;
-
+import flash.ui.Mouse;
+import flash.ui.MouseCursor;
 import starling.animation.Transitions;
-
 import starling.animation.Tween;
 import starling.core.Starling;
 import starling.display.Quad;
-
 import starling.display.Sprite;
-import starling.events.KeyboardEvent;
+import starling.events.Touch;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
 
@@ -34,11 +28,8 @@ public class OverviewComponent extends Sprite{
     private var scrollbar:ScrollBar;
     private var pageContainer:Sprite;
     private var page:Page;
-
     private var overviewBackground:Quad;
-
     private var tween:Tween;
-
 
     public function OverviewComponent() {
 
@@ -70,22 +61,20 @@ public class OverviewComponent extends Sprite{
         var xPos:int=0;
 
         pageContainer.alpha=.8;
-        pageContainer.x = ((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -250);
+        pageContainer.x = ((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -235);
         pageContainer.y = 15;
 
         for each(var pageVO:PageVO in appModel.pages)
         {
-            var q:Quad = new Quad(204.8,153.6,0xea655c);
-
-            q.x = xPos;
-            pageContainer.addChild(q);
-
             page = new Page(pageVO);
             page.x = xPos;
             page.scaleX = 0.2;
             page.scaleY = 0.2;
+            page.addEventListener(starling.events.TouchEvent.TOUCH,thumbNailHandler)
             pageContainer.addChild(page);
             xPos += 235;
+
+
         }
             appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
     }
@@ -108,8 +97,36 @@ public class OverviewComponent extends Sprite{
     private function slideChangeHandler(event:Event):void
     {
         tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
-        tween.animate("x",((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -250));
+        tween.animate("x",((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -235));
         Starling.juggler.add(tween);
+    }
+
+    private function thumbNailHandler(event:starling.events.TouchEvent):void
+    {
+        var touch:Touch = event.getTouch(event.currentTarget as Page);
+
+
+        if(touch != null)
+        {
+            Mouse.cursor = MouseCursor.BUTTON;
+
+            switch (touch.phase)
+            {
+                case TouchPhase.ENDED:
+
+                    var currentPage:Page = event.currentTarget as Page;
+                    appModel.currentSlideIndex = currentPage.pageIndex;
+
+                break;
+            }
+        }
+        else
+        {
+            Mouse.cursor = MouseCursor.ARROW;
+        }
+
+
+
     }
 }
 }
