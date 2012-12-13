@@ -112,9 +112,62 @@ public class Application extends Sprite{
 
     private function pageChangeHandler(event:flash.events.Event):void
     {
-        tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
-        tween.animate("x",(appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2));
-        Starling.juggler.add(tween);
+        var wichTween:int = Math.floor(Math.random() * 4 + 0);
+        trace(wichTween)
+
+        switch (wichTween)
+        {
+            case 0:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo((appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2),pageContainer.y);
+                Starling.juggler.add(tween);
+            break;
+
+            case 1:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo(pageContainer.x,appModel.stageHeight);
+                tween.onComplete = function():void {
+                                                    pageContainer.y = 0 - pageContainer.height;
+                                                    pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2)
+                                                    tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                                                    tween.moveTo(pageContainer.x,0);
+                                                    Starling.juggler.add(tween);
+                                                   };
+                Starling.juggler.add(tween);
+            break;
+
+            case 2:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo(pageContainer.x,0 - pageContainer.height);
+                tween.onComplete = function():void {
+                                                     pageContainer.y = pageContainer.height;
+                                                     pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2)
+                                                     tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                                                     tween.moveTo(pageContainer.x,0);
+                                                     Starling.juggler.add(tween);
+                                                   };
+                Starling.juggler.add(tween);
+            break;
+
+            case 3:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.fadeTo(0);
+                tween.onComplete = function():void {
+                                                    pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2)
+                                                    tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                                                    tween.fadeTo(1);
+                                                    Starling.juggler.add(tween);
+                                                    };
+                Starling.juggler.add(tween);
+
+            break;
+
+        }
+
+
+
+
+        //tween.fadeTo(0);
     }
 
 
