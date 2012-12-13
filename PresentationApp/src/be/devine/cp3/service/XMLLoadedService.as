@@ -37,7 +37,7 @@ public class XMLLoadedService extends File{
     private var q:Queue;
     private var appModel:AppModel;
     private var pageVOFactory:PageVOFactory;
-    private var overviewComponent:OverviewComponent;
+    private var ovc:OverviewComponent;
 
 
     public static const WRONG_FILETYPE:String = "wrong filetype";
@@ -47,6 +47,7 @@ public class XMLLoadedService extends File{
     public function XMLLoadedService()
     {
         this.appModel = AppModel.getInstance();
+
 
         //Opent de finder. +  een filter op welke bestanden je kan toevoegen.
         this.browseForOpenMultiple('Selecteer XML-Bestand.', [new FileFilter('Xml', '*.xml')]);
@@ -88,6 +89,9 @@ public class XMLLoadedService extends File{
             appModel.xmlLoaded();
         }
         dispatchEvent(new Event(Event.COMPLETE));
+
+
+
     }
 
     }

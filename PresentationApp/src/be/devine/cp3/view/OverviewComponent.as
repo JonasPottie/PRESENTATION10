@@ -28,7 +28,7 @@ public class OverviewComponent extends Sprite{
     private var appModel:AppModel;
     private var xmlloadedSer:XMLLoadedService;
     private var scrollbar:ScrollBar;
-    private var pageContainer:Sprite;
+    public var pageContainer:Sprite;
     private var page:Page;
     private var overviewBackground:Quad;
     private var tween:Tween;
@@ -70,7 +70,7 @@ public class OverviewComponent extends Sprite{
             page.x = xPos;
             page.scaleX = 0.2;
             page.scaleY = 0.2;
-            page.addEventListener(starling.events.TouchEvent.TOUCH,thumbNailHandler)
+            page.addEventListener(starling.events.TouchEvent.TOUCH,thumbNailHandler);
             pageContainer.addChild(page);
             xPos += 235;
 
@@ -99,6 +99,10 @@ public class OverviewComponent extends Sprite{
         tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
         tween.animate("x",((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -235));
         Starling.juggler.add(tween);
+    }
+
+    public function verwijderInhoud():void{
+        trace("verijwder inhoud");
     }
 
     private function thumbNailHandler(event:starling.events.TouchEvent):void
