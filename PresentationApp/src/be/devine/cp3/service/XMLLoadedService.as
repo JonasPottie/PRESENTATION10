@@ -41,7 +41,6 @@ public class XMLLoadedService extends File{
 
 
     public static const WRONG_FILETYPE:String = "wrong filetype";
-    public static const DELETE_OVERVIEWCOMPONENT:String = "DELETE_OVERVIEWCOMPONENT";
 
 
     public function XMLLoadedService()
@@ -57,7 +56,6 @@ public class XMLLoadedService extends File{
     private function selectHandler(e:FileListEvent):void
     {
 
-        trace('LocalFileLoader:' + e.files);
         q = new Queue();
         q.addEventListener(Event.COMPLETE, qCompleteHandler);
 
@@ -86,7 +84,7 @@ public class XMLLoadedService extends File{
                 appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
             }
 
-            appModel.xmlLoaded();
+            appModel.xmlChanged();
         }
         dispatchEvent(new Event(Event.COMPLETE));
 

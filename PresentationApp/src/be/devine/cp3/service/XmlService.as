@@ -38,7 +38,6 @@ public class XmlService extends EventDispatcher{
 
     private function queueCompleteHandler(event:Event):void
     {
-
         pageVOFactory = new PageVOFactory();
         appModel = AppModel.getInstance();
 

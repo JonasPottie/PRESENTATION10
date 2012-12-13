@@ -26,7 +26,7 @@ import starling.events.TouchPhase;
 public class OverviewComponent extends Sprite{
 
     private var appModel:AppModel;
-    private var xmlloadedSer:XMLLoadedService;
+    private var ovc:OverviewComponent;
     private var scrollbar:ScrollBar;
     public var pageContainer:Sprite;
     private var page:Page;
@@ -36,6 +36,7 @@ public class OverviewComponent extends Sprite{
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
+
         overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
         overviewBackground.alpha = .8;
         addChild(overviewBackground);
@@ -45,12 +46,12 @@ public class OverviewComponent extends Sprite{
         scrollbar.y = 0;
         addChild(scrollbar);
 
-        pageContainer = new Sprite();
-        addChild(pageContainer);
+
         overzichtTonen();
 
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, slideChangeHandler);
+
 
 
     }
@@ -58,6 +59,9 @@ public class OverviewComponent extends Sprite{
 
     public function overzichtTonen():void
     {
+        pageContainer = new Sprite();
+        addChild(pageContainer);
+
         var xPos:int=0;
 
         pageContainer.alpha=.8;
@@ -101,9 +105,6 @@ public class OverviewComponent extends Sprite{
         Starling.juggler.add(tween);
     }
 
-    public function verwijderInhoud():void{
-        trace("verijwder inhoud");
-    }
 
     private function thumbNailHandler(event:starling.events.TouchEvent):void
     {
@@ -128,9 +129,7 @@ public class OverviewComponent extends Sprite{
         {
             Mouse.cursor = MouseCursor.ARROW;
         }
-
-
-
     }
+
 }
 }

@@ -8,6 +8,7 @@
 package be.devine.cp3 {
 
 import be.devine.cp3.model.AppModel;
+import be.devine.cp3.service.XMLLoadedService;
 import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.Menu;
 import be.devine.cp3.view.OverviewComponent;
@@ -42,6 +43,8 @@ public class Application extends Sprite{
     private var pageContainer:Sprite;
     private var page:Page;
     private var overviewComponent:OverviewComponent;
+    private var xmlloaded:XMLLoadedService;
+
     private var menu:Menu;
 
 
@@ -81,14 +84,13 @@ public class Application extends Sprite{
 
         appModel.load("assets/xml/presentation.xml");
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
-        appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlLoadedHandler);
+        appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlChangedHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
-
     }
 
-    private function stageChangeHandler(event:flash.events.Event):void
+    private function stageChangeHandler(event:flash.events.Event = null ):void
     {
         bg.width = appModel.stageWidth;
         bg.height = appModel.stageHeight;
@@ -119,6 +121,7 @@ public class Application extends Sprite{
 
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
+        trace("1ekeer int begin e normaal");
         var xPos:uint = 0;
         for each(var pageVO:PageVO in appModel.pages) {
             page = new Page(pageVO);
@@ -127,6 +130,26 @@ public class Application extends Sprite{
             xPos += appModel.stageWidth;
         }
     }
+
+    private function XmlChangedHandler(event:flash.events.Event):void
+    {
+        //ALS HIJ HIERIN KOMT MOET HIJ HET OVERVIEWCOMPONENT OPNIEUW UPDATEN AL HET WARE... WAT HIJ VOLGENS MIJ NIET
+        //CORRECT DOET WANT NA EEN 5TAL XML'S IN GELADEN TE HEBBEN GEEFT HIJ EEN RESOURCE LIMIT ERROR
+        //ERGENS EEN LOOP...
+
+        var xPos:uint = 0;
+        for each(var pageVO:PageVO in appModel.pages) {
+            page = new Page(pageVO);
+            page.x = xPos;
+            pageContainer.addChild(page);
+            xPos += appModel.stageWidth;
+        }
+
+        overviewComponent.removeChild(overviewComponent.pageContainer);
+        overviewComponent.overzichtTonen();
+    }
+
+
 
 
 /*-------------------------------------------------------------------------//
@@ -161,6 +184,7 @@ public class Application extends Sprite{
 
         if(overviewComponent==null)
         {
+            trace("ik maak 1");
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
 
@@ -183,6 +207,7 @@ public class Application extends Sprite{
         else
         {
 
+            trace("hij bestaat al ze");
             if(appModel.overViewActive == true)
             {
                 tween = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
@@ -210,5 +235,6 @@ public class Application extends Sprite{
         }
 
     }
+
 }
 }

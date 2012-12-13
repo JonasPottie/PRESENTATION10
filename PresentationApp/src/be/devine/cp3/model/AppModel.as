@@ -82,7 +82,15 @@ public class AppModel extends EventDispatcher
 
     public function xmlLoaded():void
     {
+        trace("[APPMODEL] XMLloaded func");
         dispatchEvent(new Event(XML_URL_LOADED));
+    }
+
+
+    public function xmlChanged():void
+    {
+        trace("[APPMODEL] XMLCanged func");
+        dispatchEvent(new Event(XML_URL_CHANGED));
     }
 /*-------------------------------------------------------------------------//
 //------------    NEXT AND PREVIOUS SLIDE     --------------//
