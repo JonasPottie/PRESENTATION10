@@ -61,7 +61,6 @@ public class OverviewComponent extends Sprite{
     {
         pageContainer = new Sprite();
         addChild(pageContainer);
-
         var xPos:int=0;
 
         pageContainer.alpha=.8;
@@ -78,6 +77,7 @@ public class OverviewComponent extends Sprite{
             pageContainer.addChild(page);
             xPos += 235;
 
+            trace("pagelength ");
 
         }
             appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);

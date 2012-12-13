@@ -198,8 +198,12 @@ public class Application extends Sprite{
             xPos += appModel.stageWidth;
         }
 
-        overviewComponent.removeChild(overviewComponent.pageContainer);
-        overviewComponent.overzichtTonen();
+        removeChild(overviewComponent.pageContainer);
+        removeChild(overviewComponent);
+        removeChild(menu);
+        overviewComponent=null;
+        showOverview();
+        //overviewComponent.overzichtTonen();
     }
 
 
