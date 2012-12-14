@@ -76,9 +76,6 @@ public class OverviewComponent extends Sprite{
             page.addEventListener(starling.events.TouchEvent.TOUCH,thumbNailHandler);
             pageContainer.addChild(page);
             xPos += 235;
-
-            trace("pagelength ");
-
         }
             appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
     }
