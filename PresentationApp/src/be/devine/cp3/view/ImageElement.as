@@ -12,10 +12,6 @@ import be.devine.cp3.vo.ImageElementVO;
 import flash.display.Loader;
 import flash.events.Event;
 import flash.net.URLRequest;
-
-import starling.core.Starling;
-
-import starling.display.DisplayObject;
 import starling.display.Sprite;
 
 public class ImageElement extends Element{

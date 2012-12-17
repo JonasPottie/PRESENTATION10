@@ -16,6 +16,8 @@ import be.devine.cp3.view.OverviewComponent;
 
 import flash.events.Event;
 
+import starling.display.DisplayObjectContainer;
+
 import starling.display.Quad;
 import starling.extensions.pixelmask.PixelMaskDisplayObject;
 
@@ -43,7 +45,6 @@ public class Application extends Sprite{
     private var pageContainer:Sprite;
     private var page:Page;
     private var overviewComponent:OverviewComponent;
-    private var xmlloaded:XMLLoadedService;
 
     private var menu:Menu;
 
@@ -55,6 +56,10 @@ public class Application extends Sprite{
 
     private var bg:Quad;
     private var mask:Quad;
+
+    private var xPos:int;
+
+    private var allPages:Vector.<Page>;
 
 
 
@@ -73,6 +78,7 @@ public class Application extends Sprite{
         addChild(bg);
 
         pageContainer = new Sprite();
+        allPages = new Vector.<Page>;
         mask = new Quad(1024,768,0x0);
 
         pixelMask = new PixelMaskDisplayObject();
@@ -112,14 +118,103 @@ public class Application extends Sprite{
 
     private function pageChangeHandler(event:flash.events.Event):void
     {
+        trace("nextslide4");
+
+        switch (appModel.slideDirection)
+        {
+            case "left":
+
+                if(appModel.currentSlideIndex >= 1)
+                {
+                    if(appModel.currentSlideIndex >= 2)
+                    {
+                        if(allPages[appModel.currentSlideIndex + 2].parent != null && allPages.length >= 3)
+                        {
+                            allPages[appModel.currentSlideIndex + 2].parent.removeChild(allPages[appModel.currentSlideIndex + 2]);
+                        }
+                    }
+
+                    tween = new Tween(pageContainer,0.5,Transitions.EASE_IN_OUT);
+                    tween.moveTo(1024 * -appModel.currentSlideIndex, pageContainer.y)
+                    trace(appModel.currentSlideIndex);
+                    tween.onComplete = function():void
+                    {
+                        //nog controle eerst links en dan weer rechts (pages op elkaar zetten)
+                        if(appModel.currentSlideIndex >= 2)
+                        {
+
+                            page = new Page(appModel.pages[(appModel.currentSlideIndex-1)]);
+                            page.x = (1024 * (appModel.currentSlideIndex-1));
+                            pageContainer.addChild(page);
+                            allPages.push(page);
+
+                        }
+                    };
+                    Starling.juggler.add(tween);
+
+                }
+
+
+            break;
+
+            case "right":
+
+                    if(appModel.currentSlideIndex <= (appModel.pages.length -1))
+                    {
+                        if(appModel.currentSlideIndex >= 2)
+                        {
+                            if(allPages[appModel.currentSlideIndex - 2].parent != null && allPages.length >= 3)
+                            {
+
+                                //allPages[appModel.currentSlideIndex - 2].parent.removeChild(allPages[appModel.currentSlideIndex - 2]);
+                            }
+                        }
+
+                    tween = new Tween(pageContainer,0.5,Transitions.EASE_IN_OUT);
+                    tween.moveTo(1024 * -appModel.currentSlideIndex, pageContainer.y)
+                    trace(appModel.currentSlideIndex);
+                    tween.onComplete = function():void
+                        {
+                            //nog controle eerst links en dan weer rechts (pages op elkaar zetten)
+                            if(appModel.currentSlideIndex <= (appModel.pages.length -2) )
+                            {
+
+                            page = new Page(appModel.pages[(appModel.currentSlideIndex+1)]);
+                            page.x = (1024 * (appModel.currentSlideIndex+1));
+                            trace("make page: " + (appModel.currentSlideIndex+1))
+                            pageContainer.addChild(page);
+                            allPages.push(page);
+
+                            }
+                        };
+                    Starling.juggler.add(tween);
+
+                    }
+
+
+
+            break;
+        }
+
+
+
+       /*
         var wichTween:int = Math.floor(Math.random() * 4 + 0);
-        trace(wichTween)
+
 
         switch (wichTween)
         {
             case 0:
                 tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
-                tween.moveTo((appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2),pageContainer.y);
+                tween.moveTo((0-pageContainer.width,pageContainer.y);
+                tween.onComplete = function():void
+                    {
+                        pageContainer.removeChild(page);
+                        page = new Page(appModel.pages[appModel.currentSlideIndex]);
+                        page.x = 0;
+                        pageContainer.addChild(page);
+
+                    };
                 Starling.juggler.add(tween);
             break;
 
@@ -167,21 +262,27 @@ public class Application extends Sprite{
 
 
 
-        //tween.fadeTo(0);
+        //tween.fadeTo(0);   */
     }
 
 
 
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
-        trace("1ekeer int begin e normaal");
-        var xPos:uint = 0;
-        for each(var pageVO:PageVO in appModel.pages) {
-            page = new Page(pageVO);
-            page.x = xPos;
+
+            page = new Page(appModel.pages[0]);
+            page.x = 0;
             pageContainer.addChild(page);
-            xPos += appModel.stageWidth;
-        }
+            allPages.push(page);
+
+            page = new Page(appModel.pages[1]);
+            page.x = 1024;
+            pageContainer.addChild(page);
+            allPages.push(page);
+
+        trace(allPages);
+
+
     }
 
     private function XmlChangedHandler(event:flash.events.Event):void
@@ -228,6 +329,7 @@ public class Application extends Sprite{
 
             case Keyboard.RIGHT:
                 appModel.goToNextSlide();
+                    trace("nextslide");
             break;
 
             case Keyboard.SPACE:
@@ -295,3 +397,8 @@ public class Application extends Sprite{
 
 }
 }
+/*
+if(allPages[appModel.currentSlideIndex - 2].parent != null) {
+    allPages[appModel.currentSlideIndex - 2].parent.removeChild(allPages[appModel.currentSlideIndex - 2]);
+
+  */
