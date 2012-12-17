@@ -8,6 +8,7 @@
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
+import be.devine.cp3.service.MakePNGThumbs;
 import be.devine.cp3.service.XMLLoadedService;
 import be.devine.cp3.vo.PageVO;
 import flash.events.Event;
@@ -32,6 +33,7 @@ public class OverviewComponent extends Sprite{
     private var page:Page;
     private var overviewBackground:Quad;
     private var tween:Tween;
+    private var makepgnThumbs:MakePNGThumbs;
 
     public function OverviewComponent() {
 
@@ -61,7 +63,11 @@ public class OverviewComponent extends Sprite{
     {
         pageContainer = new Sprite();
         addChild(pageContainer);
-        var xPos:int=0;
+
+        makepgnThumbs = new MakePNGThumbs();
+        addChild(makepgnThumbs);
+
+        /*var xPos:int=0;
 
         pageContainer.alpha=.8;
         pageContainer.x = ((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -235);
@@ -77,7 +83,8 @@ public class OverviewComponent extends Sprite{
             pageContainer.addChild(page);
             xPos += 235;
         }
-            appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
+            appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);*/
+
     }
 
 
