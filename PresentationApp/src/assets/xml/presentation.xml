@@ -2,58 +2,81 @@
 
 <pages>
 
+
+
     <page label="0">
-        <pageElement type="title"  x="40" y="40" width="550" height="200">WHAT DID I DO?</pageElement>
-        <pageElement type="list"  x="500" y="300" width="300" height="190" diameter="10">MiniSlides Juiste Grootte.FontEmbedding.Tried To click minislide(FAILED).Beautiful Pics.el5</pageElement>
-        <pageElement type="image"  x="100" y="300">assets/images/WE-DID-IT.jpg</pageElement>
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school.jpg</pageElement>
+
     </page>
 
     <page label="1">
-        <pageElement type="title" x="10" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
-        <pageElement type="content" x="50" y="200" width="500" height="320" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="list" x="700" y="200" width="160" height="190" diameter="10">Devine.Howest.Artevelde.Erasmus.KHBO</pageElement>
-        <pageElement type="image" x="700" y="535">assets/images/howest.jpg</pageElement>
+        <pageElement type="title" x="150" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" x="120" y="200" width="530" height="320" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="list" x="670" y="200" width="260" height="320" diameter="10">Devine Rdr-laan.Howest Gkg-laan.Artevelde hoge School.Erasmus.KHBO.Artevelde HS.Ku Leuven.Kulak Gent-Brugge-Oostende</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner.jpg</pageElement>
 
     </page>
 
     <page label="2">
-        <pageElement type="title" x="10" y="40" width="700" height="400">I LOVE MY JOB!</pageElement>
-        <pageElement type="content" x="50" y="200" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="list" x="700" y="200" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
-        <pageElement type="image"  x="700" y="435">assets/images/4.jpg</pageElement>
+        <pageElement type="title" x="90" y="40" width="900" height="400">MEEST GEKOZEN GROENTEN</pageElement>
+        <pageElement type="list" x="50" y="200" width="200" height="190" diameter="10">Salade.Aardappelen.Wortels Van de Boer.Tomaten van Janine.Tarwe</pageElement>
+        <pageElement type="list" x="357" y="300" width="270" height="260" diameter="10">Prei (ook wel Pret genaamd).Prinsessebonen van Astrid.Ananas.AubergineSoep.Rode Bieten zonder alcohol.Ananas.Is appel ook een groente?</pageElement>
+        <pageElement type="list" x="750" y="200" width="200" height="190" diameter="10">Tomaten.Bloemkool.Straffe Paprika.AubergineSoep.Lekkere Champignons</pageElement>
+        <pageElement type="image"  x="750" y="435">assets/images/fruit1.jpg</pageElement>
+        <pageElement type="image"  x="50" y="435">assets/images/fruit2.jpg</pageElement>
     </page>
 
     <page label="3">
-        <pageElement type="title" x="40" y="40" width="550" height="200">THIS COLOR ROCKS!</pageElement>
-        <pageElement type="content" x="500" y="150" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="video" x="100" y="400">assets/video/1.mp4</pageElement>
+        <pageElement type="title"  x="150" y="100" width="550" height="200">CP3 EXAMEN</pageElement>
+        <pageElement type="list"  x="600" y="280" width="300" height="150" diameter="10">30% Schriftelijk.20% Praktijk.20% Deelexamen.30% Groepswerk</pageElement>
+        <pageElement type="image"  x="150" y="280">assets/images/devdev.jpg</pageElement>
+        <pageElement type="content" x="150" y="500" width="750" height="180" >Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken...Donderdag 29 november hebben we met de 3e jaars studenten een bezoek gebracht aan VRT. Onze studenten werden bij aankomst opgesplitst in 2 groepen, 1 groep kon vrij nadenken over hoe de deredactie.Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken..</pageElement>
     </page>
 
     <page label="4">
-        <pageElement type="title" transition="fadIn" transitionIndex="1" x="100" y="50" width="300" height="400">DUMMY TITLE IS DUMMY...</pageElement>
-        <pageElement type="content" transition="fadIn" transitionIndex="2" x="50" y="300" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="image" transition="fadIn" transitionIndex="3" x="714" y="0">assets/images/07.jpg</pageElement>
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="150" y="20" width="900" height="400">EEN MOOIE ACHTERGROND</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="112" y="200">assets/images/achtergrond.jpg</pageElement>
     </page>
 
+
     <page label="5">
-        <pageElement type="title" x="40" y="40" width="550" height="200">WHAT DID I DO?</pageElement>
-        <pageElement type="list"  x="500" y="300" width="300" height="190" diameter="10">MiniSlides Juiste Grootte.FontEmbedding.Tried To click minislide(FAILED).Beautiful Pics.el5</pageElement>
-        <pageElement type="image"  x="100" y="300">assets/images/WE-DID-IT.jpg</pageElement>
+        <pageElement type="image"  x="0" y="0">assets/images/hertBG.jpg</pageElement>
     </page>
 
     <page label="6">
-        <pageElement type="title" x="10" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
-        <pageElement type="content" x="50" y="200" width="500" height="320" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="list" x="700" y="200" width="160" height="190" diameter="10">Devine.Howest.Artevelde.Erasmus.KHBO</pageElement>
-        <pageElement type="image" x="700" y="535">assets/images/howest.jpg</pageElement>
-
+        <pageElement type="image"  x="0" y="0">assets/images/snowBG.jpg</pageElement>
     </page>
 
     <page label="7">
-        <pageElement type="title" x="10" y="40" width="700" height="400">I LOVE MY JOB!</pageElement>
-        <pageElement type="content" x="50" y="200" width="500" height="400" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</pageElement>
-        <pageElement type="list" x="700" y="200" width="200" height="190" diameter="10">listElement1.listElement2.elementje3.element4.el5</pageElement>
-        <pageElement type="image" x="700" y="435">assets/images/4.jpg</pageElement>
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="8">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school2.jpg</pageElement>
+    </page>
+
+    <page label="9">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
     </page>
 
 </pages>
