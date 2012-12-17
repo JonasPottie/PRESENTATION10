@@ -33,14 +33,14 @@ public class OverviewComponent extends Sprite{
     private var page:Page;
     private var overviewBackground:Quad;
     private var tween:Tween;
-    private var makePngThumbs:MakePNGThumbs;
+    private var makepgnThumbs:MakePNGThumbs;
 
     public function OverviewComponent() {
 
         appModel = AppModel.getInstance();
 
-        overviewBackground = new Quad(appModel.stageWidth,200, 0x1e4a5b);
-        overviewBackground.alpha = 1;
+        overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
+        overviewBackground.alpha = .8;
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();
@@ -64,8 +64,9 @@ public class OverviewComponent extends Sprite{
         pageContainer = new Sprite();
         addChild(pageContainer);
 
-        makePngThumbs = new MakePNGThumbs();
-        addChild(makePngThumbs);
+        makepgnThumbs = new MakePNGThumbs();
+        addChild(makepgnThumbs);
+
         /*var xPos:int=0;
 
         pageContainer.alpha=.8;
