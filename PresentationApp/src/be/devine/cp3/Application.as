@@ -67,7 +67,10 @@ public class Application extends Sprite{
     private var allPages:Vector.<Page>;
 
     private var previousPage:int = 0;
+    private var theTween:int = 0;
     private var arrayNumber:int = 0;
+
+    private var loaded:Boolean = true;
 
 
 
@@ -126,21 +129,137 @@ public class Application extends Sprite{
 
     private function pageChangeHandler(event:flash.events.Event):void
     {
-
-        switch (appModel.slideDirection)
-        {
-            case "left":
-                   goToPrevious();
-            break;
-
-            case "right":
-                    goToNext();
-            break;
-        }
-
+       if(loaded)
+       {
+           tweenOutHandler();
+           loaded = false;
+           trace("PAGECHANGEDMUTHAFUCKERS!!!!");
+       }
 
 
     }
+
+    private function tweenOutHandler():void
+    {
+        theTween = Math.floor(Math.random() * 4 + 0);
+        trace("in tweenout");
+
+        switch (theTween)
+        {
+            case 0:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo((appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2),pageContainer.y);
+                tween.onComplete = function():void
+                {
+                    nextHandler();
+                };
+                Starling.juggler.add(tween);
+                break;
+
+            case 1:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo(pageContainer.x,appModel.stageHeight);
+                tween.onComplete = function():void
+                {
+                    nextHandler();
+                };
+                Starling.juggler.add(tween);
+                break;
+
+            case 2:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo(pageContainer.x,0 - pageContainer.height);
+                tween.onComplete = function():void
+                {
+                    nextHandler();
+                };
+                Starling.juggler.add(tween);
+                break;
+
+            case 3:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.fadeTo(0);
+                tween.onComplete = function():void
+                {
+                    nextHandler();
+                };
+                Starling.juggler.add(tween);
+
+                break;
+        }
+    }
+
+    private function tweenInHandler():void
+    {
+        trace("tweenINhandler");
+
+        switch (theTween)
+        {
+            case 0:
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo((appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2),pageContainer.y);
+                tween.onComplete = function():void
+                {
+                    loaded = true;
+                };
+                Starling.juggler.add(tween);
+                break;
+
+            case 1:
+                pageContainer.y = 0 - pageContainer.height;
+                pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2);
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo(pageContainer.x,0);
+                tween.onComplete = function():void
+                {
+                    loaded = true;
+                };
+                Starling.juggler.add(tween);
+            break;
+
+            case 2:
+                pageContainer.y = pageContainer.height;
+                pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2);
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.moveTo(pageContainer.x,0);
+                tween.onComplete = function():void
+                {
+                    loaded = true;
+                };
+                Starling.juggler.add(tween);
+            break;
+
+            case 3:
+                pageContainer.alpha = 0;
+                pageContainer.x = (appModel.currentSlideIndex *-1024) - ((appModel.stageWidth - 1024)/2);
+                tween = new Tween(pageContainer,.5,Transitions.EASE_IN_OUT);
+                tween.fadeTo(1);
+                tween.onComplete = function():void
+                {
+                    loaded = true;
+                };
+                Starling.juggler.add(tween);
+            break;
+        }
+    }
+
+    private function nextHandler():void
+    {
+        switch (appModel.slideDirection)
+        {
+            case "left":
+                trace("next left");
+                goToPrevious();
+            break;
+
+            case "right":
+                trace("next right");
+                goToNext();
+            break;
+        }
+
+    }
+
 
 
     private function goToNext():void
@@ -153,12 +272,16 @@ public class Application extends Sprite{
             allPages.push(page);
         }
 
-        if(appModel.currentSlideIndex >= 0)
+        if((appModel.currentSlideIndex +1) <= appModel.pages.length)
         {
-
+            trace("removechild");
             removeAllChildrenOf(pageContainer);
+            trace("addchild");
             pageContainer.addChild(allPages[allPages.length -1]);
-            pageContainer.x = 1024 * -(appModel.currentSlideIndex);
+            pageContainer.x = ((appModel.currentSlideIndex -1) *-1024) - ((appModel.stageWidth - 1024)/2)
+
+
+
 
             if((appModel.currentSlideIndex +2) <= appModel.pages.length)
             {
@@ -175,6 +298,7 @@ public class Application extends Sprite{
         }
 
         previousPage = (appModel.currentSlideIndex +1);
+        tweenInHandler();
     }
 
     private function goToPrevious():void
@@ -189,10 +313,16 @@ public class Application extends Sprite{
 
         if(appModel.currentSlideIndex >= 0)
         {
-
         removeAllChildrenOf(pageContainer);
-        pageContainer.addChild(allPages[allPages.length -1]);
-        pageContainer.x = 1024 * -(appModel.currentSlideIndex);
+
+            trace("removechild");
+            removeAllChildrenOf(pageContainer);
+            trace("addchild");
+            pageContainer.addChild(allPages[allPages.length -1]);
+            pageContainer.x = ((appModel.currentSlideIndex+1) *-1024) - ((appModel.stageWidth - 1024)/2)
+
+
+
 
             if(appModel.currentSlideIndex >= 1)
             {
@@ -209,9 +339,12 @@ public class Application extends Sprite{
         }
 
         previousPage = (appModel.currentSlideIndex -1);
+        tweenInHandler();
     }
 
-    function removeAllChildrenOf(container:DisplayObjectContainer):void
+
+
+    private function removeAllChildrenOf(container:DisplayObjectContainer):void
     {
         while( container.numChildren > 0 )
         {
@@ -231,7 +364,6 @@ public class Application extends Sprite{
 
             page = new Page(appModel.pages[1]);
             page.x = 1024;
-            pageContainer.addChild(page);
             allPages.push(page);
 
        trace("CREATEPAGE");
