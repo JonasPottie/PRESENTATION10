@@ -8,9 +8,6 @@
 package be.devine.cp3.view {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
-import be.devine.cp3.service.MakePNGThumbs;
-import be.devine.cp3.service.XMLLoadedService;
-import be.devine.cp3.vo.PageVO;
 import flash.events.Event;
 import flash.ui.Mouse;
 import flash.ui.MouseCursor;
@@ -33,7 +30,7 @@ public class OverviewComponent extends Sprite{
     private var page:Page;
     private var overviewBackground:Quad;
     private var tween:Tween;
-    private var makepgnThumbs:MakePNGThumbs;
+    private var thumbNail:ThumbNail;
 
     public function OverviewComponent() {
 
@@ -64,26 +61,21 @@ public class OverviewComponent extends Sprite{
         pageContainer = new Sprite();
         addChild(pageContainer);
 
-        makepgnThumbs = new MakePNGThumbs();
-        addChild(makepgnThumbs);
-
-        /*var xPos:int=0;
+        var xPos:int=0;
 
         pageContainer.alpha=.8;
         pageContainer.x = ((appModel.stageWidth/2) - 125) + (appModel.currentSlideIndex * -235);
         pageContainer.y = 15;
 
-        for each(var pageVO:PageVO in appModel.pages)
-        {
-            page = new Page(pageVO);
-            page.x = xPos;
-            page.scaleX = 0.2;
-            page.scaleY = 0.2;
-            page.addEventListener(starling.events.TouchEvent.TOUCH,thumbNailHandler);
-            pageContainer.addChild(page);
+        for (var i:uint = 0; i < appModel.pages.length; i++) {
+            thumbNail = new ThumbNail(i);
+            thumbNail.x = xPos;
+            thumbNail.addEventListener(starling.events.TouchEvent.TOUCH,thumbNailHandler);
+            pageContainer.addChild(thumbNail);
+
             xPos += 235;
         }
-            appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);*/
+            appModel.addEventListener(AppModel.THUMB_POS_CHANGED, thumbDragHandler);
 
     }
 
@@ -112,7 +104,7 @@ public class OverviewComponent extends Sprite{
 
     private function thumbNailHandler(event:starling.events.TouchEvent):void
     {
-        var touch:Touch = event.getTouch(event.currentTarget as Page);
+        var touch:Touch = event.getTouch(event.currentTarget as ThumbNail);
 
 
         if(touch != null)
@@ -123,8 +115,18 @@ public class OverviewComponent extends Sprite{
             {
                 case TouchPhase.ENDED:
 
-                    var currentPage:Page = event.currentTarget as Page;
-                    appModel.currentSlideIndex = currentPage.pageIndex;
+                    var currentPage:ThumbNail = event.currentTarget as ThumbNail;
+                    var previousSlideIndex:int = appModel.currentSlideIndex;
+
+                    if(previousSlideIndex<currentPage.slideIndex)
+                    {
+                      appModel.slideDirection = "right"
+                    }
+                    else
+                    {
+                        appModel.slideDirection = "left"
+                    }
+                    appModel.currentSlideIndex = currentPage.slideIndex;
 
                 break;
             }

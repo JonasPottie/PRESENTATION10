@@ -6,87 +6,57 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3 {
-
 import be.devine.cp3.model.AppModel;
-import be.devine.cp3.service.XMLLoadedService;
 import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.Menu;
 import be.devine.cp3.view.OverviewComponent;
-import be.devine.cp3.view.Page;
-
-
 import flash.events.Event;
-
 import starling.display.DisplayObject;
-
 import starling.display.DisplayObjectContainer;
-
-import starling.display.DisplayObjectContainer;
-
 import starling.display.Quad;
 import starling.extensions.pixelmask.PixelMaskDisplayObject;
-
-
 import be.devine.cp3.view.Page;
-import be.devine.cp3.vo.PageVO;
-
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
-
 import starling.animation.Transitions;
 import starling.animation.Tween;
-
 import starling.core.Starling;
 import starling.display.Sprite;
 import starling.events.Event;
-import starling.textures.Texture;
+
 
 public class Application extends Sprite{
 
     private var appModel:AppModel;
-
-    //private var overviewComponent:OverviewComponent;
-
     private var pageContainer:Sprite;
     private var page:Page;
     private var overviewComponent:OverviewComponent;
-
     private var menu:Menu;
-
-
     private var tween:Tween;
-
     private var displayToTexture:DisplayToTexture;
     private var pixelMask:PixelMaskDisplayObject;
-
     private var bg:Quad;
     private var mask:Quad;
-
-    private var xPos:int;
-
     private var allPages:Vector.<Page>;
-
     private var previousPage:int = 0;
     private var theTween:int = 0;
-    private var arrayNumber:int = 0;
-
     private var loaded:Boolean = true;
 
 
-
-    /*-------------------------------------------------------------------------//
-    //------------    APP / ADDEN VAN COMPONENTS      --------------//
-    //------------------------------------------------------------------------*/
-
     public function Application()
     {
+        this.appModel = AppModel.getInstance();
+        bg = new Quad(appModel.stageWidth,appModel.stageHeight,0xea655c);
+        addChild(bg);
+
+        var createThumbs:CreateThumbs = new CreateThumbs();
+        this.addChild(createThumbs);
+
+
         this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
 
         displayToTexture = new DisplayToTexture();
-        this.appModel = AppModel.getInstance();
 
-        bg= new Quad(appModel.stageWidth,appModel.stageHeight,0xea655c);
-        addChild(bg);
 
         pageContainer = new Sprite();
         allPages = new Vector.<Page>;
@@ -98,8 +68,8 @@ public class Application extends Sprite{
         pixelMask.mask = mask;
         addChild(pixelMask);
 
-
         appModel.load("assets/xml/presentation.xml");
+
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlChangedHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
@@ -133,10 +103,7 @@ public class Application extends Sprite{
        {
            tweenOutHandler();
            loaded = false;
-           trace("PAGECHANGEDMUTHAFUCKERS!!!!");
        }
-
-
     }
 
     private function tweenOutHandler():void
@@ -248,19 +215,15 @@ public class Application extends Sprite{
         switch (appModel.slideDirection)
         {
             case "left":
-                trace("next left");
                 goToPrevious();
             break;
 
             case "right":
-                trace("next right");
                 goToNext();
             break;
         }
 
     }
-
-
 
     private function goToNext():void
     {
@@ -274,14 +237,9 @@ public class Application extends Sprite{
 
         if((appModel.currentSlideIndex +1) <= appModel.pages.length)
         {
-            trace("removechild");
             removeAllChildrenOf(pageContainer);
-            trace("addchild");
             pageContainer.addChild(allPages[allPages.length -1]);
             pageContainer.x = ((appModel.currentSlideIndex -1) *-1024) - ((appModel.stageWidth - 1024)/2)
-
-
-
 
             if((appModel.currentSlideIndex +2) <= appModel.pages.length)
             {
@@ -289,7 +247,6 @@ public class Application extends Sprite{
                 page.x = 1024 * (appModel.currentSlideIndex +1);
                 allPages.push(page);
 
-                trace("shift");
                 if(allPages.length > 4)
                 {
                     allPages.shift();
@@ -313,11 +270,8 @@ public class Application extends Sprite{
 
         if(appModel.currentSlideIndex >= 0)
         {
-        removeAllChildrenOf(pageContainer);
 
-            trace("removechild");
             removeAllChildrenOf(pageContainer);
-            trace("addchild");
             pageContainer.addChild(allPages[allPages.length -1]);
             pageContainer.x = ((appModel.currentSlideIndex+1) *-1024) - ((appModel.stageWidth - 1024)/2)
 
@@ -330,7 +284,6 @@ public class Application extends Sprite{
                 page.x = 1024 * (appModel.currentSlideIndex -1);
                 allPages.push(page);
 
-                trace("shift");
                 if(allPages.length > 4)
                 {
                 allPages.shift();
@@ -357,6 +310,7 @@ public class Application extends Sprite{
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
 
+
             page = new Page(appModel.pages[0]);
             page.x = 0;
             pageContainer.addChild(page);
@@ -365,8 +319,6 @@ public class Application extends Sprite{
             page = new Page(appModel.pages[1]);
             page.x = 1024;
             allPages.push(page);
-
-       trace("CREATEPAGE");
 
 
     }
@@ -377,20 +329,7 @@ public class Application extends Sprite{
         //CORRECT DOET WANT NA EEN 5TAL XML'S IN GELADEN TE HEBBEN GEEFT HIJ EEN RESOURCE LIMIT ERROR
         //ERGENS EEN LOOP...
 
-        var xPos:uint = 0;
-        for each(var pageVO:PageVO in appModel.pages) {
-            page = new Page(pageVO);
-            page.x = xPos;
-            pageContainer.addChild(page);
-            xPos += appModel.stageWidth;
-        }
 
-        removeChild(overviewComponent.pageContainer);
-        removeChild(overviewComponent);
-        removeChild(menu);
-        overviewComponent=null;
-        showOverview();
-        //overviewComponent.overzichtTonen();
     }
 
 
@@ -428,7 +367,6 @@ public class Application extends Sprite{
 
         if(overviewComponent==null)
         {
-            trace("ik maak 1");
             overviewComponent = new OverviewComponent();
             addChild(overviewComponent);
 
@@ -450,8 +388,6 @@ public class Application extends Sprite{
         }
         else
         {
-
-            trace("hij bestaat al ze");
             if(appModel.overViewActive == true)
             {
                 tween = new Tween(overviewComponent,.5,Transitions.EASE_IN_OUT);
@@ -482,11 +418,6 @@ public class Application extends Sprite{
 
 }
 }
-/*
-if(allPages[appModel.currentSlideIndex - 2].parent != null) {
-    allPages[appModel.currentSlideIndex - 2].parent.removeChild(allPages[appModel.currentSlideIndex - 2]);
-
-  */
 
 
 
