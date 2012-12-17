@@ -42,7 +42,6 @@ public class Application extends Sprite{
     private var theTween:int = 0;
     private var loaded:Boolean = true;
 
-
     public function Application()
     {
         this.appModel = AppModel.getInstance();
