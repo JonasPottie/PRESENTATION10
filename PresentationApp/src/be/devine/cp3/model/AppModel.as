@@ -29,6 +29,7 @@ public class AppModel extends EventDispatcher
 
         public var overViewActive:Boolean;
         public var fullScreen:Boolean;
+        public var slideDirection:String;
 
 
         private var _thumbPosition:Number;
@@ -55,6 +56,7 @@ public class AppModel extends EventDispatcher
 
         pages = new Vector.<PageVO>();
         xmlService = new XmlService();
+        slideDirection = new String("right");
     }
 
 /*-------------------------------------------------------------------------//
@@ -99,11 +101,14 @@ public class AppModel extends EventDispatcher
     public function goToPreviousSlide():void
     {
        currentSlideIndex --;
+       slideDirection = "left";
     }
 
     public function goToNextSlide():void
     {
       currentSlideIndex ++;
+        trace("nextslid2");
+      slideDirection = "right";
     }
 
 /*-------------------------------------------------------------------------//
@@ -121,6 +126,7 @@ public class AppModel extends EventDispatcher
         if(_currentSlideIndex != value)
         {
             _currentSlideIndex = value;
+            trace("nextslide3");
             dispatchEvent(new flash.events.Event(CURRENT_SLIDE_CHANGED));
         }
     }

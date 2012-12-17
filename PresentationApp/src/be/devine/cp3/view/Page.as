@@ -23,6 +23,14 @@ public class Page extends Sprite{
         this.pageVO = pageVO;
         pageIndex = pageVO.index;
 
+
+
+
+    }
+
+
+    public function createContent():void
+    {
         var q:Quad = new Quad(1024,758,0xea655c);
         addChild(q);
 
@@ -31,8 +39,11 @@ public class Page extends Sprite{
             var element:Element = ElementViewFactory.createFromVO(elementVO);
             addChild(element);
         }
+    }
 
-
+    public function removeContent():void
+    {
+        //remove quad, elements, ...
     }
 }
 }
