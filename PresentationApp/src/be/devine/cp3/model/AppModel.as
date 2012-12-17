@@ -84,14 +84,12 @@ public class AppModel extends EventDispatcher
 
     public function xmlLoaded():void
     {
-        trace("[APPMODEL] XMLloaded func");
         dispatchEvent(new Event(XML_URL_LOADED));
     }
 
 
     public function xmlChanged():void
     {
-        trace("[APPMODEL] XMLCanged func");
         dispatchEvent(new Event(XML_URL_CHANGED));
     }
 /*-------------------------------------------------------------------------//
@@ -100,15 +98,16 @@ public class AppModel extends EventDispatcher
 
     public function goToPreviousSlide():void
     {
-       currentSlideIndex --;
        slideDirection = "left";
+       currentSlideIndex --;
+
     }
+
 
     public function goToNextSlide():void
     {
-      currentSlideIndex ++;
-        trace("nextslid2");
       slideDirection = "right";
+      currentSlideIndex ++;
     }
 
 /*-------------------------------------------------------------------------//
@@ -126,7 +125,6 @@ public class AppModel extends EventDispatcher
         if(_currentSlideIndex != value)
         {
             _currentSlideIndex = value;
-            trace("nextslide3");
             dispatchEvent(new flash.events.Event(CURRENT_SLIDE_CHANGED));
         }
     }

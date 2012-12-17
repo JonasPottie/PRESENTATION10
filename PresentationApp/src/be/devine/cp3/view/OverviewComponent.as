@@ -65,7 +65,7 @@ public class OverviewComponent extends Sprite{
         addChild(pageContainer);
 
         makepgnThumbs = new MakePNGThumbs();
-        addChild(makepgnThumbs);
+        //addChild(makepgnThumbs);
 
         /*var xPos:int=0;
 
