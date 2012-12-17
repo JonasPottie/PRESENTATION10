@@ -39,8 +39,8 @@ public class OverviewComponent extends Sprite{
 
         appModel = AppModel.getInstance();
 
-        overviewBackground = new Quad(appModel.stageWidth,200, 0X333333);
-        overviewBackground.alpha = .8;
+        overviewBackground = new Quad(appModel.stageWidth,200, 0X1e4a5b);
+        overviewBackground.alpha = 1;
         addChild(overviewBackground);
 
         scrollbar = new ScrollBar();
