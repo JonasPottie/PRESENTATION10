@@ -55,7 +55,6 @@ public class Menu extends Sprite{
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
         menuBalk = new Quad(appModel.stageWidth,60,0X1e4a5b);
-        menuBalk.addEventListener(TouchEvent.TOUCH,clickedBrows);
 
         menuBalk.alpha = 1;
         addChild(menuBalk);
