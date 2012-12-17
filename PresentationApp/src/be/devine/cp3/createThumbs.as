@@ -46,7 +46,7 @@ public class CreateThumbs extends Sprite{
         trace("Create Thumbs");
         for each(var pageVO:PageVO in appModel.pages)
         {
-           trace("make thumb")
+           trace("make thumb");
 
            page = new Page(pageVO);
            trace(page);
