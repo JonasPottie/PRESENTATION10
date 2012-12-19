@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pages>
+
+
+    <page label="0">
+        <pageElement type="title" x="150" y="300" width="700" height="300">CSS PREPROCESSORS</pageElement>
+    </page>
+
+
+    <page label="1">
+        <pageElement type="title" x="90" y="60" width="900" height="400">CSS FILES</pageElement>
+        <pageElement type="list" x="50" y="250" width="250" height="190" diameter="10">Vendor Prefixes.Terugkerende Properties.kleurwaarden.Inheritance.Moeilijk te managen</pageElement>
+        <pageElement type="list" x="320" y="250" width="250" height="190" diameter="10">Compilers.Ondersteuning.geen magic trick.Verhoogt Snelheid.Keuze tussen de volgende</pageElement>
+        <pageElement type="list" x="590" y="250" width="120" height="150" diameter="10">LESS.SASS.Stylus. enz</pageElement>
+        <pageElement type="image"  x="700" y="465">assets/images/cssawards.jpg</pageElement>
+    </page>
+
+
+    <page label="2">
+        <pageElement type="title" x="150" y="60" width="700" height="300">TUTORIALS</pageElement>
+        <pageElement type="content" x="120" y="220" width="810" height="230" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.
+
+De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner2.jpg</pageElement>
+
+    </page>
+
+
+
+    <page label="3">
+        <pageElement type="title"  x="150" y="100" width="550" height="200">SASS</pageElement>
+        <pageElement type="image"  x="120" y="280">assets/images/SASS.png</pageElement>
+    </page>
+
+
+    <page label="4">
+        <pageElement type="image"  x="0" y="0">assets/images/awards1.jpg</pageElement>
+    </page>
+
+    <page label="5">
+        <pageElement type="image" x="0" y="0">assets/images/awards2.jpg</pageElement>
+    </page>
+
+    <page label="6">
+        <pageElement type="image" x="0" y="0">assets/images/awards3.jpg</pageElement>
+    </page>
+
+    <page label="7">
+        <pageElement type="title" x="40" y="100" width="800" height="200">DAT WAS HET DAN!</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/merci.jpg</pageElement>
+    </page>
+
+
+</pages>

@@ -6,6 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.service {
+import be.devine.cp3.CreateThumbs;
 import be.devine.cp3.factory.vo.PageVOFactory;
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.queue.Queue;
@@ -47,7 +48,6 @@ public class XMLLoadedService extends File{
     {
         this.appModel = AppModel.getInstance();
 
-
         //Opent de finder. +  een filter op welke bestanden je kan toevoegen.
         this.browseForOpenMultiple('Selecteer XML-Bestand.', [new FileFilter('Xml', '*.xml')]);
         this.addEventListener(FileListEvent.SELECT_MULTIPLE, selectHandler);
@@ -75,7 +75,8 @@ public class XMLLoadedService extends File{
         {
             var ingeladenXML:XML = new XML(task.data);
 
-            //PAGES ALLEMAAL VERWIJDEREN EN PLAATS MAKEN VOOR NIEUWE
+
+            trace("[XMLLOADEDSERVICE] PAGES ALLEMAAL VERWIJDEREN EN PLAATS MAKEN VOOR NIEUWE");
             appModel.pages.splice(0, appModel.pages.length);
             appModel.currentSlideIndex =0;
 
@@ -83,6 +84,7 @@ public class XMLLoadedService extends File{
             {
                 appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
             }
+
 
             appModel.xmlChanged();
         }

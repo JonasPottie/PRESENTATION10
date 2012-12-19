@@ -79,8 +79,6 @@ public class ScrollBar extends Sprite{
 
     private function slideChangeHandler(event:flash.events.Event):void
     {
-        trace('thumbX : '+thumb.x);
-
         tween = new Tween(thumb,.5,Transitions.EASE_IN_OUT);
         tween.animate("x",(appModel.currentSlideIndex/appModel.pages.length) * (appModel.stageWidth));
         Starling.juggler.add(tween);

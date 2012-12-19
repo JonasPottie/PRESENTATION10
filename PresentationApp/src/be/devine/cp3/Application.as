@@ -108,7 +108,6 @@ public class Application extends Sprite{
     private function tweenOutHandler():void
     {
         theTween = Math.floor(Math.random() * 4 + 0);
-        trace("in tweenout");
 
         switch (theTween)
         {
@@ -157,7 +156,6 @@ public class Application extends Sprite{
 
     private function tweenInHandler():void
     {
-        trace("tweenINhandler");
 
         switch (theTween)
         {
@@ -309,6 +307,7 @@ public class Application extends Sprite{
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
 
+        trace("XML changedLoaded");
 
             page = new Page(appModel.pages[0]);
             page.x = 0;
@@ -324,6 +323,7 @@ public class Application extends Sprite{
 
     private function XmlChangedHandler(event:flash.events.Event):void
     {
+        trace("XML changed");
         //ALS HIJ HIERIN KOMT MOET HIJ HET OVERVIEWCOMPONENT OPNIEUW UPDATEN AL HET WARE... WAT HIJ VOLGENS MIJ NIET
         //CORRECT DOET WANT NA EEN 5TAL XML'S IN GELADEN TE HEBBEN GEEFT HIJ EEN RESOURCE LIMIT ERROR
         //ERGENS EEN LOOP...

@@ -27,7 +27,6 @@ public class Page extends Sprite{
         this.appModel = AppModel.getInstance();
         var q:Quad = new Quad(1024,758,0xea655c);
         addChild(q);
-        trace("HASPHOTOFALSE")
 
         for each(var elementVO:ElementVO in pageVO.elements)
         {

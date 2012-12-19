@@ -31,22 +31,42 @@ public class CreateThumbs extends Sprite{
     private var appModel:AppModel;
     private var theDirectory:String;
     private var page:Page;
-    private var thumbContainer:Sprite;
+    public var thumbContainer:Sprite;
 
     public function CreateThumbs()
     {
         this.appModel = AppModel.getInstance();
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
+        appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlChangedHandler);
     }
+
+    private function XmlChangedHandler(event:flash.events.Event):void
+    {
+        trace("Create New Thumbs, First Remove Them");
+
+
+        for each(var pageVO:PageVO in appModel.pages)
+        {
+            removeChild(thumbContainer);
+            page = new Page(pageVO);
+            trace("2e keer " +page);
+            thumbContainer.addChild(page);
+            takeScreenshot(pageVO.index.toString());
+        }
+
+        removeAllChildrenOf(thumbContainer);
+        removeChild(thumbContainer,true);
+    }
+
+
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
         thumbContainer = new Sprite();
         addChild(thumbContainer);
 
-        trace("Create Thumbs");
+        trace("Create Thumbs !");
         for each(var pageVO:PageVO in appModel.pages)
         {
-           trace("make thumb");
 
            page = new Page(pageVO);
            trace(page);
@@ -81,7 +101,6 @@ public class CreateThumbs extends Sprite{
         fileStream.open(file, FileMode.WRITE);
         fileStream.writeBytes(pngBytes);
 
-        trace("thumb created");
     }
 
     private function removeAllChildrenOf(container:DisplayObjectContainer):void
@@ -92,6 +111,9 @@ public class CreateThumbs extends Sprite{
             if( child is DisplayObjectContainer )
                 removeAllChildrenOf(child as DisplayObjectContainer);
         }
+    }
+    public  function test():void{
+        trace("intestt");
     }
 
 }

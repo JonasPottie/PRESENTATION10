@@ -90,6 +90,7 @@ public class AppModel extends EventDispatcher
 
     public function xmlChanged():void
     {
+        trace("[APPMODEL] xml changed");
         dispatchEvent(new Event(XML_URL_CHANGED));
     }
 /*-------------------------------------------------------------------------//

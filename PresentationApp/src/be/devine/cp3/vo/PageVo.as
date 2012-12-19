@@ -16,7 +16,6 @@ public class PageVO {
     {
         elements = new Vector.<ElementVO>();
         index = new int();
-                  trace("test")
     }
 }
 }
