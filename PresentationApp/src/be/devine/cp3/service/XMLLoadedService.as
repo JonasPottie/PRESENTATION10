@@ -55,6 +55,11 @@ public class XMLLoadedService extends File{
 
     private function selectHandler(e:FileListEvent):void
     {
+        var currentXML:String = e.files[0].name.toString();
+        currentXML = currentXML.split(".xml").join("");
+       appModel.currentXML =  currentXML;
+
+
 
         q = new Queue();
         q.addEventListener(Event.COMPLETE, qCompleteHandler);

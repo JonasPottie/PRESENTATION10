@@ -66,7 +66,7 @@ public class Application extends Sprite{
         pixelMask.mask = mask;
         addChild(pixelMask);
 
-        appModel.load("assets/xml/presentation.xml");
+        appModel.load("assets/xml/"+ appModel.currentXML + ".xml");
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlChangedHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
@@ -310,9 +310,6 @@ public class Application extends Sprite{
             this.addChild(createThumbs);
             appModel.addEventListener(AppModel.THUMBS_CREATED, thumbsCreatedHandler);
 
-        trace("XML changedLoaded");
-
-
     }
 
 
@@ -331,10 +328,17 @@ public class Application extends Sprite{
 
     private function XmlChangedHandler(event:flash.events.Event):void
     {
-        trace("XML changed");
-        //ALS HIJ HIERIN KOMT MOET HIJ HET OVERVIEWCOMPONENT OPNIEUW UPDATEN AL HET WARE... WAT HIJ VOLGENS MIJ NIET
-        //CORRECT DOET WANT NA EEN 5TAL XML'S IN GELADEN TE HEBBEN GEEFT HIJ EEN RESOURCE LIMIT ERROR
-        //ERGENS EEN LOOP...
+        trace("xmlLoadedHandler")
+        var createThumbs:CreateThumbs = new CreateThumbs();
+        this.addChild(createThumbs);
+        appModel.addEventListener(AppModel.THUMBS_CREATED, thumbsCreatedHandler);
+
+        removeAllChildrenOf(overviewComponent);
+        removeChild(overviewComponent,true);
+        overviewComponent = new OverviewComponent();
+        addChild(overviewComponent);
+        showOverview();
+        trace("showoverview2")
 
 
     }
@@ -371,7 +375,7 @@ public class Application extends Sprite{
 
     private function showOverview():void
     {
-
+        trace("showoverview")
         if(overviewComponent==null)
         {
             overviewComponent = new OverviewComponent();
