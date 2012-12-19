@@ -9,23 +9,17 @@ package be.devine.cp3 {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.service.PNGEncoder;
 import be.devine.cp3.view.Page;
-import be.devine.cp3.vo.PageVO;
-
 import flash.display.BitmapData;
-
-import flash.events.Event;
 import flash.events.TimerEvent;
 import flash.filesystem.File;
 import flash.filesystem.FileMode;
 import flash.filesystem.FileStream;
 import flash.utils.ByteArray;
 import flash.utils.Timer;
-
 import starling.core.RenderSupport;
 import starling.core.Starling;
 import starling.display.DisplayObject;
 import starling.display.DisplayObjectContainer;
-
 import starling.display.Sprite;
 
 public class CreateThumbs extends Sprite{
@@ -54,14 +48,12 @@ public class CreateThumbs extends Sprite{
 
     private function timerTickHandler(event:TimerEvent):void
     {
-        trace("TIMERTICKHANDLER");
         takeScreenshot(slideToLoad.toString());
 
         slideToLoad ++;
 
         if(slideToLoad == appModel.pages.length)
         {
-            trace("complete");
             removeAllChildrenOf(thumbContainer);
             removeChild(thumbContainer,true);
             appModel.thumbsCreated = true;
@@ -99,7 +91,6 @@ public class CreateThumbs extends Sprite{
         fileStream.open(file, FileMode.WRITE);
         fileStream.writeBytes(pngBytes);
         removeAllChildrenOf(thumbContainer);
-        trace("thumb created");
     }
 
     private function removeAllChildrenOf(container:DisplayObjectContainer):void
@@ -112,6 +103,6 @@ public class CreateThumbs extends Sprite{
         }
     }
 
-
+  trace()
 }
 }

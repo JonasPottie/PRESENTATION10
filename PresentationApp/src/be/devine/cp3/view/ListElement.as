@@ -6,11 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.view {
-import be.devine.cp3.vo.ContentElementVO;
+
 import be.devine.cp3.vo.ListElementVO;
-
-import flash.text.Font;
-
 import starling.display.Quad;
 import starling.display.Sprite;
 import starling.text.TextField;
@@ -58,9 +55,6 @@ public class ListElement extends Element{
             content.addChild(bullet);
             yPosItem+=35;
         }
-
-        //listArray.push(listElementVO.text.split("?"));
-
     }
 }
 }

@@ -6,6 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3 {
+
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.Menu;
@@ -47,9 +48,6 @@ public class Application extends Sprite{
         this.appModel = AppModel.getInstance();
         bg = new Quad(appModel.stageWidth,appModel.stageHeight,0xea655c);
         addChild(bg);
-
-
-
 
         this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
 
@@ -291,8 +289,6 @@ public class Application extends Sprite{
         tweenInHandler();
     }
 
-
-
     private function removeAllChildrenOf(container:DisplayObjectContainer):void
     {
         while( container.numChildren > 0 )
@@ -305,7 +301,6 @@ public class Application extends Sprite{
 
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
-            trace("xmlLoadedHandler")
             var createThumbs:CreateThumbs = new CreateThumbs();
             this.addChild(createThumbs);
             appModel.addEventListener(AppModel.THUMBS_CREATED, thumbsCreatedHandler);
@@ -328,7 +323,6 @@ public class Application extends Sprite{
 
     private function XmlChangedHandler(event:flash.events.Event):void
     {
-        trace("xmlLoadedHandler")
         var createThumbs:CreateThumbs = new CreateThumbs();
         this.addChild(createThumbs);
         appModel.addEventListener(AppModel.THUMBS_CREATED, thumbsCreatedHandler);
@@ -338,17 +332,7 @@ public class Application extends Sprite{
         overviewComponent = new OverviewComponent();
         addChild(overviewComponent);
         showOverview();
-        trace("showoverview2")
-
-
     }
-
-
-
-
-/*-------------------------------------------------------------------------//
-//------------    SWITCHEN TUSSEN SLIDES MET PIJLTJES & OVERVIEW     --------------//
-//------------------------------------------------------------------------*/
 
     private function addedToStageHandler(event:starling.events.Event):void
     {
@@ -375,7 +359,6 @@ public class Application extends Sprite{
 
     private function showOverview():void
     {
-        trace("showoverview")
         if(overviewComponent==null)
         {
             overviewComponent = new OverviewComponent();

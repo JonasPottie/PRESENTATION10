@@ -6,9 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.view {
+
 import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.vo.ImageElementVO;
-
 import flash.display.Loader;
 import flash.events.Event;
 import flash.net.URLRequest;
@@ -34,7 +34,6 @@ public class ImageElement extends Element{
         deLoader = new Loader();
         deLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, imageLoadedHandler);
         deLoader.load(new URLRequest(imageElementVO.url));
-        //trace("ADDCHILD IMAGE-ELEMENT" + imageElementVO.url);
     }
 
     private function imageLoadedHandler(e:Event):void

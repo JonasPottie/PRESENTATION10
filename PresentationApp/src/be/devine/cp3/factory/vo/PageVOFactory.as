@@ -10,8 +10,6 @@ import be.devine.cp3.vo.PageVO;
 
 public class PageVOFactory {
 
-
-
     public function PageVOFactory()
     {
 

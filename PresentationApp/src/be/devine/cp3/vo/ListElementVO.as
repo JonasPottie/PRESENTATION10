@@ -11,7 +11,6 @@ public class ListElementVO extends ElementVO {
     public var text:String;
     public var width:int;
     public var height:int;
-    public var diameter:int;
     public var x:int;
     public var y:int;
 

@@ -26,7 +26,7 @@ public class AppModel extends EventDispatcher
         private var _pages:Vector.<PageVO>;
         private var _stageWidth:Number;
         private var _stageHeight:Number;
-        private var _thumbsCreated:Boolean
+        private var _thumbsCreated:Boolean;
 
 
         public var overViewActive:Boolean;
@@ -95,12 +95,8 @@ public class AppModel extends EventDispatcher
 
     public function xmlChanged():void
     {
-        trace("[APPMODEL] xml changed");
         dispatchEvent(new Event(XML_URL_CHANGED));
     }
-/*-------------------------------------------------------------------------//
-//------------    NEXT AND PREVIOUS SLIDE     --------------//
-//------------------------------------------------------------------------*/
 
     public function goToPreviousSlide():void
     {
@@ -115,10 +111,6 @@ public class AppModel extends EventDispatcher
       slideDirection = "right";
       currentSlideIndex ++;
     }
-
-/*-------------------------------------------------------------------------//
-//------------    SLIDE INDEX => CURRENTSLIDE   --------------//
-//------------------------------------------------------------------------*/
 
     public function get currentSlideIndex():int
     {
@@ -135,10 +127,6 @@ public class AppModel extends EventDispatcher
         }
     }
 
-/*-------------------------------------------------------------------------//
-//-----------        SLIDES IN VECTOR [XML FORMAT]         ----------//
-//-------------------------------------------------------------------------*/
-
     public function get pages():Vector.<PageVO> {
         return _pages;
     }
@@ -150,10 +138,6 @@ public class AppModel extends EventDispatcher
             _pages = value;
         }
     }
-
-/*-------------------------------------------------------------------------//
-//-----------       SINGLETON INTERNE CLASS        ----------//
-//-------------------------------------------------------------------------*/
 
     public function get stageWidth():Number {
         return _stageWidth;

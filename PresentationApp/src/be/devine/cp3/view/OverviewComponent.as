@@ -6,6 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.view {
+
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.scrollBar.ScrollBar;
 import flash.events.Event;
@@ -24,10 +25,8 @@ import starling.events.TouchPhase;
 public class OverviewComponent extends Sprite{
 
     private var appModel:AppModel;
-    private var ovc:OverviewComponent;
     private var scrollbar:ScrollBar;
     public var pageContainer:Sprite;
-    private var page:Page;
     private var overviewBackground:Quad;
     private var tween:Tween;
     private var thumbNail:ThumbNail;

@@ -6,32 +6,16 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.service {
-import be.devine.cp3.CreateThumbs;
+
 import be.devine.cp3.factory.vo.PageVOFactory;
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.queue.Queue;
 import be.devine.cp3.queue.XMLTask;
-import be.devine.cp3.utils.DisplayToTexture;
 import be.devine.cp3.view.OverviewComponent;
-
-import flash.display.DisplayObject;
-import flash.display.Loader;
-import flash.display.Sprite;
-import flash.events.DataEvent;
 import flash.events.Event;
-import flash.events.EventDispatcher;
 import flash.events.FileListEvent;
-import flash.events.IOErrorEvent;
-import flash.events.ProgressEvent;
 import flash.filesystem.File;
 import flash.net.FileFilter;
-import flash.net.FileReference;
-import flash.net.URLRequest;
-import flash.net.URLRequestMethod;
-import flash.utils.ByteArray;
-
-import starling.display.Quad;
-
 
 public class XMLLoadedService extends File{
 
@@ -47,8 +31,6 @@ public class XMLLoadedService extends File{
     public function XMLLoadedService()
     {
         this.appModel = AppModel.getInstance();
-
-        //Opent de finder. +  een filter op welke bestanden je kan toevoegen.
         this.browseForOpenMultiple('Selecteer XML-Bestand.', [new FileFilter('Xml', '*.xml')]);
         this.addEventListener(FileListEvent.SELECT_MULTIPLE, selectHandler);
     }
@@ -79,9 +61,6 @@ public class XMLLoadedService extends File{
         for each( var task:XMLTask in q.completedItems )
         {
             var ingeladenXML:XML = new XML(task.data);
-
-
-            trace("[XMLLOADEDSERVICE] PAGES ALLEMAAL VERWIJDEREN EN PLAATS MAKEN VOOR NIEUWE");
             appModel.pages.splice(0, appModel.pages.length);
             appModel.currentSlideIndex =0;
 
@@ -89,15 +68,9 @@ public class XMLLoadedService extends File{
             {
                 appModel.pages.push(pageVOFactory.createPageVOFromXML(page));
             }
-
-
             appModel.xmlChanged();
         }
         dispatchEvent(new Event(Event.COMPLETE));
-
-
-
     }
-
     }
 }

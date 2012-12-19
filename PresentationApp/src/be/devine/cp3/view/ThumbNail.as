@@ -6,14 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 package be.devine.cp3.view {
-import be.devine.cp3.model.AppModel;
 
+import be.devine.cp3.model.AppModel;
 import flash.display.Bitmap;
 import flash.display.Loader;
 import flash.events.Event;
-import flash.filesystem.File;
 import flash.net.URLRequest;
-
 import starling.display.Image;
 import starling.display.Sprite;
 
@@ -28,17 +26,11 @@ public class ThumbNail extends Sprite{
     public function ThumbNail(slideInd:int)
     {
         this.slideInt = slideInd;
-
         this.appModel = AppModel.getInstance();
-
-        //var file:File = File.desktopDirectory.resolvePath( "assets/" + slideInt + '.png' );
 
         deLoader = new Loader();
         deLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, imageLoadedHandler);
-        trace("DAPATH: " + 'assets/thumbs/' + appModel.currentXML +"/" +slideInt + '.png' )
         deLoader.load(new URLRequest('assets/thumbs/' + appModel.currentXML +"/" +slideInt + '.png'));
-        //deLoader.load(new URLRequest(file.url));
-
     }
 
     private function imageLoadedHandler(event:Event):void

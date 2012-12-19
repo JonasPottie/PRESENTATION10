@@ -41,9 +41,6 @@ public class ContentElement extends Element{
         textfield.y = 5;
         textfield.x = 5;
         content.addChild(textfield);
-
-        //trace("ADDCHILD CONTENT"+textfield.text);
-
     }
 }
 }

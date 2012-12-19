@@ -10,7 +10,6 @@ import be.devine.cp3.vo.ElementVO;
 
 import starling.display.Sprite;
 
-
     public class Element extends Sprite{
 
         protected var _elementVO:ElementVO;

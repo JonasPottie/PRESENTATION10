@@ -7,37 +7,27 @@
  */
 package be.devine.cp3.view {
 
-
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.service.XMLLoadedService;
 import be.devine.cp3.utils.DisplayToTexture;
-
 import flash.display.Loader;
-
 import flash.display.StageDisplayState;
 import flash.events.Event;
 import flash.net.URLRequest;
 import flash.ui.Mouse;
 import flash.ui.MouseCursor;
-
 import starling.core.Starling;
 import starling.display.DisplayObject;
-import starling.display.MovieClip;
 import starling.display.Quad;
 import starling.display.Sprite;
 import starling.events.Touch;
 import starling.events.TouchEvent;
 import starling.events.TouchPhase;
-import starling.text.TextField;
-import starling.utils.HAlign;
-
 
 public class Menu extends Sprite{
 
     private var menuBalk:Quad;
     private var appModel:AppModel;
-    private var textfield:TextField;
-    private var textfield2:TextField;
     private var displayToTexture:DisplayToTexture;
     private var uploadLoader:Loader;
     private var fullScreenLoader:Loader;
@@ -62,21 +52,6 @@ public class Menu extends Sprite{
 
         fullScreenContainer.x = appModel.stageWidth-200;
         exitFullScreenContainer.x = appModel.stageWidth-200;
-
-        /*textfield = new TextField(100,15,"FULLSCREEN","Arvo_regular",12,0xffffff);
-        textfield.hAlign = HAlign.LEFT;
-        textfield.x =  appModel.stageWidth - textfield.width;
-        textfield.y = 2;
-        textfield.addEventListener(TouchEvent.TOUCH,touchHandler);
-        addChild(textfield);
-
-        textfield2 = new TextField(100,15,"LOAD XML","Arvo_regular",12,0xffffff);
-        textfield2.hAlign = HAlign.LEFT;
-        textfield2.x = 10;
-        textfield2.y = 2;
-        textfield2.addEventListener(TouchEvent.TOUCH,clickedBrows);
-        addChild(textfield2);*/
-
 
         uploadLoader = new Loader();
         uploadLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, uploadLoadedHandler);
@@ -121,7 +96,6 @@ public class Menu extends Sprite{
     private function stageChangeHandler(event:flash.events.Event):void
     {
         menuBalk.width = appModel.stageWidth;
-        //textfield.x = appModel.stageWidth - textfield.width;
         fullScreenContainer.x = appModel.stageWidth-200;
         exitFullScreenContainer.x = appModel.stageWidth-200;
 
@@ -144,27 +118,16 @@ public class Menu extends Sprite{
                     {
 
                         appModel.fullScreen = true;
-                        trace("boolean "+appModel.fullScreen);
                         exitFullScreenContainer.alpha =1;
                         fullScreenContainer.alpha =0;
                         Starling.current.nativeStage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
-                        /*textfield.width = 150;
-                        textfield.x -= 50;
-                        textfield.text = "EXIT FULLSCREEN";
-
-                        textfield2.width = 150;
-                        textfield2.x = 10;*/
                     }
                     else
                     {
                         appModel.fullScreen = false;
-                        trace("boolean "+appModel.fullScreen);
                         exitFullScreenContainer.alpha =0;
                         fullScreenContainer.alpha =1;
                         Starling.current.nativeStage.displayState = StageDisplayState.NORMAL;
-                        /*textfield.width = 100;
-                        textfield.x +=50;
-                        textfield.text = "FULLSCREEN";*/
                     }
 
                 break;
@@ -176,7 +139,6 @@ public class Menu extends Sprite{
         }
 
     }
-
 
     function clickedBrows(event:TouchEvent):void
     {
