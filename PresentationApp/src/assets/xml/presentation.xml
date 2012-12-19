@@ -79,4 +79,378 @@ In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. St
 
     </page>
 
+    <page label="10">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school.jpg</pageElement>
+
+    </page>
+
+    <page label="11">
+        <pageElement type="title" x="150" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" x="120" y="200" width="530" height="320" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="list" x="670" y="200" width="260" height="320" diameter="10">Devine Rdr-laan.Howest Gkg-laan.Artevelde hoge School.Erasmus.KHBO.Artevelde HS.Ku Leuven.Kulak Gent-Brugge-Oostende</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner.jpg</pageElement>
+
+    </page>
+
+    <page label="12">
+        <pageElement type="title" x="90" y="40" width="900" height="400">MEEST GEKOZEN GROENTEN</pageElement>
+        <pageElement type="list" x="50" y="200" width="200" height="190" diameter="10">Salade.Aardappelen.Wortels Van de Boer.Tomaten van Janine.Tarwe</pageElement>
+        <pageElement type="list" x="357" y="300" width="270" height="260" diameter="10">Prei (ook wel Pret genaamd).Prinsessebonen van Astrid.Ananas.AubergineSoep.Rode Bieten zonder alcohol.Ananas.Is appel ook een groente?</pageElement>
+        <pageElement type="list" x="750" y="200" width="200" height="190" diameter="10">Tomaten.Bloemkool.Straffe Paprika.AubergineSoep.Lekkere Champignons</pageElement>
+        <pageElement type="image"  x="750" y="435">assets/images/fruit1.jpg</pageElement>
+        <pageElement type="image"  x="50" y="435">assets/images/fruit2.jpg</pageElement>
+    </page>
+
+    <page label="13">
+        <pageElement type="title"  x="150" y="100" width="550" height="200">CP3 EXAMEN</pageElement>
+        <pageElement type="list"  x="600" y="280" width="300" height="150" diameter="10">30% Schriftelijk.20% Praktijk.20% Deelexamen.30% Groepswerk</pageElement>
+        <pageElement type="image"  x="150" y="280">assets/images/devdev.jpg</pageElement>
+        <pageElement type="content" x="150" y="500" width="750" height="180" >Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken...Donderdag 29 november hebben we met de 3e jaars studenten een bezoek gebracht aan VRT. Onze studenten werden bij aankomst opgesplitst in 2 groepen, 1 groep kon vrij nadenken over hoe de deredactie.Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken..</pageElement>
+    </page>
+
+    <page label="14">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="150" y="20" width="900" height="400">EEN MOOIE ACHTERGROND</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="112" y="200">assets/images/achtergrond.jpg</pageElement>
+    </page>
+
+
+    <page label="15">
+        <pageElement type="image"  x="0" y="0">assets/images/hertBG.jpg</pageElement>
+    </page>
+
+    <page label="16">
+        <pageElement type="image"  x="0" y="0">assets/images/snowBG.jpg</pageElement>
+    </page>
+
+    <page label="17">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="18">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school2.jpg</pageElement>
+    </page>
+
+    <page label="19">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="20">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school.jpg</pageElement>
+
+    </page>
+
+    <page label="21">
+        <pageElement type="title" x="150" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" x="120" y="200" width="530" height="320" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="list" x="670" y="200" width="260" height="320" diameter="10">Devine Rdr-laan.Howest Gkg-laan.Artevelde hoge School.Erasmus.KHBO.Artevelde HS.Ku Leuven.Kulak Gent-Brugge-Oostende</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner.jpg</pageElement>
+
+    </page>
+
+    <page label="22">
+        <pageElement type="title" x="90" y="40" width="900" height="400">MEEST GEKOZEN GROENTEN</pageElement>
+        <pageElement type="list" x="50" y="200" width="200" height="190" diameter="10">Salade.Aardappelen.Wortels Van de Boer.Tomaten van Janine.Tarwe</pageElement>
+        <pageElement type="list" x="357" y="300" width="270" height="260" diameter="10">Prei (ook wel Pret genaamd).Prinsessebonen van Astrid.Ananas.AubergineSoep.Rode Bieten zonder alcohol.Ananas.Is appel ook een groente?</pageElement>
+        <pageElement type="list" x="750" y="200" width="200" height="190" diameter="10">Tomaten.Bloemkool.Straffe Paprika.AubergineSoep.Lekkere Champignons</pageElement>
+        <pageElement type="image"  x="750" y="435">assets/images/fruit1.jpg</pageElement>
+        <pageElement type="image"  x="50" y="435">assets/images/fruit2.jpg</pageElement>
+    </page>
+
+    <page label="23">
+        <pageElement type="title"  x="150" y="100" width="550" height="200">CP3 EXAMEN</pageElement>
+        <pageElement type="list"  x="600" y="280" width="300" height="150" diameter="10">30% Schriftelijk.20% Praktijk.20% Deelexamen.30% Groepswerk</pageElement>
+        <pageElement type="image"  x="150" y="280">assets/images/devdev.jpg</pageElement>
+        <pageElement type="content" x="150" y="500" width="750" height="180" >Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken...Donderdag 29 november hebben we met de 3e jaars studenten een bezoek gebracht aan VRT. Onze studenten werden bij aankomst opgesplitst in 2 groepen, 1 groep kon vrij nadenken over hoe de deredactie.Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken..</pageElement>
+    </page>
+
+    <page label="24">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="150" y="20" width="900" height="400">EEN MOOIE ACHTERGROND</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="112" y="200">assets/images/achtergrond.jpg</pageElement>
+    </page>
+
+
+    <page label="25">
+        <pageElement type="image"  x="0" y="0">assets/images/hertBG.jpg</pageElement>
+    </page>
+
+    <page label="26">
+        <pageElement type="image"  x="0" y="0">assets/images/snowBG.jpg</pageElement>
+    </page>
+
+    <page label="27">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="28">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school2.jpg</pageElement>
+    </page>
+
+    <page label="29">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="30">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school.jpg</pageElement>
+
+    </page>
+
+    <page label="31">
+        <pageElement type="title" x="150" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" x="120" y="200" width="530" height="320" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="list" x="670" y="200" width="260" height="320" diameter="10">Devine Rdr-laan.Howest Gkg-laan.Artevelde hoge School.Erasmus.KHBO.Artevelde HS.Ku Leuven.Kulak Gent-Brugge-Oostende</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner.jpg</pageElement>
+
+    </page>
+
+    <page label="32">
+        <pageElement type="title" x="90" y="40" width="900" height="400">MEEST GEKOZEN GROENTEN</pageElement>
+        <pageElement type="list" x="50" y="200" width="200" height="190" diameter="10">Salade.Aardappelen.Wortels Van de Boer.Tomaten van Janine.Tarwe</pageElement>
+        <pageElement type="list" x="357" y="300" width="270" height="260" diameter="10">Prei (ook wel Pret genaamd).Prinsessebonen van Astrid.Ananas.AubergineSoep.Rode Bieten zonder alcohol.Ananas.Is appel ook een groente?</pageElement>
+        <pageElement type="list" x="750" y="200" width="200" height="190" diameter="10">Tomaten.Bloemkool.Straffe Paprika.AubergineSoep.Lekkere Champignons</pageElement>
+        <pageElement type="image"  x="750" y="435">assets/images/fruit1.jpg</pageElement>
+        <pageElement type="image"  x="50" y="435">assets/images/fruit2.jpg</pageElement>
+    </page>
+
+    <page label="33">
+        <pageElement type="title"  x="150" y="100" width="550" height="200">CP3 EXAMEN</pageElement>
+        <pageElement type="list"  x="600" y="280" width="300" height="150" diameter="10">30% Schriftelijk.20% Praktijk.20% Deelexamen.30% Groepswerk</pageElement>
+        <pageElement type="image"  x="150" y="280">assets/images/devdev.jpg</pageElement>
+        <pageElement type="content" x="150" y="500" width="750" height="180" >Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken...Donderdag 29 november hebben we met de 3e jaars studenten een bezoek gebracht aan VRT. Onze studenten werden bij aankomst opgesplitst in 2 groepen, 1 groep kon vrij nadenken over hoe de deredactie.Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken..</pageElement>
+    </page>
+
+    <page label="34">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="150" y="20" width="900" height="400">EEN MOOIE ACHTERGROND</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="112" y="200">assets/images/achtergrond.jpg</pageElement>
+    </page>
+
+
+    <page label="35">
+        <pageElement type="image"  x="0" y="0">assets/images/hertBG.jpg</pageElement>
+    </page>
+
+    <page label="36">
+        <pageElement type="image"  x="0" y="0">assets/images/snowBG.jpg</pageElement>
+    </page>
+
+    <page label="37">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="38">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school2.jpg</pageElement>
+    </page>
+
+    <page label="39">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+    <page label="40">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school.jpg</pageElement>
+
+    </page>
+
+    <page label="41">
+        <pageElement type="title" x="150" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" x="120" y="200" width="530" height="320" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="list" x="670" y="200" width="260" height="320" diameter="10">Devine Rdr-laan.Howest Gkg-laan.Artevelde hoge School.Erasmus.KHBO.Artevelde HS.Ku Leuven.Kulak Gent-Brugge-Oostende</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner.jpg</pageElement>
+
+    </page>
+
+    <page label="42">
+        <pageElement type="title" x="90" y="40" width="900" height="400">MEEST GEKOZEN GROENTEN</pageElement>
+        <pageElement type="list" x="50" y="200" width="200" height="190" diameter="10">Salade.Aardappelen.Wortels Van de Boer.Tomaten van Janine.Tarwe</pageElement>
+        <pageElement type="list" x="357" y="300" width="270" height="260" diameter="10">Prei (ook wel Pret genaamd).Prinsessebonen van Astrid.Ananas.AubergineSoep.Rode Bieten zonder alcohol.Ananas.Is appel ook een groente?</pageElement>
+        <pageElement type="list" x="750" y="200" width="200" height="190" diameter="10">Tomaten.Bloemkool.Straffe Paprika.AubergineSoep.Lekkere Champignons</pageElement>
+        <pageElement type="image"  x="750" y="435">assets/images/fruit1.jpg</pageElement>
+        <pageElement type="image"  x="50" y="435">assets/images/fruit2.jpg</pageElement>
+    </page>
+
+    <page label="43">
+        <pageElement type="title"  x="150" y="100" width="550" height="200">CP3 EXAMEN</pageElement>
+        <pageElement type="list"  x="600" y="280" width="300" height="150" diameter="10">30% Schriftelijk.20% Praktijk.20% Deelexamen.30% Groepswerk</pageElement>
+        <pageElement type="image"  x="150" y="280">assets/images/devdev.jpg</pageElement>
+        <pageElement type="content" x="150" y="500" width="750" height="180" >Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken...Donderdag 29 november hebben we met de 3e jaars studenten een bezoek gebracht aan VRT. Onze studenten werden bij aankomst opgesplitst in 2 groepen, 1 groep kon vrij nadenken over hoe de deredactie.Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken..</pageElement>
+    </page>
+
+    <page label="44">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="150" y="20" width="900" height="400">EEN MOOIE ACHTERGROND</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="112" y="200">assets/images/achtergrond.jpg</pageElement>
+    </page>
+
+
+    <page label="45">
+        <pageElement type="image"  x="0" y="0">assets/images/hertBG.jpg</pageElement>
+    </page>
+
+    <page label="46">
+        <pageElement type="image"  x="0" y="0">assets/images/snowBG.jpg</pageElement>
+    </page>
+
+    <page label="47">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="48">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school2.jpg</pageElement>
+    </page>
+
+    <page label="49">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="50">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school.jpg</pageElement>
+
+    </page>
+
+    <page label="51">
+        <pageElement type="title" x="150" y="40" width="700" height="300">BAD ASS SCHOOL</pageElement>
+        <pageElement type="content" x="120" y="200" width="530" height="320" >In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographicsmogelijkheden van 2D animatie en visual effects in video.De 2de groep kreeg een uiteenzetting over hoe VRT in de toekomst meer infographics wil gebruiken en wat dan de rol van een Deviner daarin zou kunnen zijn.</pageElement>
+        <pageElement type="list" x="670" y="200" width="260" height="320" diameter="10">Devine Rdr-laan.Howest Gkg-laan.Artevelde hoge School.Erasmus.KHBO.Artevelde HS.Ku Leuven.Kulak Gent-Brugge-Oostende</pageElement>
+        <pageElement type="image" x="120" y="535">assets/images/banner.jpg</pageElement>
+
+    </page>
+
+    <page label="52">
+        <pageElement type="title" x="90" y="40" width="900" height="400">MEEST GEKOZEN GROENTEN</pageElement>
+        <pageElement type="list" x="50" y="200" width="200" height="190" diameter="10">Salade.Aardappelen.Wortels Van de Boer.Tomaten van Janine.Tarwe</pageElement>
+        <pageElement type="list" x="357" y="300" width="270" height="260" diameter="10">Prei (ook wel Pret genaamd).Prinsessebonen van Astrid.Ananas.AubergineSoep.Rode Bieten zonder alcohol.Ananas.Is appel ook een groente?</pageElement>
+        <pageElement type="list" x="750" y="200" width="200" height="190" diameter="10">Tomaten.Bloemkool.Straffe Paprika.AubergineSoep.Lekkere Champignons</pageElement>
+        <pageElement type="image"  x="750" y="435">assets/images/fruit1.jpg</pageElement>
+        <pageElement type="image"  x="50" y="435">assets/images/fruit2.jpg</pageElement>
+    </page>
+
+    <page label="53">
+        <pageElement type="title"  x="150" y="100" width="550" height="200">CP3 EXAMEN</pageElement>
+        <pageElement type="list"  x="600" y="280" width="300" height="150" diameter="10">30% Schriftelijk.20% Praktijk.20% Deelexamen.30% Groepswerk</pageElement>
+        <pageElement type="image"  x="150" y="280">assets/images/devdev.jpg</pageElement>
+        <pageElement type="content" x="150" y="500" width="750" height="180" >Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken...Donderdag 29 november hebben we met de 3e jaars studenten een bezoek gebracht aan VRT. Onze studenten werden bij aankomst opgesplitst in 2 groepen, 1 groep kon vrij nadenken over hoe de deredactie.Devine Is een Design/Development- gerichte opleiding. Bestaat Sinds 2009.Al enkel jaren komt devine uit de kast met mooie en goed-afgewerkte eindwerken..</pageElement>
+    </page>
+
+    <page label="54">
+        <pageElement type="title" transition="fadIn" transitionIndex="1" x="150" y="20" width="900" height="400">EEN MOOIE ACHTERGROND</pageElement>
+        <pageElement type="image" transition="fadIn" transitionIndex="3" x="112" y="200">assets/images/achtergrond.jpg</pageElement>
+    </page>
+
+
+    <page label="55">
+        <pageElement type="image"  x="0" y="0">assets/images/hertBG.jpg</pageElement>
+    </page>
+
+    <page label="56">
+        <pageElement type="image"  x="0" y="0">assets/images/snowBG.jpg</pageElement>
+    </page>
+
+    <page label="57">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
+    <page label="58">
+        <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
+        <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
+            Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
+
+            Bekijk het initiatief:
+            http://motion-plus-design.com/
+            http://devine.be/
+
+            In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. Studenten maken hun eigen 'mov to show off' en denken na over ritme en timing. Vanaf het 2e jaar exploreren ze de mogelijkheden van 2D animatie en visual effects in video. </pageElement>
+        <pageElement type="image" x="40" y="250">assets/images/school2.jpg</pageElement>
+    </page>
+
+    <page label="59">
+        <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
+
+    </page>
+
 </pages>

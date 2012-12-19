@@ -98,7 +98,7 @@ public class CreateThumbs extends Sprite{
         var fileStream:FileStream = new FileStream();
         fileStream.open(file, FileMode.WRITE);
         fileStream.writeBytes(pngBytes);
-
+        removeAllChildrenOf(thumbContainer);
         trace("thumb created");
     }
 
