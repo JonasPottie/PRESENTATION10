@@ -48,8 +48,7 @@ public class Application extends Sprite{
         bg = new Quad(appModel.stageWidth,appModel.stageHeight,0xea655c);
         addChild(bg);
 
-        var createThumbs:CreateThumbs = new CreateThumbs();
-        this.addChild(createThumbs);
+
 
 
         this.addEventListener(starling.events.Event.ADDED_TO_STAGE, addedToStageHandler);
@@ -68,13 +67,13 @@ public class Application extends Sprite{
         addChild(pixelMask);
 
         appModel.load("assets/xml/presentation.xml");
-
         appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
         appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlChangedHandler);
         appModel.addEventListener(AppModel.CURRENT_SLIDE_CHANGED, pageChangeHandler);
         appModel.addEventListener(AppModel.STAGE_SIZE_CHANGED, stageChangeHandler);
 
     }
+
 
     private function stageChangeHandler(event:flash.events.Event = null ):void
     {
@@ -306,18 +305,27 @@ public class Application extends Sprite{
 
     private function XmlLoadedHandler(event:flash.events.Event):void
     {
+            trace("xmlLoadedHandler")
+            var createThumbs:CreateThumbs = new CreateThumbs();
+            this.addChild(createThumbs);
+            appModel.addEventListener(AppModel.THUMBS_CREATED, thumbsCreatedHandler);
 
         trace("XML changedLoaded");
 
-            page = new Page(appModel.pages[0]);
-            page.x = 0;
-            pageContainer.addChild(page);
-            allPages.push(page);
 
-            page = new Page(appModel.pages[1]);
-            page.x = 1024;
-            allPages.push(page);
+    }
 
+
+    private function thumbsCreatedHandler(event:flash.events.Event):void
+    {
+        page = new Page(appModel.pages[0]);
+        page.x = 0;
+        pageContainer.addChild(page);
+        allPages.push(page);
+
+        page = new Page(appModel.pages[1]);
+        page.x = 1024;
+        allPages.push(page);
 
     }
 
@@ -414,6 +422,7 @@ public class Application extends Sprite{
         }
 
     }
+
 
 }
 }
