@@ -18,6 +18,7 @@ public class AppModel extends EventDispatcher
         public static const XML_URL_LOADED:String = "XML_URL_LOADED";
         public static const THUMB_POS_CHANGED:String = "THUMB_POS_CHANGED";
         public static const STAGE_SIZE_CHANGED:String = "STAGE_SIZE_CHANGED";
+        public static const THUMBS_CREATED:String = "THUMBS_CREATED";
 
 
         private var _currentSlideIndex:int;
@@ -25,6 +26,7 @@ public class AppModel extends EventDispatcher
         private var _pages:Vector.<PageVO>;
         private var _stageWidth:Number;
         private var _stageHeight:Number;
+        private var _thumbsCreated:Boolean
 
 
         public var overViewActive:Boolean;
@@ -185,6 +187,18 @@ public class AppModel extends EventDispatcher
         }
         dispatchEvent(new Event(THUMB_POS_CHANGED));
 
+    }
+
+    public function get thumbsCreated():Boolean {
+        return _thumbsCreated;
+    }
+
+    public function set thumbsCreated(value:Boolean):void {
+        if(_thumbsCreated != value)
+        {
+            _thumbsCreated = value;
+        }
+        dispatchEvent(new Event(THUMBS_CREATED));
     }
 }
 }
