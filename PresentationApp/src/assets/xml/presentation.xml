@@ -136,7 +136,7 @@ In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. St
 
     </page>
 
-    <page label="18">
+    <!--<page label="18">
         <pageElement type="title" x="40" y="100" width="800" height="200">PRESENTATION ENGINE 10</pageElement>
         <pageElement type="content" x="480" y="250" width="500" height="370" >Als eerste in België staan we op deze lijst van scholen waar Motion Design een deel is van de opleiding. Dit initiatief verzamelt nuttige bronnen en opleidingen omtrent motion.
             Ze nodigen elke maand een nieuw Resident Artist uit en willen een ontmoetings/inspiratiepunt zijn voor mensen uit de motion sector.  Een mooie erkenning van de 'motion track' in de opleiding en het werk geproduceerd hierin door onze studenten!
@@ -451,6 +451,6 @@ In Devine staat vanaf het 1e jaar een intro in montagetechnieken op het menu. St
     <page label="59">
         <pageElement type="image" x="0" y="0">assets/images/asianBG.jpg</pageElement>
 
-    </page>
+    </page>-->
 
 </pages>

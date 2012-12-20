@@ -9,21 +9,17 @@ package be.devine.cp3 {
 import be.devine.cp3.model.AppModel;
 import be.devine.cp3.service.PNGEncoder;
 import be.devine.cp3.view.Page;
-import be.devine.cp3.vo.PageVO;
-
 import flash.display.BitmapData;
-
-import flash.events.Event;
+import flash.events.TimerEvent;
 import flash.filesystem.File;
 import flash.filesystem.FileMode;
 import flash.filesystem.FileStream;
 import flash.utils.ByteArray;
-
+import flash.utils.Timer;
 import starling.core.RenderSupport;
 import starling.core.Starling;
 import starling.display.DisplayObject;
 import starling.display.DisplayObjectContainer;
-
 import starling.display.Sprite;
 
 public class CreateThumbs extends Sprite{
@@ -31,52 +27,45 @@ public class CreateThumbs extends Sprite{
     private var appModel:AppModel;
     private var theDirectory:String;
     private var page:Page;
-    public var thumbContainer:Sprite;
+    private var thumbContainer:Sprite;
+    private var timer:Timer;
+    private var slideToLoad:int;
 
     public function CreateThumbs()
     {
         this.appModel = AppModel.getInstance();
-        appModel.addEventListener(AppModel.XML_URL_LOADED, XmlLoadedHandler);
-        appModel.addEventListener(AppModel.XML_URL_CHANGED, XmlChangedHandler);
-    }
 
-    private function XmlChangedHandler(event:flash.events.Event):void
-    {
-        trace("Create New Thumbs, First Remove Them");
-
-
-        for each(var pageVO:PageVO in appModel.pages)
-        {
-            removeChild(thumbContainer);
-            page = new Page(pageVO);
-            trace("2e keer " +page);
-            thumbContainer.addChild(page);
-            takeScreenshot(pageVO.index.toString());
-        }
-
-        removeAllChildrenOf(thumbContainer);
-        removeChild(thumbContainer,true);
-    }
-
-
-    private function XmlLoadedHandler(event:flash.events.Event):void
-    {
         thumbContainer = new Sprite();
         addChild(thumbContainer);
 
-        trace("Create Thumbs !");
-        for each(var pageVO:PageVO in appModel.pages)
-        {
+        page = new Page(appModel.pages[slideToLoad]);
+        thumbContainer.addChild(page);
+        timer =  new Timer(500,appModel.pages.length)
+        timer.addEventListener(TimerEvent.TIMER, timerTickHandler);
+        timer.start();
 
-           page = new Page(pageVO);
-           trace(page);
-           thumbContainer.addChild(page);
-           takeScreenshot(pageVO.index.toString());
+    }
+
+    private function timerTickHandler(event:TimerEvent):void
+    {
+        takeScreenshot(slideToLoad.toString());
+
+        slideToLoad ++;
+
+        if(slideToLoad == appModel.pages.length)
+        {
+            removeAllChildrenOf(thumbContainer);
+            removeChild(thumbContainer,true);
+            appModel.thumbsCreated = true;
+        }
+        else
+        {
+            page = new Page(appModel.pages[slideToLoad]);
+            thumbContainer.addChild(page);
         }
 
-        removeAllChildrenOf(thumbContainer);
-        removeChild(thumbContainer,true);
     }
+
 
 
     public function takeScreenshot(slideNmr:String,directory:String = "assets"):void {
@@ -85,11 +74,12 @@ public class CreateThumbs extends Sprite{
 
         var support:RenderSupport = new RenderSupport();
         RenderSupport.clear(Starling.current.stage.color, 1.0);
-        support.setOrthographicProjection(Starling.current.viewPort.width, Starling.current.viewPort.height);
+        support.setOrthographicProjection(Starling.current.viewPort.width*(Starling.current.viewPort.width/200), Starling.current.viewPort.height*(Starling.current.viewPort.width/200));
+
         Starling.current.stage.render(support, 1.0);
         support.finishQuadBatch();
 
-        var result:BitmapData = new BitmapData(Starling.current.viewPort.width, Starling.current.viewPort.height, true);
+        var result:BitmapData = new BitmapData(200,150);
         Starling.context.drawToBitmapData(result);
 
         var pngBytes:ByteArray = PNGEncoder.encode(result);
@@ -100,7 +90,7 @@ public class CreateThumbs extends Sprite{
         var fileStream:FileStream = new FileStream();
         fileStream.open(file, FileMode.WRITE);
         fileStream.writeBytes(pngBytes);
-
+        removeAllChildrenOf(thumbContainer);
     }
 
     private function removeAllChildrenOf(container:DisplayObjectContainer):void
@@ -112,9 +102,7 @@ public class CreateThumbs extends Sprite{
                 removeAllChildrenOf(child as DisplayObjectContainer);
         }
     }
-    public  function test():void{
-        trace("intestt");
-    }
 
+  trace()
 }
 }
